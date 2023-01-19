@@ -1,100 +1,381 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-            </div>
+<head>
 
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
+    <!-- SITE META -->
+    <title>YourCoupon | Responsive Coupon Code Site Templates</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/images/apple-touch-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/images/apple-touch-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/images/apple-touch-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/images/apple-touch-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/images/apple-touch-icon-152x152.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
+
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin1.css') }}" title="skin1"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin2.css') }}" title="skin2"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin3.css') }}" title="skin3"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin4.css') }}" title="skin4"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin5.css') }}" title="skin5"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin6.css') }}" title="skin6"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin7.css') }}" title="skin7"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin8.css') }}" title="skin8"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin9.css') }}" title="skin9"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}" title="skin10"
+        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin11.css') }}"
+        title="skin11" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin12.css') }}"
+        title="skin12" media="all" />
+    <link href="{{ asset('assets/switcher/switcher.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 center-xs">
+                        <p class="topbar-text">
+                            <strong><i class="fa fa-phone"></i></strong> +90 987 123 45 67 &nbsp;&nbsp;
+                            <strong><i class="fa fa-envelope-o"></i></strong> <a
+                                href="mailto:info@yoursite.com">info@yoursite.com</a>
+                        </p>
+                    </div><!-- end col -->
+
+                    <div class="col-md-6 col-sm-6 center-xs text-right">
+                        <div class="topbar-links">
+                            <ul class="list-inline">
+                                <li><a href="user-favorites.html"><i class="fa fa-heart-o"></i> &nbsp;Favorites</a>
+                                </li>
+                                <li><a href="user-saved.html"><i class="fa fa-star-o"></i> &nbsp;Saved</a></li>
+                                <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> &nbsp;Submit a
+                                        Coupon</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end topbar -->
+
+        <div class="header">
+            <div class="logo-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6">
+                            <a class="navbar-brand" href="index.html">YourCoupon <small>Discount Coupon
+                                    Codes</small></a>
+                        </div><!-- end col -->
+                        <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
+                            <div id="dl-menu" class="dl-menuwrapper">
+                                <button class="dl-trigger"><i class="fa fa-tags"></i></button>
+                                <p>Browse Deal</p>
+                                <ul class="dl-menu">
+                                    <li><a href="#">Coupon Codes</a></li>
+                                    <li><a href="#">Printable Coupons</a></li>
+                                    <li><a href="#">Product Deals</a></li>
+                                    <li><a href="#">Gift Card Deals</a></li>
+                                    <li><a href="#">Free Shipping</a></li>
+                                    <li><a href="#">Top 30 Coupons</a></li>
+                                    <li><a href="#">Black Friday</a></li>
+                                    <li><a href="#">Back to School</a></li>
+                                </ul>
                             </div>
-                        </button>
-                    </x-slot>
+                        </div><!-- end col -->
 
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
+                        <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
+                            <div id="dl-menu2" class="dl-menuwrapper">
+                                <button class="dl-trigger"><i class="fa fa-share-alt"></i></button>
+                                <p>Follow us</p>
+                                <ul class="dl-menu">
+                                    <li><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                                    <li><a href="#"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-square"></i> Youtube</a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin-square"></i> Linkedin</a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus-square"></i> Google+</a></li>
+                                </ul>
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end rpw -->
+                </div><!-- end container -->
+            </div>
 
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+            <div class="menu-wrapper">
+                <div class="container">
+                    <div class="hovermenu ttmenu menu-color">
+                        <div class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div><!-- end navbar-header -->
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a class="active" href="index.html" title="">Home</a></li>
+                                    <li class="dropdown hasmenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span
+                                                class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="store-single.html">Store Single</a></li>
+                                            <li><a href="coupon-single.html">Coupon Single</a></li>
+                                            <li><a href="category-single.html">Category Single</a></li>
+                                            <li><a href="single.html">Blog Single</a></li>
+                                            <li><a href="page-contact.html">Contact us</a></li>
+                                            <li><a href="page.html">Default Page</a></li>
+                                            <li><a href="page-404.html">Not Found</a></li>
+                                            <li><a href="page-elements.html">All Elements</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="coupons.html" title="">Coupons</a></li>
+                                    <li><a href="printable.html" title="">Printable</a></li>
+                                    <li><a href="categories.html" title="">Categories</a></li>
+                                    <li><a href="stores.html" title="">Stores</a></li>
+                                    <li class="dropdown hasmenu ttmenu-full"><a href="#" data-toggle="dropdown"
+                                            class="dropdown-toggle">Mega Menu <b class="fa fa-angle-down"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="ttmenu-content">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4>Popular Categories</h4>
+                                                        </div><!-- end col -->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                            <ul class="customlist">
+                                                                <li><a href="#">Baby Kids</a></li>
+                                                                <li><a href="#">Books & Magazines</a></li>
+                                                                <li><a href="#">Computers</a></li>
+                                                                <li><a href="#">Cameras</a></li>
+                                                                <li><a href="#">Electronics</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                            <ul class="customlist">
+                                                                <li><a href="#">Games</a></li>
+                                                                <li><a href="#">Gifts</a></li>
+                                                                <li><a href="#">Health Beauty</a></li>
+                                                                <li><a href="#">Home Garden</a></li>
+                                                                <li><a href="#">Home Supplies</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                            <ul class="customlist">
+                                                                <li><a href="#">Laptops</a></li>
+                                                                <li><a href="#">Entertainetmen</a></li>
+                                                                <li><a href="#">Digital Stores</a></li>
+                                                                <li><a href="#">Marketplaces</a></li>
+                                                                <li><a href="#">Musicians</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                            <ul class="customlist">
+                                                                <li><a href="#">Movies & Films</a></li>
+                                                                <li><a href="#">Phones</a></li>
+                                                                <li><a href="#">Travel</a></li>
+                                                                <li><a href="#">Televisions</a></li>
+                                                                <li><a href="#">Telegraphers</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                            <ul class="customlist">
+                                                                <li><a href="#">Baby Toys</a></li>
+                                                                <li><a href="#">Clothings</a></li>
+                                                                <li><a href="#">Jewellry</a></li>
+                                                                <li><a href="#">Car Supplies</a></li>
+                                                                <li><a href="#">Watches</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                            <ul class="customlist">
+                                                                <li><a href="#">Glassess</a></li>
+                                                                <li><a href="#">Medical</a></li>
+                                                                <li><a href="#">Pet Shops</a></li>
+                                                                <li><a href="#">LifeStyle</a></li>
+                                                                <li><a href="#">Sports</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- end row -->
+
+                                                    <hr class="invis1">
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4>Popular Stores</h4>
+                                                        </div><!-- end col -->
+                                                    </div>
+
+                                                    <div class="text-center store-list row">
+                                                        <div class="col-md-2 col-sm-4 col-xs-6">
+                                                            <div class="post-media">
+                                                                <a href="coupon-single.html"><img
+                                                                        src="{{ asset('assets/uploads/store_01.jpg') }}" alt=""
+                                                                        class="img-responsive"></a>
+                                                                <small>Takifest.com</small>
+                                                            </div><!-- end media -->
+                                                        </div>
+                                                        <div class="col-md-2 col-sm-4 col-xs-6">
+                                                            <div class="post-media">
+                                                                <a href="coupon-single.html"><img
+                                                                        src="{{ asset('assets/uploads/store_02.jpg') }}" alt=""
+                                                                        class="img-responsive"></a>
+                                                                <small>WPServis.com</small>
+                                                            </div><!-- end media -->
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-4 col-xs-6">
+                                                            <div class="post-media">
+                                                                <a href="coupon-single.html"><img
+                                                                        src="{{ asset('assets/uploads/store_03.jpg') }}" alt=""
+                                                                        class="img-responsive"></a>
+                                                                <small>PurplebyBanu.com</small>
+                                                            </div><!-- end media -->
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-4 col-xs-6">
+                                                            <div class="post-media">
+                                                                <a href="coupon-single.html"><img
+                                                                        src="{{ asset('assets/uploads/store_04.jpg') }}" alt=""
+                                                                        class="img-responsive"></a>
+                                                                <small>Tutsplus.com</small>
+                                                            </div><!-- end media -->
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-4 col-xs-6">
+                                                            <div class="post-media">
+                                                                <a href="coupon-single.html"><img
+                                                                        src="{{ asset('assets/uploads/store_05.jpg') }}" alt=""
+                                                                        class="img-responsive"></a>
+                                                                <small>Showwp.com</small>
+                                                            </div><!-- end media -->
+                                                        </div>
+
+                                                        <div class="col-md-2 col-sm-4 col-xs-6">
+                                                            <div class="post-media">
+                                                                <a href="coupon-single.html"><img
+                                                                        src="{{ asset('assets/uploads/store_06.jpg') }}" alt=""
+                                                                        class="img-responsive"></a>
+                                                                <small>PSDConvertHTML.com</small>
+                                                            </div><!-- end media -->
+                                                        </div>
+                                                    </div><!-- end row -->
+                                                </div><!-- end ttmenu-content -->
+                                            </li>
+                                        </ul>
+                                    </li><!-- end mega menu -->
+                                    <li><a href="blog.html" title="">Blog</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown hasmenu userpanel">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+                                                src="{{ asset('assets/uploads/testi_03.png') }}" alt="" class="img-circle"> <span
+                                                class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu start-right" role="menu">
+                                            <li><a href="user-dashboard.html"><i class="fa fa-dashboard"></i>
+                                                    Dashboard</a></li>
+                                            <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
+                                                    Stores</a></li>
+                                            <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
+                                                    Coupons</a></li>
+                                            <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
+                                                    Coupon</a></li>
+                                            <li><a href="#"><i class="fa fa-lock"></i> Sign Out</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div><!-- end navbar navbar-default clearfix -->
+                    </div><!-- end menu 1 -->
+                </div><!-- end container -->
+            </div><!-- / menu-wrapper -->
+        </div><!-- end header -->
+
+        <div class="section wb">
+            <div class="container">
+                <div class="section-title m30 text-center">
+                    <h1>4.000+ Stores Publishes 20.000+ <span class="element"></span></h1>
+                </div><!-- end title -->
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form class="well">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    <input id="typeahead" type="text" class="form-control"
+                                        placeholder="Search for coupons..." autocomplete="off"
+                                        data-provide="typeahead">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="pull-left text-left hidden-xs">
+                                    <div class="checkbox checkbox-success checkbox-inline">
+                                        <input type="checkbox" class="styled" id="inlineCheckbox1" value="option1"
+                                            checked>
+                                        <label for="inlineCheckbox1"> Coupons </label>
+                                    </div>
+                                    <div class="checkbox checkbox-success checkbox-inline">
+                                        <input type="checkbox" class="styled" id="inlineCheckbox2" value="option1"
+                                            checked>
+                                        <label for="inlineCheckbox2"> Printable </label>
+                                    </div>
+                                    <div class="checkbox checkbox-success checkbox-inline">
+                                        <input type="checkbox" class="styled" id="inlineCheckbox3" value="option1">
+                                        <label for="inlineCheckbox3"> Deals </label>
+                                    </div>
+                                    <div class="checkbox checkbox-success checkbox-inline">
+                                        <input type="checkbox" class="styled" id="inlineCheckbox4" value="option1">
+                                        <label for="inlineCheckbox4"> Stores </label>
+                                    </div>
+                                </div>
+                                <div class="pull-right text-right hidden-xs">
+                                    <label>Search : <a href="#">MyLogo</a>, <a href="#">Companies</a>, <a
+                                            href="#">Garden</a> etc.</label>
+                                </div>
+                            </div>
                         </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-        </div>
-    </div>
-</nav>
+                    </div>
+                </div>
