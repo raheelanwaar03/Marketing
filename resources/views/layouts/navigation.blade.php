@@ -168,40 +168,69 @@
                                     <li><a href="stores.html" title="">Stores</a></li>
                                     @if (auth()->user())
                                         <li><a href="{{ route('User.Dashboard') }}" title="">Dashboard</a></li>
-                                    @else
+                                        @else
                                         <li><a href="{{ route('login') }}" title="">Login</a></li>
                                         <li><a href="{{ route('register') }}" title="">Register</a></li>
-                                    @endif
-                                </ul>
-                                @if (auth()->user())
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li class="dropdown hasmenu userpanel">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                                    src="{{ asset('assets/uploads/testi_03.png') }}" alt=""
-                                                    class="img-circle"> <span class="fa fa-angle-down"></span></a>
-                                            <ul class="dropdown-menu start-right" role="menu">
-                                                <li><a href="{{ route('User.Dashboard') }}"><i class="fa fa-dashboard"></i>
-                                                        Dashboard</a></li>
-                                                <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
-                                                        Stores</a></li>
-                                                <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
-                                                        Coupons</a></li>
-                                                <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
-                                                        Coupon</a></li>
-                                                <li>
-                                                <li>
-                                                    <form action="{{ route('logout') }}" method="POST">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-block btn-info"><i
-                                                                class="fa fa-lock"></i>Sign Out</button>
-                                                    </form>
-                                                </li>
-
+                                        @endif
+                                    </ul>
+                                    @if (auth()->user())
+                                </li>
+                            </ul>
+                            @endif
+                            @if (auth()->user()->type = 'men')
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown hasmenu userpanel">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+                                            src="{{ asset('assets/uploads/men.jpg') }}" alt="avatar"
+                                            class="img-circle"> <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu start-right" role="menu">
+                                        <li><a href="{{ route('User.Dashboard') }}"><i class="fa fa-dashboard"></i>
+                                                Dashboard</a></li>
+                                        <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
+                                                Stores</a></li>
+                                        <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
+                                                Coupons</a></li>
+                                        <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
+                                                Coupon</a></li>
+                                        <li>
+                                        <li>
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-block btn-info"><i
+                                                        class="fa fa-lock"></i>Sign Out</button>
+                                            </form>
                                         </li>
-                                    </ul>
-                                    </li>
-                                    </ul>
-                                @endif
+
+                                </li>
+                            </ul>
+
+                            @else
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown hasmenu userpanel">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+                                            src="{{ asset('assets/uploads/women.jpg') }}" alt="avatar"
+                                            class="img-circle"> <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu start-right" role="menu">
+                                        <li><a href="{{ route('User.Dashboard') }}"><i class="fa fa-dashboard"></i>
+                                                Dashboard</a></li>
+                                        <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
+                                                Stores</a></li>
+                                        <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
+                                                Coupons</a></li>
+                                        <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
+                                                Coupon</a></li>
+                                        <li>
+                                        <li>
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-block btn-info"><i
+                                                        class="fa fa-lock"></i>Sign Out</button>
+                                            </form>
+                                        </li>
+
+                                </li>
+                            </ul>
+                            @endif
                             </div>
                             <!--/.nav-collapse -->
                         </div><!-- end navbar navbar-default clearfix -->
