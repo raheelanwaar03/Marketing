@@ -49,8 +49,8 @@
         media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin9.css') }}" title="skin9"
         media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}" title="skin10"
-        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}"
+        title="skin10" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin11.css') }}"
         title="skin11" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin12.css') }}"
@@ -98,7 +98,7 @@
                             <a class="navbar-brand" href="index.html">YourCoupon <small>Discount Coupon
                                     Codes</small></a>
                         </div><!-- end col -->
-                        <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
+                        {{-- <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
                             <div id="dl-menu" class="dl-menuwrapper">
                                 <button class="dl-trigger"><i class="fa fa-tags"></i></button>
                                 <p>Browse Deal</p>
@@ -113,7 +113,7 @@
                                     <li><a href="#">Back to School</a></li>
                                 </ul>
                             </div>
-                        </div><!-- end col -->
+                        </div><!-- end col --> --}}
 
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
                             <div id="dl-menu2" class="dl-menuwrapper">
@@ -148,10 +148,11 @@
 
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li><a class="active" href="{{ route('LandingPage') }}" title="">Home</a></li>
+                                    <li><a class="active" href="{{ route('LandingPage') }}" title="">Home</a>
+                                    </li>
                                     <li class="dropdown hasmenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span
-                                                class="fa fa-angle-down"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories
+                                            <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="store-single.html">Store Single</a></li>
                                             <li><a href="coupon-single.html">Coupon Single</a></li>
@@ -165,27 +166,42 @@
                                     </li>
                                     <li><a href="coupons.html" title="">Coupons</a></li>
                                     <li><a href="stores.html" title="">Stores</a></li>
-                                    <li><a href="{{ route('login') }}" title="">Login</a></li>
-                                    <li><a href="{{ route('register') }}" title="">Register</a></li>
+                                    @if (auth()->user())
+                                        <li><a href="{{ route('User.Dashboard') }}" title="">Dashboard</a></li>
+                                    @else
+                                        <li><a href="{{ route('login') }}" title="">Login</a></li>
+                                        <li><a href="{{ route('register') }}" title="">Register</a></li>
+                                    @endif
                                 </ul>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown hasmenu userpanel">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                                src="{{ asset('assets/uploads/testi_03.png') }}" alt="" class="img-circle"> <span
-                                                class="fa fa-angle-down"></span></a>
-                                        <ul class="dropdown-menu start-right" role="menu">
-                                            <li><a href="user-dashboard.html"><i class="fa fa-dashboard"></i>
-                                                    Dashboard</a></li>
-                                            <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
-                                                    Stores</a></li>
-                                            <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
-                                                    Coupons</a></li>
-                                            <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
-                                                    Coupon</a></li>
-                                            <li><a href="#"><i class="fa fa-lock"></i> Sign Out</a></li>
-                                        </ul>
+                                @if (auth()->user())
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown hasmenu userpanel">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+                                                    src="{{ asset('assets/uploads/testi_03.png') }}" alt=""
+                                                    class="img-circle"> <span class="fa fa-angle-down"></span></a>
+                                            <ul class="dropdown-menu start-right" role="menu">
+                                                <li><a href="{{ route('User.Dashboard') }}"><i class="fa fa-dashboard"></i>
+                                                        Dashboard</a></li>
+                                                <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
+                                                        Stores</a></li>
+                                                <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
+                                                        Coupons</a></li>
+                                                <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
+                                                        Coupon</a></li>
+                                                <li>
+                                                <li>
+                                                    <form action="{{ route('logout') }}" method="POST">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-block btn-info"><i
+                                                                class="fa fa-lock"></i>Sign Out</button>
+                                                    </form>
+                                                </li>
+
+                                        </li>
+                                    </ul>
                                     </li>
-                                </ul>
+                                    </ul>
+                                @endif
                             </div>
                             <!--/.nav-collapse -->
                         </div><!-- end navbar navbar-default clearfix -->

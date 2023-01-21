@@ -1,5 +1,9 @@
 @extends('auth.layout.app')
 
+@section('title')
+    Authentication
+@endsection
+
 @section('content')
     <section class="section page-title-wrapper wb">
         <div class="container">
@@ -36,14 +40,14 @@
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Your Email</label>
-                                    <input type="email" class="form-control" placeholder="">
+                                    <input type="email" name="email" class="form-control" placeholder="">
                                 </div>
                             </div>
                             <!-- end row -->
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter your Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Enter your Password">
                                 </div>
                             </div>
                             <!-- end row -->

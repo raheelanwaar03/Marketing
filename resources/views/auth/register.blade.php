@@ -1,5 +1,9 @@
 @extends('auth.layout.app')
 
+@section('title')
+    Authentication
+@endsection
+
 @section('content')
     <section class="section page-title-wrapper wb">
         <div class="container">
@@ -35,7 +39,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <label class="control-label">Your Name</label>
+                                    <label class="control-label">Your Name</label>`
                                     <input type="name" name="name" class="form-control" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
