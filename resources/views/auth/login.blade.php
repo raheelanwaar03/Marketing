@@ -11,7 +11,8 @@
                 <div class="bread">
                     <ol class="breadcrumb">
                         <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li class="active">login</li>
+                        <li class="active">Authentication</li>
+                        <li class="active">Login</li>
                     </ol>
                 </div><!-- end bread -->
             </div><!-- /.pull-right -->
@@ -32,14 +33,14 @@
 
                         <form id="submit" class="comment-form newsletter">
                             <div class="row">
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Your Email</label>
                                     <input type="email" class="form-control" placeholder="">
                                 </div>
                             </div>
                             <!-- end row -->
                             <div class="row">
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Password</label>
                                     <input type="password" class="form-control" placeholder="Enter your Password">
                                 </div>
@@ -53,7 +54,7 @@
                 </div><!-- end content -->
 
                 <div class="sidebar col-md-5">
-                    <img src="{{ asset('assets/images/auth.jpg') }}" height="550px" width="400px" alt="img">
+                    <img src="{{ asset('assets/images/auth.png') }}" height="450px" width="450px" alt="img">
                 </div>
             </div><!-- end row -->
 

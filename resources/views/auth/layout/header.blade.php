@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE META -->
-    <title>YourCoupon | Responsive Coupon Code Site Templates</title>
+    <title>Authentication</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
@@ -75,13 +75,6 @@
 
                     <div class="col-md-6 col-sm-6 center-xs text-right">
                         <div class="topbar-links">
-                            <ul class="list-inline">
-                                <li><a href="user-favorites.html"><i class="fa fa-heart-o"></i> &nbsp;Favorites</a>
-                                </li>
-                                <li><a href="user-saved.html"><i class="fa fa-star-o"></i> &nbsp;Saved</a></li>
-                                <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> &nbsp;Submit a
-                                        Coupon</a></li>
-                            </ul>
                         </div>
                     </div><!-- end col -->
                 </div><!-- end row -->
@@ -97,20 +90,6 @@
                                     Codes</small></a>
                         </div><!-- end col -->
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
-                            <div id="dl-menu" class="dl-menuwrapper">
-                                <button class="dl-trigger"><i class="fa fa-tags"></i></button>
-                                <p>Browse Deal</p>
-                                <ul class="dl-menu">
-                                    <li><a href="#">Coupon Codes</a></li>
-                                    <li><a href="#">Printable Coupons</a></li>
-                                    <li><a href="#">Product Deals</a></li>
-                                    <li><a href="#">Gift Card Deals</a></li>
-                                    <li><a href="#">Free Shipping</a></li>
-                                    <li><a href="#">Top 30 Coupons</a></li>
-                                    <li><a href="#">Black Friday</a></li>
-                                    <li><a href="#">Back to School</a></li>
-                                </ul>
-                            </div>
                         </div><!-- end col -->
 
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">

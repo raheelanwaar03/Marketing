@@ -5,13 +5,14 @@
         <div class="container">
             <div class="page-title pull-left">
                 <p>You can take best deals with us.</p>
-                <h3>Login</h3>
+                <h3>Register</h3>
             </div><!-- end title -->
             <div class="pull-right hidden-xs">
                 <div class="bread">
                     <ol class="breadcrumb">
                         <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li class="active">login</li>
+                        <li class="active">Authentication</li>
+                        <li class="active">Register</li>
                     </ol>
                 </div><!-- end bread -->
             </div><!-- /.pull-right -->
@@ -24,7 +25,7 @@
                 <div class="content col-md-7">
                     <div class="post-wrapper">
                         <div class="widget-title">
-                            <h4 class="text-center"><span>Login to Your Account</span></h4>
+                            <h4 class="text-center"><span>Register New Account</span></h4>
                         </div>
                         <!-- end widget-title -->
 
@@ -34,7 +35,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="control-label">Your Name</label>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input type="name" class="form-control" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="control-label">Your Email</label>
@@ -45,12 +46,12 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <label class="control-label">Phone</label>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <label class="control-label">Password</label>
+                                    <input type="password" class="form-control" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <label class="control-label">Subject</label>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <label class="control-label">Confirm Password</label>
+                                    <input type="confirmation_password" class="form-control" placeholder="">
                                 </div>
                             </div>
                             <!-- end row -->
@@ -64,7 +65,7 @@
                 </div><!-- end content -->
 
                 <div class="sidebar col-md-5">
-                    <img src="{{ asset('assets/images/auth.jpg') }}" height="550px" width="400px" alt="img">
+                    <img src="{{ asset('assets/images/auth.png') }}" height="450px" width="450px" alt="img">
                 </div>
             </div><!-- end row -->
 
