@@ -31,7 +31,8 @@
 
                         <hr class="invis3">
 
-                        <form id="submit" class="comment-form newsletter">
+                        <form action="{{ route('login') }}" method="POST" class="comment-form newsletter">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Your Email</label>

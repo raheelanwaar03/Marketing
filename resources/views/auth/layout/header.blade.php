@@ -61,6 +61,8 @@
 
 <body>
 
+    <x-alert />
+
     <div id="wrapper">
         <div class="topbar">
             <div class="container">

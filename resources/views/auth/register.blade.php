@@ -31,15 +31,16 @@
 
                         <hr class="invis3">
 
-                        <form id="submit" class="comment-form newsletter">
+                        <form action="{{ route('register') }}" method="POST" class="comment-form newsletter">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="control-label">Your Name</label>
-                                    <input type="name" class="form-control" placeholder="">
+                                    <input type="name" name="name" class="form-control" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="control-label">Your Email</label>
-                                    <input type="email" class="form-control" placeholder="">
+                                    <input type="email" name="email" class="form-control" placeholder="">
                                 </div>
                             </div>
                             <!-- end row -->
@@ -47,11 +48,11 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="control-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="">
+                                    <input type="password" name="password" class="form-control" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="control-label">Confirm Password</label>
-                                    <input type="confirmation_password" class="form-control" placeholder="">
+                                    <input type="password" name="password_confirmation" class="form-control" placeholder="">
                                 </div>
                             </div>
                             <!-- end row -->
