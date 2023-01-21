@@ -38,7 +38,13 @@ class StoreController extends Controller
 
     public function index()
     {
-        $store = Store::paginate(10);
+        $stores = Store::paginate(10);
+        return view('admin.store.index',compact('stores'));
+    }
+
+    public function show($id)
+    {
+        $store = Store::find($id);
         return view('admin.store.show',compact('store'));
     }
 

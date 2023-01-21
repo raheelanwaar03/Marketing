@@ -12,5 +12,6 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth','admin')->group(functi
     Route::get('/Add/Store',[StoreController::class,'create'])->name('Add.Store');
     Route::post('/Store',[StoreController::class,'store'])->name('Store');
     Route::get('/All/Store',[StoreController::class,'index'])->name('All.Store');
+    Route::get('/Show/Store/{id}',[StoreController::class,'show'])->name('Store.Show');
     Route::resource('/Category',CategoryController::class);
 });

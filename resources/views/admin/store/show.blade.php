@@ -52,56 +52,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Catagory Id</th>
-                                            <th>Catagory Name</th>
-                                            <th>Catagory Description</th>
-                                            <th>Catagory Image</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Catagory Id</th>
-                                            <th>Catagory Name</th>
-                                            <th>Catagory Description</th>
-                                            <th>Catagory Image</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        @foreach ($stores as $store)
-                                            <tr>
-                                                <td>{{ $store->id }}</td>
-                                                <td>{{ $store->store_name }}</td>
-                                                <td>{{ $store->store_des }}</td>
-                                                <td>
-                                                    <img src="{{ asset('images/' . $store->store_img) }}" height="90px"
-                                                        width="90px" class="img-fluid img-thumbnail" alt="store_img">
-                                                </td>
-                                                <td>{{ $store->created_at }}</td>
-                                                <td>
-                                                    <a href="{{ route('Admin.Store.Show',['id'=>$store->id]) }}"
-                                                        class="btn btn-primary">show</a>
-                                                  {{--   <a href="{{ route('store.edit', ['store' => $store->id]) }}"
-                                                        class="btn btn-info">Edit</a>
-                                                    <form action="{{ route('Admin.store.destroy', $store->id) }}" method="POST"
-                                                        style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" onclick="return confirm('Are you really want to Delete this Store?')"
-                                                            class="btn btn-danger">Delete</button>
-                                                    </form>
-                                                </td> --}}
-                                            </tr>
-                                        @endforeach
-                                        {{ $stores->withQueryString()->links('pagination::bootstrap-4') }}
-                                    </tbody>
-                                </table>
+                                show store
                         </div>
                     </div>
                 </div>
