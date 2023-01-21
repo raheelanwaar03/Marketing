@@ -192,24 +192,3 @@
             </div><!-- / menu-wrapper -->
         </div><!-- end header -->
 
-        <div class="section wb">
-            <div class="container">
-                <div class="section-title m30 text-center">
-                    <h1>4.000+ Stores Publishes 20.000+ <span class="element"></span></h1>
-                </div><!-- end title -->
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <form class="well">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                    <input id="typeahead" type="text" class="form-control"
-                                        placeholder="Search for coupons..." autocomplete="off"
-                                        data-provide="typeahead">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>

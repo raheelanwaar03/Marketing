@@ -1,47 +1,63 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('auth.layout.app')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+@section('content')
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <p>You can take best deals with us.</p>
+                <h3>Login</h3>
+            </div><!-- end title -->
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">login</li>
+                    </ol>
+                </div><!-- end bread -->
+            </div><!-- /.pull-right -->
         </div>
+    </section><!-- end section -->
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-7">
+                    <div class="post-wrapper">
+                        <div class="widget-title">
+                            <h4 class="text-center"><span>Login to Your Account</span></h4>
+                        </div>
+                        <!-- end widget-title -->
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+                        <hr class="invis3">
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                        <form id="submit" class="comment-form newsletter">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Your Email</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <!-- end row -->
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter your Password">
+                                </div>
+                            </div>
+                            <!-- end row -->
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+                            <button class="btn btn-custom">Login</button>
+                        </form>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+                    </div><!-- end coupon-wrapper -->
+                </div><!-- end content -->
 
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+                <div class="sidebar col-md-5">
+                    <img src="{{ asset('assets/images/auth.jpg') }}" height="550px" width="400px" alt="img">
+                </div>
+            </div><!-- end row -->
+
+            <!-- end ttmenu-content -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+@endsection

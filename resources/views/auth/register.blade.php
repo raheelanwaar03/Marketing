@@ -1,52 +1,74 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('auth.layout.app')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+@section('content')
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <p>You can take best deals with us.</p>
+                <h3>Login</h3>
+            </div><!-- end title -->
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">login</li>
+                    </ol>
+                </div><!-- end bread -->
+            </div><!-- /.pull-right -->
         </div>
+    </section><!-- end section -->
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-7">
+                    <div class="post-wrapper">
+                        <div class="widget-title">
+                            <h4 class="text-center"><span>Login to Your Account</span></h4>
+                        </div>
+                        <!-- end widget-title -->
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                        <hr class="invis3">
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                        <form id="submit" class="comment-form newsletter">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Your Name</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Your Email</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <!-- end row -->
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Phone</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Subject</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <!-- end row -->
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                            <!-- end row -->
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required />
+                            <button class="btn btn-custom">Register</button>
+                        </form>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+                    </div><!-- end coupon-wrapper -->
+                </div><!-- end content -->
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+                <div class="sidebar col-md-5">
+                    <img src="{{ asset('assets/images/auth.jpg') }}" height="550px" width="400px" alt="img">
+                </div>
+            </div><!-- end row -->
 
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+            <!-- end ttmenu-content -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+@endsection
