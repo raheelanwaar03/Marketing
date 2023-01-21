@@ -73,7 +73,7 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="menu_apps">
                             <li><a class="ms-link" href="{{ route('Admin.Category.create') }}">Add Category</a></li>
-                            <li><a class="ms-link" href="app-calendar.html">See Categories</a></li>
+                            <li><a class="ms-link" href="{{ route('Admin.Category.index') }}">See Categories</a></li>
                         </ul>
                     </li>
                     <li class="collapsed">

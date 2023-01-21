@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categorys = Catagory::paginate(10);
+        return view('admin.catagory.show',compact('categorys'));
     }
 
     /**
@@ -25,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.catagory.add');
+        $categorys = Catagory::paginate(10);
+        return view('admin.catagory.add',compact('categorys'));
     }
 
     /**
@@ -62,7 +64,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $catagorys = Catagory::paginate(10);
+        return view('admin.catagory.show',compact('catagorys'));
     }
 
     /**
@@ -96,6 +99,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Catagory::find($id);
+        $category->delete();
+        return redirect()->back()->with('success','Category Deleted Successfully!');
     }
 }
