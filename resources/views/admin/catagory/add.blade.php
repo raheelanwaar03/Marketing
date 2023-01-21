@@ -47,6 +47,37 @@
         <main class="page-body">
             <div class="container-fluid">
                 <!--[ Start:: My Dashboard ]-->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3 class="text-center my-3 text-gradient">Add New Category</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="{{ route('Admin.Category.store') }}" method="POST">
+                                        @csrf
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Name</label>
+                                            <input type="text" name="category_name" class="form-control" placeholder="Enter Category Name">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Description</label>
+                                            <input type="text" name="category_des" class="form-control" placeholder="Enter Category Description">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Image</label>
+                                            <input type="file" name="category_img" class="form-control">
+                                        </div>
+                                        <button class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
         <!--[ Start:: page footer link copywrite ]-->
