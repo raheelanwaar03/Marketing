@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Catagory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -35,7 +36,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'category_name' => 'required',
+            'category_des' => 'required',
+            'category_img' => 'required',
+        ]);
+
+        $image = $validated['category_img'];
+        $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
+
+        $category = new Catagory();
+        $category->category_name = $validated['category_name'];
+        $category->category_des = $validated['category_des'];
+        $category->category_img = $imageName;
+        $category->save();
+        return redirect()->back()->with('success','Category saved successfully');
     }
 
     /**

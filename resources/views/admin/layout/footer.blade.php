@@ -60,10 +60,14 @@
             d="M224.489 204.577L241.056 225.885H207.923L224.489 204.577Z" />
     </svg>
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 <script src="{{ asset('assets/assets/js/theme.js') }}"></script>
 <script src="{{ asset('assets/assets/bundles/apexcharts.bundle.js') }}"></script>
 <script src="{{ asset('assets/assets/bundles/bootstrapdatepicker.bundle.js') }}"></script>
 <script src="{{ asset('assets/assets/vendor/peity/jquery.peity.min.js') }}"></script>
+
+@yield('editor')
+
 <script>
     var options1 = {
         chart: {

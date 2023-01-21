@@ -56,7 +56,7 @@
                                     <h3 class="text-center my-3 text-gradient">Add New Category</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('Admin.Category.store') }}" method="POST">
+                                    <form action="{{ route('Admin.Category.store') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Category Name</label>
@@ -64,13 +64,13 @@
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Category Description</label>
-                                            <input type="text" name="category_des" class="form-control" placeholder="Enter Category Description">
+                                            <textarea name="category_des" id="textEditor" class="form-control" rows="5"></textarea>
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Category Image</label>
                                             <input type="file" name="category_img" class="form-control">
                                         </div>
-                                        <button class="btn btn-primary">Submit</button>
+                                        <button class="btn btn-primary">Add Category</button>
                                     </form>
                                 </div>
                             </div>
@@ -94,4 +94,15 @@
             fill: ["var(--primary-color)", "var(--border-color)"]
         })
     </script>
+@endsection
+
+
+@section('editor')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#textEditor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
