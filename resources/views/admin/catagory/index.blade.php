@@ -36,7 +36,7 @@
             <div class="container-fluid">
                 <ol class="breadcrumb bg-transparent w-100 li_animate mb-3 mb-md-1">
                     <li class="breadcrumb-item"><a href="{{ route('Admin.Dashboard') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Add Catagory</li>
+                    <li class="breadcrumb-item active" aria-current="page">All Categories</li>
                 </ol>
                 <h1 class="mb-0 text-gradient font-heading">Hello, {{ auth()->user()->name }}!</h1>
                 <div class="ms-sm-auto mt-2 mt-sm-0">
@@ -51,33 +51,57 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h3 class="text-center my-3 text-gradient">Add New Category</h3>
-                                </div>
-                                <div class="card-body">
-                                    <form action="{{ route('Admin.Category.store') }}" method="POST" enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group my-3">
-                                            <label for="" class="mb-1 ml-2">Category Name</label>
-                                            <input type="text" name="category_name" class="form-control" placeholder="Enter Category Name">
-                                        </div>
-                                        <div class="form-group my-3">
-                                            <label for="" class="mb-1 ml-2">Category Slug</label>
-                                            <input type="text" name="category_slug" class="form-control" placeholder="Enter Category Slug">
-                                        </div>
-                                        <div class="form-group my-3">
-                                            <label for="" class="mb-1 ml-2">Category Description</label>
-                                            <textarea name="category_des" id="textEditor" class="form-control" rows="5"></textarea>
-                                        </div>
-                                        <div class="form-group my-3">
-                                            <label for="" class="mb-1 ml-2">Category Image</label>
-                                            <input type="file" name="category_img" class="form-control">
-                                        </div>
-                                        <button class="btn btn-primary">Add Category</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Catagory Id</th>
+                                            <th>Catagory Name</th>
+                                            <th>Catagory Description</th>
+                                            <th>Catagory Image</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Catagory Id</th>
+                                            <th>Catagory Name</th>
+                                            <th>Catagory Description</th>
+                                            <th>Catagory Image</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        @foreach ($categorys as $category)
+                                            <tr>
+                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $category->category_name }}</td>
+                                                <td>{{ $category->category_des }}</td>
+                                                <td>
+                                                    <img src="{{ asset('images/' . $category->category_img) }}" height="90px"
+                                                        width="90px" class="img-fluid img-thumbnail" alt="category_img">
+                                                </td>
+                                                <td>{{ $category->created_at }}</td>
+                                                <td>
+                                                    <a href="{{ route('Admin.Category.show',['Category'=>$category->slug]) }}"
+                                                        class="btn btn-primary">show</a>
+                                                    {{-- <a href="{{ route('category.edit', ['category' => $category->id]) }}"
+                                                        class="btn btn-info">Edit</a> --}}
+                                                    <form action="{{ route('Admin.Category.destroy', $category->id) }}" method="POST"
+                                                        style="display: inline-block;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" onclick="return confirm('Are you really want to Delete this Category?')"
+                                                            class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        {{ $categorys->withQueryString()->links('pagination::bootstrap-4') }}
+                                    </tbody>
+                                </table>
                         </div>
                     </div>
                 </div>

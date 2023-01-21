@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categorys = Catagory::paginate(10);
-        return view('admin.catagory.show',compact('categorys'));
+        return view('admin.catagory.index',compact('categorys'));
     }
 
     /**
@@ -40,6 +40,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'category_name' => 'required',
+            'category_slug' => 'required',
             'category_des' => 'required',
             'category_img' => 'required',
         ]);
@@ -50,6 +51,7 @@ class CategoryController extends Controller
 
         $category = new Catagory();
         $category->category_name = $validated['category_name'];
+        $category->category_slug = $validated['category_slug'];
         $category->category_des = $validated['category_des'];
         $category->category_img = $imageName;
         $category->save();
@@ -64,8 +66,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $catagorys = Catagory::paginate(10);
-        return view('admin.catagory.show',compact('catagorys'));
+       $category = Catagory::find($id);
+        return view('admin.catagory.show',compact('category'));
     }
 
     /**

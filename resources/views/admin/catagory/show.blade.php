@@ -52,56 +52,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Catagory Id</th>
-                                            <th>Catagory Name</th>
-                                            <th>Catagory Description</th>
-                                            <th>Catagory Image</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Catagory Id</th>
-                                            <th>Catagory Name</th>
-                                            <th>Catagory Description</th>
-                                            <th>Catagory Image</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        @foreach ($categorys as $category)
-                                            <tr>
-                                                <td>{{ $category->id }}</td>
-                                                <td>{{ $category->category_name }}</td>
-                                                <td>{{ $category->category_des }}</td>
-                                                <td>
-                                                    <img src="{{ asset('images/' . $category->category_img) }}" height="90px"
-                                                        width="90px" class="img-fluid img-thumbnail" alt="category_img">
-                                                </td>
-                                                <td>{{ $category->created_at }}</td>
-                                                <td>
-                                                    <a href="{{ route('category.show', $category->id) }}"
-                                                        class="btn btn-primary">show</a>
-                                                    {{-- <a href="{{ route('category.edit', ['category' => $category->id]) }}"
-                                                        class="btn btn-info">Edit</a> --}}
-                                                    <form action="{{ route('Admin.Category.destroy', $category->id) }}" method="POST"
-                                                        style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" onclick="return confirm('Are you really want to Delete this Category?')"
-                                                            class="btn btn-danger">Delete</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        {{ $categorys->withQueryString()->links('pagination::bootstrap-4') }}
-                                    </tbody>
-                                </table>
+                                show category
                         </div>
                     </div>
                 </div>
