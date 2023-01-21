@@ -29,7 +29,7 @@
                 <div class="content col-md-7">
                     <div class="post-wrapper">
                         <div class="widget-title">
-                            <h4 class="text-center"><span>Register New Account</span></h4>
+                            <h4 class="text-center"><span>Register New Account <span><a href="{{ route('login') }}" class="text-info">or Already Register?</a></span></span></h4>
                         </div>
                         <!-- end widget-title -->
 
@@ -59,11 +59,25 @@
                                     <input type="password" name="password_confirmation" class="form-control" placeholder="">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="control-label">Gender</label>
+                                    <select class="form-control" name="gender" id="gender">
+                                        <option value="male" class="form-control">Male</option>
+                                        <option value="female" class="form-control">Female</option>
+                                        <option value="others" class="form-control">others</option>
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <input type="checkbox" name="remember" id="remember" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                </div>
+                            </div>
                             <!-- end row -->
 
-                            <!-- end row -->
-
-                            <button class="btn btn-custom">Register</button>
+                                <button class="btn btn-custom">Register</button>
                         </form>
 
                     </div><!-- end coupon-wrapper -->

@@ -29,7 +29,7 @@
                 <div class="content col-md-7">
                     <div class="post-wrapper">
                         <div class="widget-title">
-                            <h4 class="text-center"><span>Login to Your Account</span></h4>
+                            <h4 class="text-center"><span>Login to Your Account <span><a href="{{ route('register') }}" class="text-info">Or have Not Register yet?</a></span></span></h4>
                         </div>
                         <!-- end widget-title -->
 
@@ -40,19 +40,29 @@
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Your Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Verified Email">
                                 </div>
                             </div>
-                            <!-- end row -->
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <label class="control-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Enter your Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Enter your password">
+                                </div>
+                            </div>
+
+                            <!-- end row -->
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <input type="checkbox" name="remember"
+                                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                                        id="checkbox">
+                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                 </div>
                             </div>
                             <!-- end row -->
 
                             <button class="btn btn-custom">Login</button>
+
                         </form>
 
                     </div><!-- end coupon-wrapper -->

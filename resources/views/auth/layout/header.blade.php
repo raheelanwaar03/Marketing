@@ -147,6 +147,7 @@
                                     <li><a href="{{ route('login') }}" title="">Login</a></li>
                                     <li><a href="{{ route('register') }}" title="">Register</a></li>
                                 </ul>
+                                @if (auth()->user())
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown hasmenu userpanel">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
@@ -165,6 +166,7 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                @endif
                             </div>
                             <!--/.nav-collapse -->
                         </div><!-- end navbar navbar-default clearfix -->
