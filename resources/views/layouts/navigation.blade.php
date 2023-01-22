@@ -155,7 +155,7 @@
                                             <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach ($categorys as $category)
-                                            <li><a href="#">{{ $category->category_name }}</a></li>
+                                            <li><a href="{{ route('User.See.Category/',$category->category_slug) }}">{{ $category->category_name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -165,7 +165,7 @@
                                             <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach ($stores as $store)
-                                            <li><a href="{{ route('#') }}">{{ $store->store_name }}</a></li>
+                                            <li><a href="{{ route('User.Store.See/',$store->store_slug) }}">{{ $store->store_name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
