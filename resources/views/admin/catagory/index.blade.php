@@ -85,17 +85,17 @@
                                                 </td>
                                                 <td>{{ $category->created_at }}</td>
                                                 <td>
-                                                    {{-- <a href="{{ route('Admin.Category.show',$category->cotegory_slug) }}"
-                                                        class="btn btn-primary">show</a> --}}
+                                                    <a href="{{ route('Admin.Category.Show/',$category->category_slug) }}"
+                                                        class="btn btn-primary">show</a>
                                                     {{-- <a href="{{ route('category.edit', ['category' => $category->id]) }}"
                                                         class="btn btn-info">Edit</a> --}}
-                                                    <form action="{{ route('Admin.Category.destroy', $category->id) }}" method="POST"
+                                                    {{-- <form action="{{ route('Admin.Category.destroy', $category->id) }}" method="POST"
                                                         style="display: inline-block;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" onclick="return confirm('Are you really want to Delete this Category?')"
                                                             class="btn btn-danger">Delete</button>
-                                                    </form>
+                                                    </form> --}}
                                                 </td>
                                             </tr>
                                         @endforeach

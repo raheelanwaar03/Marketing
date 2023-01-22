@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class StoreController extends Controller
 {
@@ -28,7 +30,7 @@ class StoreController extends Controller
 
         $store = new Store();
         $store->store_name = $validated['store_name'];
-        $store->store_slug = $validated['store_slug'];
+        $store->store_slug = Str::slug($validated['store_slug']);
         $store->store_des = $validated['store_des'];
         $store->store_img = $imgName;
         $store->save();

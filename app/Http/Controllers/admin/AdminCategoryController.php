@@ -16,8 +16,6 @@ class AdminCategoryController extends Controller
 
     public function store(Request $request)
     {
-        return 1;
-        $request['category_slug'] =  Str::slug($request->category_slug);
         $validated = $request->validate([
             'category_name' => 'required',
             'category_slug' => 'required',
@@ -32,7 +30,7 @@ class AdminCategoryController extends Controller
 
         $category = new Catagory();
         $category->category_name = $validated['category_name'];
-        $category->category_slug = $validated['category_slug'];
+        $category->category_slug = str::slug($validated['category_slug']);
         $category->category_des = $validated['category_des'];
         $category->category_img = $imageName;
         $category->save();

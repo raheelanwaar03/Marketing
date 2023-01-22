@@ -18,8 +18,8 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth','admin')->group(functi
     Route::get('/Show/Store/{store_slug}',[StoreController::class,'show'])->name('Store.Show/');
     // category routes
 
-    Route::get('/Add/Category',[AdminCategoryController::class,'add'])->name('Add.Category');
-    Route::post('/Store',[AdminCategoryController::class,'store'])->name('Add.Category');
+    Route::get('/Add/Category',[AdminCategoryController::class,'add'])->name('Create.Category');
+    Route::post('/Store/Category',[AdminCategoryController::class,'store'])->name('Store.Category');
     Route::get('/All/Category',[AdminCategoryController::class,'index'])->name('All.Categories');
     Route::get('/All/Category/{category_slug}',[AdminCategoryController::class,'show'])->name('Category.Show/');
 });

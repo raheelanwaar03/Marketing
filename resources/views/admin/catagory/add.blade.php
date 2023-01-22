@@ -56,7 +56,7 @@
                                     <h3 class="text-center my-3 text-gradient">Add New Category</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('Admin.Add.Category') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('Admin.Store.Category') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Category Name</label>
