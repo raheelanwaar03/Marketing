@@ -51,8 +51,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive">
-                                show store
+
+                            <div class="card">
+                                <div class="my-3">
+                                    <h4 class="card-title text-center">{{ $store->store_name }}</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="">
+                                        <p>{{ $store->store_des }}</p>
+                                    </div>
+                                    <div class="img">
+                                        <img src="{{ asset('images/'.$store->store_img) }}" alt="store img">
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

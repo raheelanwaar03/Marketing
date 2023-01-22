@@ -61,12 +61,22 @@
     </svg>
 </div>
 <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+{{-- datatable cdn --}}
+
+<script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
 <script src="{{ asset('assets/assets/js/theme.js') }}"></script>
 <script src="{{ asset('assets/assets/bundles/apexcharts.bundle.js') }}"></script>
 <script src="{{ asset('assets/assets/bundles/bootstrapdatepicker.bundle.js') }}"></script>
 <script src="{{ asset('assets/assets/vendor/peity/jquery.peity.min.js') }}"></script>
 
 @yield('editor')
+
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 
 <script>
     var options1 = {

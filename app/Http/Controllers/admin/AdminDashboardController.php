@@ -13,6 +13,6 @@ class AdminDashboardController extends Controller
     {
         $catagory = Catagory::paginate(10);
         $store = Store::paginate(10);
-        return view('admin.dashboard',compact('catagorys','store'));
+        return view('admin.dashboard',compact('catagory','store'));
     }
 }

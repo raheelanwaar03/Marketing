@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ asset('assets/assets/bundles/bootstrapdatepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/assets/css/style.css') }}">
     <script src="{{ asset('assets/assets/js/plugins.js') }}"></script>
+    {{-- Datatable cdns --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 </head>
 
 <body class="qboat admin" data-qboat="theme-DodgerBlue">
@@ -72,8 +76,8 @@
                         </a>
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="menu_apps">
-                            <li><a class="ms-link" href="{{ route('Admin.Category.create') }}">Add Category</a></li>
-                            <li><a class="ms-link" href="{{ route('Admin.Category.index') }}">See Categories</a></li>
+                            <li><a class="ms-link" href="{{ route('Admin.Add.Category') }}">Add Category</a></li>
+                            <li><a class="ms-link" href="{{ route('Admin.All.Categories') }}">All Categories</a></li>
                         </ul>
                     </li>
                     <li class="collapsed">
@@ -91,7 +95,7 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="menu_pages">
                             <li><a class="ms-link" href="{{ route('Admin.Add.Store') }}">Add Store</a></li>
-                            <li><a class="ms-link" href="{{ route('Admin.All.Store') }}">All Store</a></li>
+                            <li><a class="ms-link" href="{{ route('Admin.All.Stores') }}">All Stores</a></li>
                         </ul>
                     </li>
                     <li class="divider"></li>

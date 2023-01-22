@@ -42,9 +42,9 @@ class StoreController extends Controller
         return view('admin.store.index',compact('stores'));
     }
 
-    public function show($id)
+    public function show($store_slug)
     {
-        $store = Store::find($id);
+        $store = Store::where('store_slug',$store_slug)->first();
         return view('admin.store.show',compact('store'));
     }
 

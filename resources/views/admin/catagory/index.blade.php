@@ -85,8 +85,8 @@
                                                 </td>
                                                 <td>{{ $category->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Category.show',['Category'=>$category->slug]) }}"
-                                                        class="btn btn-primary">show</a>
+                                                    {{-- <a href="{{ route('Admin.Category.show',$category->cotegory_slug) }}"
+                                                        class="btn btn-primary">show</a> --}}
                                                     {{-- <a href="{{ route('category.edit', ['category' => $category->id]) }}"
                                                         class="btn btn-info">Edit</a> --}}
                                                     <form action="{{ route('Admin.Category.destroy', $category->id) }}" method="POST"

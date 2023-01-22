@@ -85,7 +85,7 @@
                                                 </td>
                                                 <td>{{ $store->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Store.Show',['id'=>$store->id]) }}"
+                                                    <a href="{{ route('Admin.Store.Show/',$store->store_slug) }}"
                                                         class="btn btn-primary">show</a>
                                                   {{--   <a href="{{ route('store.edit', ['store' => $store->id]) }}"
                                                         class="btn btn-info">Edit</a>
