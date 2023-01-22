@@ -154,18 +154,21 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories
                                             <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="store-single.html">Store Single</a></li>
-                                            <li><a href="coupon-single.html">Coupon Single</a></li>
-                                            <li><a href="category-single.html">Category Single</a></li>
-                                            <li><a href="single.html">Blog Single</a></li>
-                                            <li><a href="page-contact.html">Contact us</a></li>
-                                            <li><a href="page.html">Default Page</a></li>
-                                            <li><a href="page-404.html">Not Found</a></li>
-                                            <li><a href="page-elements.html">All Elements</a></li>
+                                            @foreach ($categorys as $category)
+                                            <li><a href="#">{{ $category->category_name }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li><a href="coupons.html" title="">Coupons</a></li>
-                                    <li><a href="stores.html" title="">Stores</a></li>
+                                    <li class="dropdown hasmenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stores
+                                            <span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            @foreach ($stores as $store)
+                                            <li><a href="{{ route('#') }}">{{ $store->store_name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
                                     @if (auth()->user())
                                         <li><a href="{{ route('User.Dashboard') }}" title="">Dashboard</a></li>
                                 </ul>
