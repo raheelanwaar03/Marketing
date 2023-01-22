@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\admin\AdminCategoryController;
 use App\Http\Controllers\admin\AdminDashboardController;
-use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\CouponDealContorller;
 use App\Http\Controllers\admin\StoreController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +22,8 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth','admin')->group(functi
     Route::post('/Store/Category',[AdminCategoryController::class,'store'])->name('Store.Category');
     Route::get('/All/Category',[AdminCategoryController::class,'index'])->name('All.Categories');
     Route::get('/All/Category/{category_slug}',[AdminCategoryController::class,'show'])->name('Category.Show/');
+    // Coupon Deal Routes
+
+    Route::get('/Coupon/Deal',[CouponDealContorller::class,'create'])->name('Coupon.Deal');
+
 });

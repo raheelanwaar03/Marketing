@@ -36,7 +36,7 @@
             <div class="container-fluid">
                 <ol class="breadcrumb bg-transparent w-100 li_animate mb-3 mb-md-1">
                     <li class="breadcrumb-item"><a href="{{ route('Admin.Dashboard') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">All Stores</li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Catagory</li>
                 </ol>
                 <h1 class="mb-0 text-gradient font-heading">Hello, {{ auth()->user()->name }}!</h1>
                 <div class="ms-sm-auto mt-2 mt-sm-0">
@@ -51,57 +51,65 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Store Id</th>
-                                            <th>Store Name</th>
-                                            <th>Store Description</th>
-                                            <th>Store Image</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Store Id</th>
-                                            <th>Store Name</th>
-                                            <th>Store Description</th>
-                                            <th>Store Image</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        @foreach ($stores as $store)
-                                            <tr>
-                                                <td>{{ $store->id }}</td>
-                                                <td>{{ $store->store_name }}</td>
-                                                <td>{{ $store->store_des }}</td>
-                                                <td>
-                                                    <img src="{{ asset('images/'.$store->store_img) }}" height="90px"
-                                                        width="90px" class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">
-                                                </td>
-                                                <td>{{ $store->created_at }}</td>
-                                                <td>
-                                                    <a href="{{ route('Admin.Store.Show/',$store->store_slug) }}"
-                                                        class="btn btn-primary">show</a>
-                                                  {{--   <a href="{{ route('store.edit', ['store' => $store->id]) }}"
-                                                        class="btn btn-info">Edit</a>
-                                                    <form action="{{ route('Admin.store.destroy', $store->id) }}" method="POST"
-                                                        style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" onclick="return confirm('Are you really want to Delete this Store?')"
-                                                            class="btn btn-danger">Delete</button>
-                                                    </form>
-                                                </td> --}}
-                                            </tr>
-                                        @endforeach
-                                        {{ $stores->withQueryString()->links('pagination::bootstrap-4') }}
-                                    </tbody>
-                                </table>
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3 class="text-center my-3 text-gradient">Add New Category</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="{{ route('Admin.Store.Category') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Name</label>
+                                            <input type="text" name="coupon_name" class="form-control" placeholder="Enter Coupon Name">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Slug</label>
+                                            <input type="text" name="coupon_slug" class="form-control" placeholder="Enter Coupon Slug">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Description</label>
+                                            <textarea name="coupon_des" height='15' id="textEditor" class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Type</label>
+                                            <input type="text" name="coupon_type" class="form-control" placeholder="Enter Coupon Type">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Link</label>
+                                            <input type="text" name="coupon_link" class="form-control" placeholder="Enter Coupon Link">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Code</label>
+                                            <input type="text" name="coupon_code" class="form-control" placeholder="Enter Coupon Code">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Category</label>
+                                            <select name="coupon_category" class="form-control">
+                                                @foreach ($categorys as $category)
+                                                <option class="form-control" value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Store</label>
+                                            <select name="coupon_store" class="form-control">
+                                                @foreach ($stores as $store)
+                                                <option class="form-control" value="{{ $store->store_name }}">{{ $store->store_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Image</label>
+                                            <input type="file" name="coupon_img" class="form-control">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Coupon Expire</label>
+                                            <input type="text" name="coupon_expire" class="form-control" placeholder="Enter Coupon Expire">
+                                        </div>
+                                        <button class="btn btn-primary">Add Coupon Deal</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
