@@ -27,9 +27,9 @@
                 <ul class="menu-list mt-3 rounded-4">
                     <!--[ Start:: brand logo and name ]-->
                     <li class="brand-icon mb-3 py-1">
-                        <a href="index.html">
+                        <a href="{{ route('LandingPage') }}">
                             <img src="{{ asset('assets/images/favicon.ico') }}" alt="">
-                            <span class="fs-5 ms-2">Zeshan</span>
+                            <span class="fs-5 ms-2">{{ auth()->user()->name }}</span>
                         </a>
                         <button type="button" class="btn btn-link px-0" data-bs-toggle="modal"
                             data-bs-target="#full_screen_menu" data-toggle="tooltip" title="Grid Fullscreen Menu"
@@ -59,7 +59,6 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse show" id="menu_dashboard">
                             <li><a class="ms-link active" href="{{ route('Admin.Dashboard') }}">My Dashboard</a></li>
-                            <li><a class="ms-link" href="my-analytics.html">Analytics</a></li>
                         </ul>
                     </li>
                     <!--[ Start:: Account ]-->
