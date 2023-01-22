@@ -168,15 +168,7 @@
                                     <li><a href="stores.html" title="">Stores</a></li>
                                     @if (auth()->user())
                                         <li><a href="{{ route('User.Dashboard') }}" title="">Dashboard</a></li>
-                                    @else
-                                        <li><a href="{{ route('login') }}" title="">Login</a></li>
-                                        <li><a href="{{ route('register') }}" title="">Register</a></li>
-                                    @endif
                                 </ul>
-                                @if (auth()->user())
-                                    </li>
-                                    </ul>
-                                @endif
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown hasmenu userpanel">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
@@ -203,6 +195,11 @@
 
                                     </li>
                                 </ul>
+                            @else
+                                <li><a href="{{ route('login') }}" title="">Login</a></li>
+                                <li><a href="{{ route('register') }}" title="">Register</a></li>
+                                @endif
+
                             </div>
                             <!--/.nav-collapse -->
                         </div><!-- end navbar navbar-default clearfix -->
