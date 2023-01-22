@@ -56,15 +56,18 @@
                                     <h3 class="text-center my-3 text-gradient">Add New Category</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('Admin.Store.Category') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('Admin.Store.Coupon.Deal') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Name</label>
-                                            <input type="text" name="coupon_name" class="form-control" placeholder="Enter Coupon Name">
+                                            <input type="text" name="coupon_name" class="form-control"
+                                                placeholder="Enter Coupon Name">
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Slug</label>
-                                            <input type="text" name="coupon_slug" class="form-control" placeholder="Enter Coupon Slug">
+                                            <input type="text" name="coupon_slug" class="form-control"
+                                                placeholder="Enter Coupon Slug">
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Description</label>
@@ -72,31 +75,39 @@
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Type</label>
-                                            <input type="text" name="coupon_type" class="form-control" placeholder="Enter Coupon Type">
+                                            <input type="text" name="coupon_type" class="form-control"
+                                                placeholder="Enter Coupon Type">
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Link</label>
-                                            <input type="text" name="coupon_link" class="form-control" placeholder="Enter Coupon Link">
+                                            <input type="text" name="coupon_link" class="form-control"
+                                                placeholder="Enter Coupon Link">
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Code</label>
-                                            <input type="text" name="coupon_code" class="form-control" placeholder="Enter Coupon Code">
+                                            <input type="text" name="coupon_code" class="form-control"
+                                                placeholder="Enter Coupon Code">
                                         </div>
-                                        <div class="form-group my-3">
-                                            <label for="" class="mb-1 ml-2">Coupon Category</label>
-                                            <select name="coupon_category" class="form-control">
-                                                @foreach ($categorys as $category)
-                                                <option class="form-control" value="{{ $category->category_name }}">{{ $category->category_name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group my-3">
-                                            <label for="" class="mb-1 ml-2">Coupon Store</label>
-                                            <select name="coupon_store" class="form-control">
-                                                @foreach ($stores as $store)
-                                                <option class="form-control" value="{{ $store->store_name }}">{{ $store->store_name }}</option>
-                                                @endforeach
-                                            </select>
+                                        <div class="d-flex justify-content-center align-itmes-between">
+                                            <div class="col-md-6 form-group my-3">
+                                                <label for="" class="mb-1 ml-2">Coupon Category</label>
+                                                <select name="coupon_category" class="form-control">
+                                                    @foreach ($categorys as $category)
+                                                        <option class="form-control"
+                                                            value="{{ $category->category_name }}">
+                                                            {{ $category->category_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 form-group my-3">
+                                                <label for="" class="mb-1 ml-2">Coupon Store</label>
+                                                <select name="coupon_store" class="form-control">
+                                                    @foreach ($stores as $store)
+                                                        <option class="form-control" value="{{ $store->store_name }}">
+                                                            {{ $store->store_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Image</label>
@@ -104,7 +115,8 @@
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Expire</label>
-                                            <input type="text" name="coupon_expire" class="form-control" placeholder="Enter Coupon Expire">
+                                            <input type="text" name="coupon_expire" class="form-control"
+                                                placeholder="Enter Coupon Expire">
                                         </div>
                                         <button class="btn btn-primary">Add Coupon Deal</button>
                                     </form>
@@ -119,7 +131,7 @@
         <!--[ Start:: page footer link copywrite ]-->
         <footer class="page-footer py-4 mt-4 static">
             <div class="container-fluid">
-                <p class="col-md-4 mb-0 text-muted">© 2022 <a  target="_blank" class="underline"
+                <p class="col-md-4 mb-0 text-muted">© 2022 <a target="_blank" class="underline"
                         title="{{ env('APP_NAME') }}">{{ env('APP_NAME') }}</a>, All Rights Reserved.</p>
             </div>
         </footer>
@@ -134,11 +146,11 @@
 
 
 @section('editor')
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#textEditor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#textEditor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 @endsection

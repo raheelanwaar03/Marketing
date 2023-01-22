@@ -113,6 +113,7 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="menu_auth">
                             <li><a class="ms-link" href="{{ route('Admin.Coupon.Deal') }}">Add Coupon</a></li>
+                            <li><a class="ms-link" href="{{ route('Admin.All.Coupon.Deals') }}">All Coupon Deals</a></li>
                         </ul>
                     </li>
                     <li class="divider"></li>

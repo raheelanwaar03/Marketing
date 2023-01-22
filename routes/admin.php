@@ -25,5 +25,9 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth','admin')->group(functi
     // Coupon Deal Routes
 
     Route::get('/Coupon/Deal',[CouponDealContorller::class,'create'])->name('Coupon.Deal');
+    Route::post('/Coupon/Store',[CouponDealContorller::class,'store'])->name('Store.Coupon.Deal');
+    Route::get('/All/Coupon/Deals',[CouponDealContorller::class,'index'])->name('All.Coupon.Deals');
+
+
 
 });

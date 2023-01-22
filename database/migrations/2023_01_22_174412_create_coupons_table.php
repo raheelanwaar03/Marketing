@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('coupon_name');
             $table->string('coupon_slug');
-            $table->string('coupon_des');
+            $table->longText('coupon_des');
             $table->string('coupon_type');
             $table->string('coupon_link');
             $table->string('coupon_code');
             $table->string('coupon_category');
             $table->string('coupon_store');
             $table->string('coupon_img');
-            $table->string('coupon_expire');
+            $table->date('coupon_expire');
             $table->timestamps();
         });
     }
