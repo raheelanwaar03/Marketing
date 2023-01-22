@@ -51,21 +51,24 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-
                             <div class="card">
-                                <div class="my-3">
-                                    <h4 class="card-title text-center">{{ $store->store_name }}</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="">
-                                        <p>{{ $store->store_des }}</p>
-                                    </div>
-                                    <div class="img">
-                                        <img src="{{ asset('images/'.$store->store_img) }}" alt="store img">
+                                <div class="row">
+                                        <div class="d-flex">
+                                        <div class="col-lg-6">
+                                            <div class="card-title m-4">
+                                                <h4 class="m-4">Title: {{ $store->store_name }}</h4>
+                                                <p class="m-4">Description: {{ $store->store_des }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="card-body">
+                                                <img src="{{ asset('images/' . $store->store_img) }}" class="card-img" height="400px"
+                                                    width="400px" alt="{{ $store->store_img }}">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

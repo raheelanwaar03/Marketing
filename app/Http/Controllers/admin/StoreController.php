@@ -24,15 +24,15 @@ class StoreController extends Controller
             'store_img'=> 'required'
         ]);
 
-        $img = $validated['store_img'];
-        $imgName = rand(11111,99999) . '.' . $img->getClientOriginalExtension();
-        $img->move(public_path('images',$imgName));
+        $image = $validated['store_img'];
+        $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
 
         $store = new Store();
         $store->store_name = $validated['store_name'];
         $store->store_slug = Str::slug($validated['store_slug']);
         $store->store_des = $validated['store_des'];
-        $store->store_img = $imgName;
+        $store->store_img = $imageName;
         $store->save();
         return redirect()->back()->with('success','Store added successfully');
 

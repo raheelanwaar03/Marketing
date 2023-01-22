@@ -51,8 +51,24 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive">
-                                show category
+                            <div class="card">
+                                <div class="row">
+                                        <div class="d-flex">
+                                        <div class="col-lg-6">
+                                            <div class="card-title m-4">
+                                                <h4 class="m-4">Title: {{ $category->category_name }}</h4>
+                                                <p class="m-4">Description: {{ $category->category_des }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="card-body">
+                                                <img src="{{ asset('images/' . $category->category_img) }}" class="card-img" height="400px"
+                                                    width="400px" alt="{{ $category->category_img }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +78,7 @@
         <!--[ Start:: page footer link copywrite ]-->
         <footer class="page-footer py-4 mt-4 static">
             <div class="container-fluid">
-                <p class="col-md-4 mb-0 text-muted">© 2022 <a  target="_blank" class="underline"
+                <p class="col-md-4 mb-0 text-muted">© 2022 <a target="_blank" class="underline"
                         title="{{ env('APP_NAME') }}">{{ env('APP_NAME') }}</a>, All Rights Reserved.</p>
             </div>
         </footer>
@@ -77,11 +93,11 @@
 
 
 @section('editor')
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#textEditor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#textEditor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 @endsection
