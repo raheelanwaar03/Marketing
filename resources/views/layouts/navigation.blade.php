@@ -155,11 +155,12 @@
                                             <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach ($categorys as $category)
+                                            <li><a href="{{ route('User.All.Category') }}">All Categories</a></li>
                                             <li><a href="{{ route('User.See.Category/',$category->category_slug) }}">{{ $category->category_name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="coupons.html" title="">Coupons</a></li>
+                                    {{-- <li><a href="{{ route('User.Coupon.Details/') }}" title="">Coupons</a></li> --}}
                                     <li class="dropdown hasmenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stores
                                             <span class="fa fa-angle-down"></span></a>
