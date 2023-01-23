@@ -43,7 +43,10 @@ class UserCategoryController extends Controller
 
     public function allCoupon()
     {
-        return 1;
+        $categorys = Catagory::paginate(10);
+        $stores = Store::paginate(10);
+        $coupons = Coupon::paginate(10);
+        return view('user.coupon.index',compact('categorys','stores','coupons'));
     }
 
 
