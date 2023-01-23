@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Store Description</label>
-                                            <textarea name="store_des" id="textEditor" class="form-control" rows="5"></textarea>
+                                            <textarea name="store_des" class="form-control" rows="5"></textarea>
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Store Image</label>

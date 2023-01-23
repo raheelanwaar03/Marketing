@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Category Description</label>
-                                            <textarea name="category_des" height='15' id="textEditor" class="form-control" rows="5"></textarea>
+                                            <textarea name="category_des" class="form-control" rows="5"></textarea>
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Category Image</label>

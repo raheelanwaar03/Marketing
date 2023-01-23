@@ -36,7 +36,7 @@
             <div class="container-fluid">
                 <ol class="breadcrumb bg-transparent w-100 li_animate mb-3 mb-md-1">
                     <li class="breadcrumb-item"><a href="{{ route('Admin.Dashboard') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Add Catagory</li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Coupon Deal</li>
                 </ol>
                 <h1 class="mb-0 text-gradient font-heading">Hello, {{ auth()->user()->name }}!</h1>
                 <div class="ms-sm-auto mt-2 mt-sm-0">
@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Description</label>
-                                            <textarea name="coupon_des" height='15' id="textEditor" class="form-control" rows="5"></textarea>
+                                            <textarea name="coupon_des" class="form-control" rows="5"></textarea>
                                         </div>
                                         <div class="form-group my-3">
                                             <label for="" class="mb-1 ml-2">Coupon Type</label>
