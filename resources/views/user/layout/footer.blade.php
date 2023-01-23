@@ -135,8 +135,7 @@
                         <li><a href="#">Trademark</a></li>
                         <li><a href="#">License</a></li>
                     </ul><!-- end ul -->
-                    <p>YourCoupon &copy; 2016 - Designed by <a href="http://psdconverthtml.com/">PSD to
-                            HTML</a></p>
+                    <p>YourCoupon &copy; 2016 - Designed by <a href="raheelanwaar.com" target="_blank">Raheel Anwaar</a></p>
                 </div><!-- end links -->
             </div><!-- end col -->
 
