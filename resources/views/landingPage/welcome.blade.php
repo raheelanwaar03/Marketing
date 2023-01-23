@@ -66,7 +66,7 @@
         <div class="text-center store-list row">
             <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="post-media">
-                    <a href="coupon-single.html"><img src="{{ asset('images/' . $store->store_img) }}"
+                    <a href="{{route('User.Store.See/',$store->store_slug)}}"><img src="{{ asset('images/' . $store->store_img) }}"
                             alt="{{ $store->store_img }}" class="img-responsive"></a>
                     <small>{{ $store->store_name }}</small>
                 </div>

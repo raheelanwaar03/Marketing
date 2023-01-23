@@ -141,7 +141,16 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    {{-- <li><a href="{{ route('User.Coupon.Details/') }}" title="">Coupons</a></li> --}}
+                                    <li class="dropdown hasmenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Coupon Deals
+                                            <span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            @foreach ($coupons as $coupon)
+                                            <li><a href="{{ route('User.All.Coupon.Deals') }}">All Coupon Deals</a></li>
+                                            <li><a href="{{ route('User.See.Category/',$coupon->coupon_slug) }}">{{ $coupon->coupon_name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
                                     <li class="dropdown hasmenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stores
                                             <span class="fa fa-angle-down"></span></a>

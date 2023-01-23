@@ -14,6 +14,7 @@ Route::prefix('User')->name('User.')->middleware('auth','user')->group(function 
     // User stores routes
     Route::get('/Store/{store_slug}',[UserCategoryController::class,'storeSee'])->name('Store.See/');
     // user Coupon routes
+    Route::get('/All/Coupon',[UserCategoryController::class,'allCoupon'])->name('All.Coupon.Deals');
     Route::get('/Coupon/{coupon_slug}',[UserCategoryController::class,'couponSee'])->name('Coupon.Details/');
 
 });

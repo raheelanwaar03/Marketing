@@ -18,8 +18,10 @@ class UserCategoryController extends Controller
 
     public function storeSee($store_slug)
     {
+        $categorys = Catagory::paginate(10);
+        $coupons = Coupon::paginate(10);
         $store = Store::where('store_slug',$store_slug)->first();
-        return view('user.store.index',compact('store'));
+        return view('user.store.index',compact('store','categorys','coupons'));
     }
 
 
@@ -35,8 +37,14 @@ class UserCategoryController extends Controller
     {
         $categorys = Catagory::paginate(10);
         $stores = Store::paginate(10);
-        $coupon = Coupon::where('coupon_slug',$coupon_slug)->first();
-        return view('user.coupon.index',compact('coupon','categorys','stores'));
+        $coupons = Coupon::where('coupon_slug',$coupon_slug)->first();
+        return view('user.coupon.index',compact('coupons','categorys','stores'));
+    }
+
+    public function allCoupon()
+    {
+
+        return 1;
     }
 
 }

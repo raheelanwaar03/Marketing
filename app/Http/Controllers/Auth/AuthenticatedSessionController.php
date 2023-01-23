@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\admin\Coupon;
+use App\Models\admin\Store;
+use App\Models\Catagory;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -17,7 +20,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        $categorys = Catagory::paginate(10);
+        $stores = Store::paginate(10);
+        $coupons = Coupon::paginate(10);
+        return view('auth.login',compact('categorys','stores','coupons'));
     }
 
     /**

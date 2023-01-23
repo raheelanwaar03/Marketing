@@ -16,9 +16,8 @@
                             <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
                         </form>
                     </div>
-                </div><!-- end widget -->
-            </div><!-- end col -->
-
+                </div>
+            </div>
             <div class="col-md-3 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
@@ -34,11 +33,10 @@
                                 <p>PSD Convert HTML, thanks for support and a merry Christmas and a happy new
                                     years! <a href="#">about 9 days ago</a></p>
                             </li>
-                        </ul><!-- end twiteer_feed -->
+                        </ul>
                     </div>
-                </div><!-- end widget -->
-            </div><!-- end col -->
-
+                </div>
+            </div>
             <div class="col-md-2 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
