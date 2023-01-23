@@ -141,14 +141,14 @@
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4><a href="coupon-single.html">Save 5$ Next Orders from Brands 2016</a>
+                                            <h4><a href="coupon-single.html">{{ $coupon->coupon_name }}</a>
                                             </h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <a href="store-single.html"><img
-                                                            src="{{ asset('assets/uploads/store_09.jpg') }}"
+                                                            src="{{ asset('images/' . $coupon->coupon_img) }}"
                                                             alt="" class="img-responsive"></a>
                                                     <div class="modal-button">
                                                         <a href="http://themeforest.net/" target="_blank" title=""
@@ -159,28 +159,8 @@
                                                 <!-- end col -->
 
                                                 <div class="col-md-8">
-                                                    <div class="coupon-meta">
-                                                        <div class="coupon-top clearfix">
-                                                            <div class="rating pull-left">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <small>12 Rating</small>
-                                                            </div>
-                                                            <div class="favorite-coupon pull-right text-right">
-                                                                <a href="coupon-favorites.html" data-toggle="tooltip"
-                                                                    data-placement="bottom" title="Favorite"><i
-                                                                        class="fa fa-heart-o"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end coupon-top -->
-                                                    </div>
-                                                    <!-- end coupon-meta -->
 
-                                                    <p>This is another awesome coupon code in 2016 from Brand. You can
-                                                        save awesome discount with our coupon code today!</p>
+                                                    <p>{{ $coupon->coupon_des }}</p>
 
                                                     <div class="modal-share clearfix">
                                                         <ul class="list-inline social-small">
@@ -222,26 +202,17 @@
                                                         <small>Click to Copy</small>
                                                     </div>
                                                 </div>
-                                                <!-- end row -->
                                             </div>
-                                            <!-- end coupon-area -->
                                         </div>
-                                        <!-- end modal-footer -->
                                     </div>
-                                    <!-- end mpdal-content -->
                                 </div>
-                                <!-- end modal-dialog -->
                             </div>
-                            <!-- end modal -->
                         </div>
-                        <!-- end coupon list -->
                     </div>
                 @endforeach
-                <!-- col -->
             </div>
-            <!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+        </div>
+    </div>
 
     <div class="section wb overflow">
         <div class="device-showcase hidden-sm hidden-xs">
