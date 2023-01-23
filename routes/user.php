@@ -12,6 +12,7 @@ Route::prefix('User')->name('User.')->middleware('auth','user')->group(function 
     Route::get('/Category/{category_slug}',[UserCategoryController::class,'seeCategory'])->name('See.Category/');
     Route::get('/All/Category',[UserCategoryController::class,'userCategory'])->name('All.Category');
     // User stores routes
+    Route::get('/All/Store',[UserCategoryController::class,'allStores'])->name('All.Store.See');
     Route::get('/Store/{store_slug}',[UserCategoryController::class,'storeSee'])->name('Store.See/');
     // user Coupon routes
     Route::get('/All/Coupon',[UserCategoryController::class,'allCoupon'])->name('All.Coupon.Deals');

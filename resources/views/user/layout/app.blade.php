@@ -1,5 +1,5 @@
-@include('auth.layout.header')
+@include('user.layout.header')
 
 @yield('content')
 
-@include('auth.layout.footer')
+@include('user.layout.footer')

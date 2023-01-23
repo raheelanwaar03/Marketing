@@ -176,6 +176,7 @@
                                             <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach ($stores as $store)
+                                            <li><a href="{{ route('User.All.Store.See') }}">All Stores</a></li>
                                             <li><a href="{{ route('User.Store.See/',$store->store_slug) }}">{{ $store->store_name }}</a></li>
                                             @endforeach
                                         </ul>

@@ -118,7 +118,7 @@
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                                     data-target=".navbar-collapse">
-                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="sr-only"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -135,8 +135,8 @@
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach ($categorys as $category)
                                                 <li><a href="{{ route('User.All.Category') }}">All Categories</a></li>
-                                                <li><a
-                                                        href="{{ route('User.See.Category/', $category->category_slug) }}">{{ $category->category_name }}</a>
+                                                <li>
+                                                    <a href="{{ route('User.See.Category/', $category->category_slug) }}">{{ $category->category_name }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -156,8 +156,9 @@
                                             <span class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach ($stores as $store)
-                                                <li><a
-                                                        href="{{ route('User.Store.See/', $store->store_slug) }}">{{ $store->store_name }}</a>
+                                            <li><a href="{{ route('User.All.Store.See') }}">All Stores</a></li>
+                                                <li>
+                                                    <a href="{{ route('User.Store.See/',$store->store_slug) }}">{{ $store->store_name }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
