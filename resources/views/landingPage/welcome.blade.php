@@ -116,12 +116,12 @@
                                         </div>
                                     </div>
                                     <!-- end coupon-top -->
-                                    <h3><a href="#">{{ $coupon->coupon_des }} </p>
+                                    <h3><a href="#">{{ $coupon->coupon_name }} </p>
                                 </div>
                                 <!-- end meta -->
 
                                 <div class="showcode">
-                                    <a href="#" class="code-link">
+                                    <a href="{{ $coupon->coupon_slug }}" class="code-link">
                                         <span class="coupon-code">{{ $coupon->coupon_code }}</span>
                                         <span class="show-code">Show Code</span>
                                     </a>
@@ -136,7 +136,7 @@
                             <!-- end coupon-wrapper -->
 
                             <!-- Modal -->
-                            <div id="code_id_09" class="modal fade code-modal">
+                            <div id="{{ $coupon->coupon_slug }}" class="modal fade code-modal">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -148,11 +148,12 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <a href="store-single.html"><img
+                                                    <a href="{{ $coupon->coupon_link }}"><img
                                                             src="{{ asset('images/' . $coupon->coupon_img) }}"
                                                             alt="" class="img-responsive"></a>
                                                     <div class="modal-button">
-                                                        <a href="http://themeforest.net/" target="_blank" title=""
+                                                        <a href="{{ $coupon->coupon_link }}" target="_blank"
+                                                            title="{{ $coupon->coupon_store }}"
                                                             class="btn btn-default btn-block">Visit
                                                             Store <i class="fa fa-angle-right"></i></a>
                                                     </div>
@@ -196,10 +197,10 @@
                                                         <!-- end coupon-meta -->
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-md-8 text-center">
-                                                        <button data-clipboard-text="FORGETABOUTLINKS"
+                                                    <div class="col-md-8 text-center">>
+                                                        <button data-clipboard-text="{{ $coupon->coupon_code }}"
                                                             class="coupon-code btn btn-primary btn-block" type="submit"
-                                                            title="Click to Copy">FORGETABOUTLINKS</button>
+                                                            title="Click to Copy">{{ $coupon->coupon_code }}</button>
                                                         <small>Click to Copy</small>
                                                     </div>
                                                 </div>
@@ -265,8 +266,7 @@
                                 </div><!-- end meta -->
 
                                 <div class="showcode">
-                                    <a href="{{ $coupon->coupon_link }}" class="code-link"
-                                        data-ex-link="{{ $coupon->coupon_link }}">
+                                    <a href="{{ $coupon->coupon_slug }}" class="code-link">
                                         <span class="coupon-code">{{ $coupon->coupon_code }}</span>
                                         <span class="show-code">Show Code</span>
                                     </a>
@@ -277,7 +277,7 @@
                                 </div>
                             </div>
                             <!-- Modal -->
-                            <div id="code_id_01" class="modal fade code-modal">
+                            <div id="{{ $coupon->coupon_slug }}" class="modal fade code-modal">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -347,9 +347,9 @@
                                                         </div><!-- end coupon-meta -->
                                                     </div><!-- end col -->
                                                     <div class="col-md-8 text-center">
-                                                        <button data-clipboard-text="2016TATILRA50"
+                                                        <button data-clipboard-text="{{ $coupon->coupon_code }}"
                                                             class="coupon-code btn btn-primary btn-block" type="submit"
-                                                            title="Click to Copy">2016TATILRA50</button>
+                                                            title="Click to Copy">{{ $coupon->coupon_code }}</button>
                                                         <small>Click to Copy</small>
                                                     </div>
                                                 </div><!-- end row -->
@@ -437,8 +437,8 @@
                             <li><a href="#">Sports</a></li>
                         </ul>
                     </div>
-                </div><!-- end row -->
-            </div><!-- end ttmenu-content -->
+                </div>
+            </div>
         </div>
     </div>
 @endsection

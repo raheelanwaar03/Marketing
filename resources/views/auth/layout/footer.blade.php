@@ -21,7 +21,7 @@
 
             <div class="col-md-3 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
-                    <div class="widget-title">
+                    {{-- <div class="widget-title">
                         <h4>Twitter Feed's</h4>
                     </div>
                     <div class="twitter-widget">
@@ -35,9 +35,9 @@
                                     years! <a href="#">about 9 days ago</a></p>
                             </li>
                         </ul><!-- end twiteer_feed -->
-                    </div>
-                </div><!-- end widget -->
-            </div><!-- end col -->
+                    </div> --}}
+                </div>
+            </div>
 
             <div class="col-md-2 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
@@ -46,16 +46,14 @@
                     </div>
 
                     <ul class="footer-links">
-                        <li><a href="#">About us</a></li>
+                        <li><a href="{{ route('LandingPage') }}">Homes</a></li>
+                        <li><a href="{{ route('User.All.Coupon.Deals') }}">Coupon Deals</a></li>
                         <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Terms of Usage</a></li>
-                        <li><a href="#">Copyrights</a></li>
-                        <li><a href="#">Coupon a Report</a></li>
-                        <li><a href="#">License</a></li>
-                        <li><a href="#">Trademarks</a></li>
-                    </ul><!-- end links -->
-                </div><!-- end widget -->
-            </div><!-- end col -->
+                        <li><a href="{{ route('User.All.Category') }}">Categories</a></li>
+                        <li><a href="{{ route('User.All.Store.See') }}">Stores</a></li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
@@ -67,8 +65,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse115">
+                                    <a data-toggle="collapse" data-parent="#accordion5" href="#collapse115">
                                         <i class="fa fa-angle-down"></i> How to Use Coupon Codes?
                                     </a>
                                 </h4>
@@ -84,8 +81,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse215">
+                                    <a data-toggle="collapse" data-parent="#accordion5" href="#collapse215">
                                         <i class="fa fa-angle-down"></i> Can I submit My Coupons?
                                     </a>
                                 </h4>
@@ -101,8 +97,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse315">
+                                    <a data-toggle="collapse" data-parent="#accordion5" href="#collapse315">
                                         <i class="fa fa-angle-down"></i> Coupon Submission free?
                                     </a>
                                 </h4>
@@ -117,10 +112,10 @@
                         </div>
                     </div> <!-- end panel -->
                 </div><!-- end widget -->
-            </div><!-- end col -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</footer><!-- end footer -->
+            </div>
+        </div>
+    </div>
+</footer>
 
 <div class="copyrights">
     <div class="container">
@@ -129,14 +124,13 @@
                 <div class="copylinks">
                     <ul class="list-inline">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Terms of Usage</a></li>
-                        <li><a href="#">Trademark</a></li>
-                        <li><a href="#">License</a></li>
+                        <li><a href="#">Coupon Deals</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Stores</a></li>
                     </ul><!-- end ul -->
-                    <p>YourCoupon &copy; 2016 - Designed by <a href="http://psdconverthtml.com/">PSD to
-                            HTML</a></p>
+                    <p>YourCoupon &copy; 2022 - Designed by <a href="raheelanwaar.com" target="_blank">Raheel Anwaar</a>
+                    </p>
                 </div><!-- end links -->
             </div><!-- end col -->
 
@@ -162,4 +156,5 @@
 <script src="{{ asset('assets/switcher/switcher.js') }}"></script>
 
 </body>
+
 </html>
