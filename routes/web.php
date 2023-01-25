@@ -15,6 +15,7 @@ Route::middleware('auth')->group(function () {
 // custom routing
 
 Route::get('/',[LandingPageController::class,'landingpage'])->name('LandingPage');
+Route::get('/ContactUs',[LandingPageController::class,'contact'])->name('LandingPage.ContactUs');
 
 
 

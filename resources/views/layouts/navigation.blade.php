@@ -148,7 +148,9 @@
 
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li><a class="active" href="{{ route('LandingPage') }}" title="">Home</a>
+                                    <li><a class="active" href="{{ route('LandingPage') }}" title="Contact Us">Home</a>
+                                    </li>
+                                    <li><a href="{{ route('LandingPage.ContactUs') }}" title="Contact Us">Contact Us</a>
                                     </li>
                                     <li class="dropdown hasmenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories
