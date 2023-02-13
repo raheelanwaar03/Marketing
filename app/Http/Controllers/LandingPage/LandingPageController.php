@@ -26,4 +26,12 @@ class LandingPageController extends Controller
         return view('landingPage.contactUs',compact('categorys','stores','coupons'));
     }
 
+    public function allCategorys()
+    {
+        $categorys = Catagory::get();
+        $stores = Store::get();
+        $coupons = Coupon::get();
+        return view('landingPage.contactUs',compact('categorys','stores','coupons'));
+    }
+
 }

@@ -16,7 +16,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/',[LandingPageController::class,'landingpage'])->name('LandingPage');
 Route::get('/ContactUs',[LandingPageController::class,'contact'])->name('LandingPage.ContactUs');
-
+Route::get('/Categories',[LandingPageController::class,'allCategorys'])->name('LandingPage.Categorys');
 
 
 
