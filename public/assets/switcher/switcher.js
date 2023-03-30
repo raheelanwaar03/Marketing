@@ -1,87 +1,83 @@
-(function($)
-{
-	$(document).ready(function() {
-		$('.styleswitch').click(function()
-		{
-			switchStylestyle(this.getAttribute("rel"));
-			return false;
-		});
-		var c = readCookie('style');
-		if (c) switchStylestyle(c);
-	});
 
-	function switchStylestyle(styleName)
-	{
-		$('link[rel*=style][title]').each(function(i) 
-		{
-			this.disabled = true;
-			if (this.getAttribute('title') == styleName) this.disabled = false;
-		});
-		createCookie('style', styleName, 365);
-	}
-})(jQuery);
+jQuery(function($) {
 
-// Cookie functions
-function createCookie(name,value,days)
-{
-	if (days)
-	{
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/";
-}
-function readCookie(name)
-{
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++)
-	{
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-function eraseCookie(name)
-{
-	createCookie(name,"",-1);
-}
+    var switcherHtml = [];
+    var colorName = [ 'default', 'red', 'orange', 'blue', 'olive', 'violet', 'pink', 'navy' ];
 
-	// Selector (MODULE #2)
-	jQuery('.demo_changer .PatternChanger a').click(function(){
-		var bgBgCol = jQuery(this).attr('href');
-		jQuery('.demo_changer .PatternChanger a').removeClass('current');
-		jQuery('body').css({backgroundColor:'#ffffff'});
-		jQuery(this).addClass('current');
-		jQuery('body').css({backgroundImage:'url(' + bgBgCol + ')'});
-		if (jQuery(this).hasClass('bg_t')){
-			jQuery('body').css({backgroundRepeat:'repeat', backgroundPosition:'50% 0', backgroundAttachment:'scroll'});
-		} else {
-			jQuery('body').css({backgroundRepeat:'repeat', backgroundPosition:'50% 0', backgroundAttachment:'scroll'});
-		}
-		return false;
-	});
-	
-// Switcher
-	jQuery('.demo_changer .demo-icon').click(function(){
+    switcherHtml.push( '<div class="cbx-switcher-area">' );
+    switcherHtml.push( '<div class="cbx-switcher-inner">' );
+    switcherHtml.push( '<a id="cbx-switcher-btn" class="cbx-switcher-btn" href="#"><span class="fa fa-cog fa-spin" aria-hidden="true"></span></a>' );
+    switcherHtml.push( '<div id="cbx-switcher-body" class="cbx-switcher-body cbx-hide">' );
+    switcherHtml.push( '<span class="cbx-switcher-text text-center" > Style Switcher</span>' );
+    switcherHtml.push( '<ul class="list-unstyled clearfix cbx-switcher-list">' );
 
-		if(jQuery('.demo_changer').hasClass("active")){
-			jQuery('.demo_changer').animate({"left":"-256px"},function(){
-				jQuery('.demo_changer').toggleClass("active");
-			});						
-		}else{
-			jQuery('.demo_changer').animate({"left":"0px"},function(){
-				jQuery('.demo_changer').toggleClass("active");
-			});			
-		} 
-	});
-
-    $("a.layoutselectboxed").click(function () {
-      $('body').addClass('boxed');
+    $.each( colorName, function (index, value) {
+        switcherHtml.push( '<li class="cbx-list-' + value + '"><a href="#"  class="cbx-switcher-clr-btn" data-color-name="-' + value + '"></a></li>' );
     });
-    $("a.layoutselectfullwidth").click(function () {
-      $('body').removeClass('boxed');
-    });
+    switcherHtml.push( '</ul>' );
+
+    switcherHtml.push( '</div></div></div>' );
+
+
+
+
+    $.fn.SwitcherLoader = function() {
+        var $this = $( this );
+        $this.html( switcherHtml.join( '' ) );
+
+        /*LZ Switcher */
+
+        var showSwitcher = true;
+        $this.find("#cbx-switcher-btn").on('click', function(evt){
+            evt.preventDefault();
+
+            if ( showSwitcher ) {
+                $("#cbx-switcher-body").animate({
+                    right: 0
+                }, 500);
+                showSwitcher = !showSwitcher;
+            } else {
+                $("#cbx-switcher-body").animate({
+                    right: -280
+                }, 500);
+                showSwitcher = !showSwitcher;
+            }
+
+
+
+
+        });
+
+        //lz-theme-style
+        $( 'a.cbx-switcher-clr-btn').on( 'click', function (e) {
+            e.preventDefault();
+
+            var $this = $( this );
+
+
+
+            var styleLinker = $( '#cbx-style' );  // stylesheet id
+
+            styleLinker.attr( 'href', 'assets/css/style' + $this.data( 'color-name' ) + '.min.css?v=2' );
+
+        });
+
+        /*LZ Switcher  */
+    }
+
+
+});
+
+
+//initialize the switcher
+jQuery(document).ready(function($){
+
+    //add the switcher holder div
+    $(document.body).append('<div class="switcher-loader"></div>');
+
+
+    //Load Style Switcher
+    if( $( '.switcher-loader').length ) {
+        $( '.switcher-loader').SwitcherLoader();
+    }
+});
