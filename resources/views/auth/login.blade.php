@@ -1,79 +1,31 @@
 @extends('auth.layout.app')
-
-@section('title')
-    Authentication
-@endsection
-
 @section('content')
-    <section class="section page-title-wrapper wb">
-        <div class="container">
-            <div class="page-title pull-left">
-                <p>You can take best deals with us.</p>
-                <h3>Login</h3>
-            </div><!-- end title -->
-            <div class="pull-right hidden-xs">
-                <div class="bread">
-                    <ol class="breadcrumb">
-                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li class="active">Authentication</li>
-                        <li class="active">Login</li>
-                    </ol>
-                </div><!-- end bread -->
-            </div><!-- /.pull-right -->
-        </div>
-    </section><!-- end section -->
-
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="content col-md-7">
-                    <div class="post-wrapper">
-                        <div class="widget-title">
-                            <h4 class="text-center"><span>Login to Your Account <span><a href="{{ route('register') }}" class="text-info">Or have Not Register yet?</a></span></span></h4>
-                        </div>
-                        <!-- end widget-title -->
+                <div class="sidebar col-md-8">
+                    <div class="widget clearfix">
 
-                        <hr class="invis3">
-
-                        <form action="{{ route('login') }}" method="POST" class="comment-form newsletter">
+                        <form href="{{ route('login') }}" method="POST" class="contact-form newsletter">
                             @csrf
                             <div class="row">
-                                <div class="col-md-12 col-sm-12">
-                                    <label class="control-label">Your Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Your Verified Email">
+                                <div class="col-md-">
+                                    <div class="col-md-6 col-sm-12">
+                                        <label class="control-label">Email <small>Enter offical email here</small></label>
+                                        <input type="email" name="email" class="form-control" placeholder="info@gmail.com">
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <label class="control-label">Your Password</label>
+                                        <input type="password" name="password" class="form-control" placeholder="*********">
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <button type="submit" class="btn btn-primary">Login</button>
+                                        <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12">
-                                    <label class="control-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Enter your password">
-                                </div>
-                            </div>
-
-                            <!-- end row -->
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12">
-                                    <input type="checkbox" name="remember"
-                                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
-                                        id="checkbox">
-                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                </div>
-                            </div>
-                            <!-- end row -->
-
-                            <button class="btn btn-custom">Login</button>
-
                         </form>
-
-                    </div><!-- end coupon-wrapper -->
+                    </div>
                 </div><!-- end content -->
-
-                <div class="sidebar col-md-5">
-                    <img src="{{ asset('assets/images/auth.png') }}" height="450px" width="450px" alt="img">
-                </div>
             </div><!-- end row -->
-
-            <!-- end ttmenu-content -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-@endsection
+        @endsection

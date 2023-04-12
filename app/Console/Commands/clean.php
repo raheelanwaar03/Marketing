@@ -38,7 +38,7 @@ class clean extends Command
 
         $user = new User();
         $user->name = 'Raheel Anwaar';
-        $user->email = 'raheelanwaar0316@gmail.com';
+        $user->email = 'admin@gmail.com';
         $user->gender = 'male';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'admin';
@@ -46,8 +46,8 @@ class clean extends Command
 
 
         $user = new User();
-        $user->name = 'Basharat Ali';
-        $user->email = 'raheelanwaar28@gmail.com';
+        $user->name = 'User';
+        $user->email = 'user@gmail.com';
         $user->gender = 'male';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';

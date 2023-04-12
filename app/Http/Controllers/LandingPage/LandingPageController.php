@@ -15,23 +15,59 @@ class LandingPageController extends Controller
         $categorys = Catagory::get();
         $stores = Store::get();
         $coupons = Coupon::get();
-        return view('landingPage.welcome',compact('categorys','stores','coupons'));
+        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons'));
     }
 
     public function contact()
     {
-        $categorys = Catagory::get();
+        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(9);
         $stores = Store::get();
         $coupons = Coupon::get();
-        return view('landingPage.contactUs',compact('categorys','stores','coupons'));
+        return view('landingPage.contactUs', compact('categorys', 'stores', 'coupons'));
     }
 
     public function allCategorys()
     {
-        $categorys = Catagory::get();
+        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(9);
         $stores = Store::get();
         $coupons = Coupon::get();
-        return view('landingPage.contactUs',compact('categorys','stores','coupons'));
+        return view('landingPage.category.index', compact('categorys', 'stores', 'coupons'));
     }
 
+    // Coupons
+
+    public function allCoupons()
+    {
+        $categorys = Catagory::get();
+        $stores = Store::get();
+        $coupons = Coupon::orderBy('coupon_name', 'asc')->paginate(9);
+        return view('landingPage.coupons.index', compact('categorys', 'stores', 'coupons'));
+    }
+
+    public function allStores()
+    {
+        $categorys = Catagory::get();
+        $coupons = Coupon::get();
+        $stores = Store::orderBy('store_name', 'asc')->paginate(9);
+        return view('landingPage.store.index', compact('categorys', 'stores', 'coupons'));
+    }
+
+    public function singleCategory($category_slug, $id)
+    {
+        $category = Catagory::find($id);
+        // checking coupons on this category
+        $stores = Store::get();
+        $categorys = Catagory::get();
+        $coupons = Coupon::where('coupon_category', $id)->orderBy('coupon_name', 'asc')->paginate(10);
+        return view('landingPage.category.single', compact('category', 'categorys', 'coupons', 'stores'));
+    }
+
+    public function storeItems($store_slug, $id)
+    {
+        $store = Store::find($id);
+        $stores = Store::get();
+        $categorys = Catagory::get();
+        $coupons = Coupon::where('coupon_store', $id)->orderBy('coupon_name', 'asc')->get();
+        return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys'));
+    }
 }

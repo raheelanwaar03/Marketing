@@ -24,7 +24,7 @@ class adminAuth
 
         elseif(auth()->user()->role == 'user')
         {
-            return redirect()->route('User.Dashboard');
+            return redirect()->route('LandingPage');
         }
 
     }

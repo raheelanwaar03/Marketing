@@ -8,29 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE META -->
-    <title>@yield('title')</title>
+    <title>YourCoupon | Responsive Coupon Code Site Templates</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
 
     <!-- FAVICONS -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/images/apple-touch-icon-57x57.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/images/apple-touch-icon-76x76.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114x114.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/images/apple-touch-icon-120x120.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/images/apple-touch-icon-144x144.png') }}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/images/apple-touch-icon-152x152.png') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/imagesfavicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('assets/imagesapple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/imagesapple-touch-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/imagesapple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/imagesapple-touch-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/imagesapple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/imagesapple-touch-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/imagesapple-touch-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/imagesapple-touch-icon-152x152.png') }}">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <!-- TEMPLATE STYLES -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/style.css')}}">
+    <!-- RESPONSIVE STYLES -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
+    <!-- COLORS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors.css') }}">
+    <!-- CUSTOM STYLES -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
+
+
+    <!-- Skin Examples -->
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin1.css') }}" title="skin1"
         media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin2.css') }}" title="skin2"
@@ -49,20 +54,16 @@
         media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin9.css') }}" title="skin9"
         media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}"
-        title="skin10" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}" title="skin10"
+        media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin11.css') }}"
         title="skin11" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin12.css') }}"
         title="skin12" media="all" />
-    <link href="{{ asset('assets/switcher/switcher.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-
-    <x-alert />
-
     <div id="wrapper">
         <div class="topbar">
             <div class="container">
@@ -70,14 +71,8 @@
                     <div class="col-md-6 col-sm-6 center-xs">
                         <p class="topbar-text">
                             <strong><i class="fa fa-phone"></i></strong> +90 987 123 45 67 &nbsp;&nbsp;
-                            <strong><i class="fa fa-envelope-o"></i></strong> <a
-                                href="mailto:info@yoursite.com">info@yoursite.com</a>
+                            <strong><i class="fa fa-envelope-o"></i>info@gmail.com</strong>
                         </p>
-                    </div><!-- end col -->
-
-                    <div class="col-md-6 col-sm-6 center-xs text-right">
-                        <div class="topbar-links">
-                        </div>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end container -->
@@ -92,6 +87,13 @@
                                     Codes</small></a>
                         </div><!-- end col -->
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
+                            <div id="dl-menu" class="dl-menuwrapper">
+                                <button class="dl-trigger"><i class="fa fa-tags"></i></button>
+                                <p>Browse Deal</p>
+                                <ul class="dl-menu">
+                                    <li><a href="#">Coupon Codes</a></li>
+                                </ul>
+                            </div>
                         </div><!-- end col -->
 
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
@@ -118,7 +120,7 @@
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                                     data-target=".navbar-collapse">
-                                    <span class="sr-only"></span>
+                                    <span class="sr-only">Toggle navigation</span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -127,82 +129,35 @@
 
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li><a class="active" href="{{ route('LandingPage') }}" title="Home">Home</a>
-                                    </li>
-                                    <li><a  href="{{ route('LandingPage.ContactUs') }}" title="ContactUs">Contact Us</a>
-                                    </li>
+                                    <li><a class="active" href="{{ route('LandingPage') }}" title="">Home</a></li>
+                                    {{-- <li><a href="{{ route('LandingPage.ContactUs') }}" title="">Contact Us</a></li>
                                     <li class="dropdown hasmenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories
-                                            <span class="fa fa-angle-down"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span
+                                                class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            @foreach ($categorys as $category)
-                                                <li><a href="{{ route('User.All.Category') }}">All Categories</a></li>
-                                                <li>
-                                                    <a href="{{ route('User.See.Category/', $category->category_slug) }}">{{ $category->category_name }}</a>
-                                                </li>
-                                            @endforeach
+                                            <li><a href="store-single.html">All Categories</a></li>
+                                            @forelse ($categorys as $category)
+                                            <li><a href="store-single.html">{{ $category->category_name }}</a></li>
+                                            @empty
+                                                <h4>No more category</h4>
+                                            @endforelse
                                         </ul>
                                     </li>
                                     <li class="dropdown hasmenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Coupon Deals
-                                            <span class="fa fa-angle-down"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stores <span
+                                                class="fa fa-angle-down"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            @foreach ($coupons as $coupon)
-                                            <li><a href="{{ route('User.All.Coupon.Deals') }}">All Coupon Deals</a></li>
-                                            <li><a href="{{ route('User.See.Category/',$coupon->coupon_slug) }}">{{ $coupon->coupon_name }}</a></li>
-                                            @endforeach
+                                            <li><a href="#">All Stores</a></li>
+                                            @forelse ($stores as $store)
+                                            <li><a href="#">{{ $store->store_name }}</a></li>
+                                            @empty
+                                            <h4>No more Store</h4>
+                                            @endforelse
                                         </ul>
-                                    </li>
-                                    <li class="dropdown hasmenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stores
-                                            <span class="fa fa-angle-down"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            @foreach ($stores as $store)
-                                            <li><a href="{{ route('User.All.Store.See') }}">All Stores</a></li>
-                                                <li>
-                                                    <a href="{{ route('User.Store.See/',$store->store_slug) }}">{{ $store->store_name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    @if (auth()->user())
-                                        <li><a href="{{ route('User.Dashboard') }}" title="">Dashboard</a></li>
+                                    </li> --}}
                                 </ul>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown hasmenu userpanel">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                                src="{{ asset('assets/uploads/men.jpg') }}" alt="avatar"
-                                                class="img-circle"> <span class="fa fa-angle-down"></span></a>
-                                        <ul class="dropdown-menu start-right" role="menu">
-                                            <li><a href="{{ route('User.Dashboard') }}"><i
-                                                        class="fa fa-dashboard"></i>
-                                                    Dashboard</a></li>
-                                            <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
-                                                    Stores</a></li>
-                                            <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
-                                                    Coupons</a></li>
-                                            <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
-                                                    Coupon</a></li>
-                                            <li>
-                                            <li>
-                                                <form action="{{ route('logout') }}" method="POST">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-block btn-info"><i
-                                                            class="fa fa-lock"></i>Sign Out</button>
-                                                </form>
-                                            </li>
-
-                                    </li>
-                                </ul>
-                            @else
-                                <li><a href="{{ route('login') }}" title="">Login</a></li>
-                                <li><a href="{{ route('register') }}" title="">Register</a></li>
-                                @endif
-
-                            </div>
-                            <!--/.nav-collapse -->
-                        </div><!-- end navbar navbar-default clearfix -->
-                    </div><!-- end menu 1 -->
-                </div><!-- end container -->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div><!-- end header -->
+        </div>

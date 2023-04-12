@@ -21,7 +21,10 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth','admin')->group(functi
     Route::get('/Add/Category',[AdminCategoryController::class,'add'])->name('Create.Category');
     Route::post('/Store/Category',[AdminCategoryController::class,'store'])->name('Store.Category');
     Route::get('/All/Category',[AdminCategoryController::class,'index'])->name('All.Categories');
+    Route::get('/edit/Category/{id}',[AdminCategoryController::class,'edit'])->name('Edit.Category');
+    Route::post('/Update/Category/{id}',[AdminCategoryController::class,'update'])->name('Update.Category');
     Route::get('/All/Category/{category_slug}',[AdminCategoryController::class,'show'])->name('Category.Show/');
+    Route::get('/Delete/Category/{id}',[AdminCategoryController::class,'delete'])->name('Delete.Category');
     // Coupon Deal Routes
 
     Route::get('/Coupon/Deal',[CouponDealContorller::class,'create'])->name('Coupon.Deal');
