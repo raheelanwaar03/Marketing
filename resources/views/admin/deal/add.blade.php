@@ -32,8 +32,10 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Type</label>
-                                    <input type="text" name="coupon_type" class="form-control"
-                                        placeholder="Enter Coupon Type">
+                                    <select name="coupon_type" class="form-control">
+                                        <option value="Deal">Deal</option>
+                                        <option value="Coupon">Coupon</option>
+                                    </select>
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Link</label>

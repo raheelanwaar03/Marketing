@@ -9,8 +9,8 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-12">
                                 <div class="post-media text-center">
-                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
-                                            alt="img" height="70px" width="70px" class="img-responsive"></a>
+                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt="img"
+                                            height="70px" width="70px" class="img-responsive"></a>
                                 </div>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-12">
@@ -22,7 +22,8 @@
                                     <p>{{ $store->store_des }}</p>
                                 </div>
                                 <div class="">
-                                    <a href="#" class="btn btn-primary">Go To Store</a>
+                                    <a href="{{ $store->store_link }}" target="_blank" class="btn btn-primary">Go To
+                                        Store</a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +38,6 @@
                                             <a href="coupon-single.html"><img
                                                     src="{{ asset('images/' . $coupon->coupon_img) }}" alt="img"
                                                     class="img-responsive"></a>
-                                            <small><a href="store-single.html">View Store Coupons</a></small>
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -114,17 +114,18 @@
                                 </div>
                             </div>
                         </div>
-                    @empty
                         <div class="col-md-12">
                             {{ $coupons->withQueryString()->links('pagination::bootstrap-5') }}
                         </div>
+                    @empty
+                        <h4>no store item</h4>
                     @endforelse
                 </div>
             </div>
             <div class="footer-content">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>Popular Categories</h4>
+                        <h4>We have coupon on all type of Categories</h4>
                     </div>
                     <!-- end col -->
                 </div>
@@ -200,19 +201,19 @@
                     </div>
                     <!-- end col -->
                 </div>
-                @forelse ($stores as $store)
                 <div class="text-center store-list row">
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="post-media">
-                            <a href="coupon-single.html"><img src="{{ asset('images/'.$store->store_img) }}" alt=""
-                                    class="img-responsive"></a>
-                            <small>{{ $store->store_name }}</small>
+                    @forelse ($stores as $store)
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="post-media">
+                                <a href="coupon-single.html"><img src="{{ asset('images/' . $store->store_img) }}"
+                                        alt="" height="100px" width="100px" class="img-thumbnail img-responsive"></a>
+                                <small>{{ $store->store_name }}</small>
+                            </div>
                         </div>
-                    </div>
+                    @empty
+                        <h3>NO Store Avaliable</h3>
+                    @endforelse
                 </div>
-                @empty
-                    <h3>NO Store Avaliable</h3>
-                @endforelse
             </div>
         </div>
     </div>

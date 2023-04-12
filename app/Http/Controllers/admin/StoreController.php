@@ -23,6 +23,7 @@ class StoreController extends Controller
             'store_des' => 'required',
             'store_country' => 'required',
             'store_network' => 'required',
+            'store_link' => 'required',
             'store_img' => 'required'
         ]);
 

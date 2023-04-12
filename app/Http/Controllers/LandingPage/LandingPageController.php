@@ -67,7 +67,7 @@ class LandingPageController extends Controller
         $store = Store::find($id);
         $stores = Store::get();
         $categorys = Catagory::get();
-        $coupons = Coupon::where('coupon_store', $id)->orderBy('coupon_name', 'asc')->get();
+        $coupons = Coupon::where('coupon_store', $id)->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys'));
     }
 }
