@@ -100,8 +100,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Add.Store') }}">Add New Store</a></li>
                              <li><a href="{{ route('Admin.All.Stores') }}">All Stores</a></li>
-                           {{-- <li><a href="{{ route('Admin.Easypaisa.index') }}">Payment Page Details</a></li>
-                            <li><a href="{{ route('Admin.Add.Verification.Details') }}">Verification Page Text</a></li> --}}
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

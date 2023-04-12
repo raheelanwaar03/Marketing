@@ -16,6 +16,8 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth','admin')->group(functi
     Route::post('/Store',[StoreController::class,'store'])->name('Store.Store');
     Route::get('/All/Store',[StoreController::class,'index'])->name('All.Stores');
     Route::get('/Show/Store/{store_slug}',[StoreController::class,'show'])->name('Store.Show/');
+    Route::get('/Edit/Store/{id}',[StoreController::class,'edit'])->name('Edit.Store');
+    Route::post('/Update/Store/{id}',[StoreController::class,'update'])->name('Update.Store');
     // category routes
 
     Route::get('/Add/Category',[AdminCategoryController::class,'add'])->name('Create.Category');

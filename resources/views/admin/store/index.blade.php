@@ -5,6 +5,7 @@
         <div class="container-fluid">
             <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
                 <h2 class="mb-3 me-auto">Admin Dashboard</h2>
+                <a href="{{ route('Admin.Add.Store') }}" class="btn btn-primary">Add New</a>
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -43,9 +44,9 @@
                                     <td>
                                         <a href="{{ route('Admin.Store.Show/',$store->store_slug) }}"
                                             class="btn btn-primary">show</a>
-                                      {{--   <a href="{{ route('store.edit', ['store' => $store->id]) }}"
+                                        <a href="{{ route('Admin.Edit.Store',['id' => $store->id]) }}"
                                             class="btn btn-info">Edit</a>
-                                        <form action="{{ route('Admin.store.destroy', $store->id) }}" method="POST"
+                                        {{-- <form action="{{ route('Admin.store.destroy', $store->id) }}" method="POST"
                                             style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')

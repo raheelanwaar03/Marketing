@@ -50,4 +50,29 @@ class StoreController extends Controller
         return view('admin.store.show',compact('store'));
     }
 
+    public function edit($id)
+    {
+        $store = Store::find($id);
+        return view('admin.store.edit',compact('store'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $store = Store::find($id);
+        if($request->has('store_img'))
+        {
+            $image = $request['store_img'];
+            $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $store->store_img = $imageName;
+        }
+
+        $store->store_name = $request->store_name;
+        $store->store_slug = str::slug($request->store_slug);
+        $store->store_des = $request->store_des;
+        $store->save();
+        return redirect()->route('Admin.All.Stores')->with('success','store updated successfully');
+    }
+
+
 }
