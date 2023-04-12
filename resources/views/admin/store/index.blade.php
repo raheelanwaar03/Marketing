@@ -37,23 +37,17 @@
                                     <td>{{ $store->store_name }}</td>
                                     <td>{{ $store->store_des }}</td>
                                     <td>
-                                        <img src="{{ asset('images/'.$store->store_img) }}" height="90px"
-                                            width="90px" class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">
+                                        <img src="{{ asset('images/' . $store->store_img) }}" height="90px" width="90px"
+                                            class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">
                                     </td>
                                     <td>{{ $store->created_at }}</td>
                                     <td>
-                                        <a href="{{ route('Admin.Store.Show/',$store->store_slug) }}"
+                                        <a href="{{ route('Admin.Store.Show/', $store->store_slug) }}"
                                             class="btn btn-primary">show</a>
-                                        <a href="{{ route('Admin.Edit.Store',['id' => $store->id]) }}"
+                                        <a href="{{ route('Admin.Edit.Store', ['id' => $store->id]) }}"
                                             class="btn btn-info">Edit</a>
-                                        {{-- <form action="{{ route('Admin.store.destroy', $store->id) }}" method="POST"
-                                            style="display: inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you really want to Delete this Store?')"
-                                                class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </td> --}}
+                                        <a href="{{ route('Admin.Delete.Store', ['id' => $store->id]) }}"
+                                            class="btn btn-danger">Delete</a>
                                 </tr>
                             @endforeach
                             {{ $stores->withQueryString()->links('pagination::bootstrap-4') }}

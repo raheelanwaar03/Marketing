@@ -5,6 +5,7 @@
         <div class="container-fluid">
             <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
                 <h2 class="mb-3 me-auto">Admin Dashboard</h2>
+                <a href="{{ route('Admin.Coupon.Deal') }}" class="btn btn-primary">Add New</a>
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -36,23 +37,18 @@
                                     <td>{{ $coupon->coupon_category }}</td>
                                     <td>{{ $coupon->coupon_store }}</td>
                                     <td>
-                                        <img src="{{ asset('images/' . $coupon->coupon_img) }}" height="90px" width="90px"
-                                            class="img-fluid img-thumbnail" alt="{{ $coupon->coupon_img }}">
+                                        <img src="{{ asset('images/' . $coupon->coupon_img) }}" height="90px"
+                                            width="90px" class="img-fluid img-thumbnail" alt="{{ $coupon->coupon_img }}">
                                     </td>
                                     <td>{{ $coupon->coupon_expire }}</td>
                                     <td>
-                                        {{-- <a href="{{ route('Admin.coupon.Show/',$coupon->coupon_slug) }}"
-                                            class="btn btn-primary">show</a> --}}
-                                        {{--   <a href="{{ route('coupon.edit', ['coupon' => $coupon->id]) }}"
+                                        <a href="{{ route('Admin.Show.Coupon.Deals', ['id' => $coupon->id]) }}"
+                                            class="btn btn-primary">show</a>
+                                        <a href="{{ route('Admin.Edit.Coupon', ['id' => $coupon->id]) }}"
                                             class="btn btn-info">Edit</a>
-                                        <form action="{{ route('Admin.coupon.destroy', $coupon->id) }}" method="POST"
-                                            style="display: inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you really want to Delete this coupon?')"
-                                                class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </td> --}}
+                                        <a href="{{ route('Admin.Destroy.Coupon', ['id' => $coupon->id]) }}"
+                                            class="btn btn-danger">Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

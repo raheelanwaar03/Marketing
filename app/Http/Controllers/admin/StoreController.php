@@ -21,7 +21,7 @@ class StoreController extends Controller
             'store_name' => 'required',
             'store_slug' => 'required',
             'store_des' => 'required',
-            'store_img'=> 'required'
+            'store_img' => 'required'
         ]);
 
         $image = $validated['store_img'];
@@ -34,33 +34,31 @@ class StoreController extends Controller
         $store->store_des = $validated['store_des'];
         $store->store_img = $imageName;
         $store->save();
-        return redirect()->back()->with('success','Store added successfully');
-
+        return redirect()->back()->with('success', 'Store added successfully');
     }
 
     public function index()
     {
         $stores = Store::paginate(10);
-        return view('admin.store.index',compact('stores'));
+        return view('admin.store.index', compact('stores'));
     }
 
     public function show($store_slug)
     {
-        $store = Store::where('store_slug',$store_slug)->first();
-        return view('admin.store.show',compact('store'));
+        $store = Store::where('store_slug', $store_slug)->first();
+        return view('admin.store.show', compact('store'));
     }
 
     public function edit($id)
     {
         $store = Store::find($id);
-        return view('admin.store.edit',compact('store'));
+        return view('admin.store.edit', compact('store'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $store = Store::find($id);
-        if($request->has('store_img'))
-        {
+        if ($request->has('store_img')) {
             $image = $request['store_img'];
             $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $imageName);
@@ -71,8 +69,13 @@ class StoreController extends Controller
         $store->store_slug = str::slug($request->store_slug);
         $store->store_des = $request->store_des;
         $store->save();
-        return redirect()->route('Admin.All.Stores')->with('success','store updated successfully');
+        return redirect()->route('Admin.All.Stores')->with('success', 'store updated successfully');
     }
 
-
+    public function destroy($id)
+    {
+        $store = Store::find($id);
+        $store->delete();
+        return redirect()->back()->with('success', 'Store Deleted successfully');
+    }
 }

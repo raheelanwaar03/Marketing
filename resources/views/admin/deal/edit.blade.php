@@ -1,0 +1,91 @@
+@extends('admin.layout.app')
+@section('content')
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
+                <h2 class="mb-3 me-auto">Admin Dashboard</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-title">
+                            <h3 class="text-center my-3 text-gradient">Edit Coupon</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="{{ route('Admin.Update.Coupon',['id'=>$coupon->id]) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Name</label>
+                                    <input type="text" name="coupon_name" value="{{ $coupon->coupon_name }}"
+                                        class="form-control" placeholder="Enter Coupon Name">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Slug</label>
+                                    <input type="text" name="coupon_slug" value="{{ $coupon->coupon_slug }}"
+                                        class="form-control" placeholder="Enter Coupon Slug">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Description</label>
+                                    <input type="text" name="coupon_des" class="form-control"
+                                        value="{{ $coupon->coupon_des }}">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Type</label>
+                                    <input type="text" name="coupon_type" value="{{ $coupon->coupon_type }}"
+                                        class="form-control" placeholder="Enter Coupon Type">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Link</label>
+                                    <input type="text" name="coupon_link" value="{{ $coupon->coupon_link }}"
+                                        class="form-control" placeholder="Enter Coupon Link">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Code</label>
+                                    <input type="text" name="coupon_code" value="{{ $coupon->coupon_code }}"
+                                        class="form-control" placeholder="Enter Coupon Code">
+                                </div>
+                                <div class="d-flex justify-content-center align-itmes-between">
+                                    <div class="col-md-6 form-group my-3">
+                                        <label for="" class="mb-1 ml-2">Coupon Category</label>
+                                        <select name="coupon_category" value="{{ $coupon->coupon_category }}"
+                                            class="form-control">
+                                            @foreach ($categorys as $category)
+                                                <option class="form-control" value="{{ $category->id }}">
+                                                    {{ $category->category_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 form-group my-3">
+                                        <label for="" class="mb-1 ml-2">Coupon Store</label>
+                                        <select name="coupon_store" value="{{ $coupon->coupon_store }}"
+                                            class="form-control">
+                                            @foreach ($stores as $store)
+                                                <option class="form-control" value="{{ $store->id }}">
+                                                    {{ $store->store_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Image</label>
+                                    <input type="file" name="coupon_img" class="form-control">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Coupon Expire</label>
+                                    <input type="text" name="coupon_expire" value="{{ $coupon->coupon_expire }}"
+                                        class="form-control" placeholder="Enter Coupon Expire">
+                                </div>
+                                <div class="my-3">
+                                    <img src="{{ asset('images/' . $coupon->coupon_img) }}" alt="">
+                                </div>
+                                <button class="btn btn-primary">Update Coupon Deal</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
