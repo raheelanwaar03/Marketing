@@ -13,8 +13,8 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <div class="menu">
-                                        <span class="font-w500 fs-16 d-block mb-2">Total User's</span>
-                                        <h2>0</h2>
+                                        <span class="font-w500 fs-16 d-block mb-2">Total Categories</span>
+                                        <h2>{{ first() }}</h2>
                                     </div>
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"
