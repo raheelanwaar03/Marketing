@@ -30,6 +30,16 @@
                                     <textarea name="store_des" class="form-control" rows="5"></textarea>
                                 </div>
                                 <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Country</label>
+                                    <input type="text" name="store_country" class="form-control"
+                                        placeholder="Enter Store country">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2"> Network</label>
+                                    <input type="text" name="store_network" class="form-control"
+                                        placeholder="Enter Store Network">
+                                </div>
+                                <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Store Image</label>
                                     <input type="file" name="store_img" class="form-control">
                                 </div>

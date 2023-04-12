@@ -25,6 +25,8 @@
                                 <th>Store Id</th>
                                 <th>Store Name</th>
                                 <th>Store Description</th>
+                                <th>Country</th>
+                                <th>Network</th>
                                 <th>Store Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
@@ -36,6 +38,8 @@
                                     <td>{{ $store->id }}</td>
                                     <td>{{ $store->store_name }}</td>
                                     <td>{{ $store->store_des }}</td>
+                                    <td>{{ $store->store_country }}</td>
+                                    <td>{{ $store->store_network }}</td>
                                     <td>
                                         <img src="{{ asset('images/' . $store->store_img) }}" height="90px" width="90px"
                                             class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">

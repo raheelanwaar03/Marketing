@@ -21,6 +21,8 @@ class StoreController extends Controller
             'store_name' => 'required',
             'store_slug' => 'required',
             'store_des' => 'required',
+            'store_country' => 'required',
+            'store_network' => 'required',
             'store_img' => 'required'
         ]);
 
@@ -32,6 +34,8 @@ class StoreController extends Controller
         $store->store_name = $validated['store_name'];
         $store->store_slug = Str::slug($validated['store_slug']);
         $store->store_des = $validated['store_des'];
+        $store->store_country = $validated['store_country'];
+        $store->store_network = $validated['store_country'];
         $store->store_img = $imageName;
         $store->save();
         return redirect()->back()->with('success', 'Store added successfully');
@@ -68,6 +72,8 @@ class StoreController extends Controller
         $store->store_name = $request->store_name;
         $store->store_slug = str::slug($request->store_slug);
         $store->store_des = $request->store_des;
+        $store->store_country = $request->store_country;
+        $store->store_network = $request->store_network;
         $store->save();
         return redirect()->route('Admin.All.Stores')->with('success', 'store updated successfully');
     }

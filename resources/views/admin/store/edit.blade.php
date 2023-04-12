@@ -30,6 +30,14 @@
                                     <input type="text" name="store_des" value="{{ $store->store_des }}" class="form-control">
                                 </div>
                                 <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Store Country</label>
+                                    <input type="text" name="store_country" value="{{ $store->store_country }}" class="form-control">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Store Network</label>
+                                    <input type="text" name="store_network" value="{{ $store->store_network }}" class="form-control">
+                                </div>
+                                <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Store Image</label>
                                     <input type="file" name="store_img" value="{{ $store->store_img }}" class="form-control">
                                 </div>

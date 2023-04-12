@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('store_name');
             $table->string('store_slug');
             $table->string('store_des');
+            $table->string('store_country');
+            $table->string('store_network');
             $table->string('store_img');
             $table->timestamps();
         });

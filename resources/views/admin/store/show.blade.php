@@ -15,6 +15,8 @@
                                     <div class="card-title m-4">
                                         <h4 class="m-4">Title: {{ $store->store_name }}</h4>
                                         <p class="m-4">Description: {{ $store->store_des }}</p>
+                                        <p>Country: {{ $store->store_country }}</p>
+                                        <p>Network: {{ $store->store_network }}</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
