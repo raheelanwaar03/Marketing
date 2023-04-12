@@ -36,6 +36,7 @@ class StoreController extends Controller
         $store->store_des = $validated['store_des'];
         $store->store_country = $validated['store_country'];
         $store->store_network = $validated['store_country'];
+        $store->store_link = $validated['store_link'];
         $store->store_img = $imageName;
         $store->save();
         return redirect()->back()->with('success', 'Store added successfully');
@@ -74,6 +75,7 @@ class StoreController extends Controller
         $store->store_des = $request->store_des;
         $store->store_country = $request->store_country;
         $store->store_network = $request->store_network;
+        $store->store_link = $request->store_link;
         $store->save();
         return redirect()->route('Admin.All.Stores')->with('success', 'store updated successfully');
     }

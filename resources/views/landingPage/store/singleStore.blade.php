@@ -15,8 +15,14 @@
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <div class="coupon-meta">
-                                    <h3>{{ $store->store_name }}</h3>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <h3>{{ $store->store_name }}</h3>
+                                        <h4>Country: {{ $store->store_country }}</h4>
+                                    </div>
                                     <p>{{ $store->store_des }}</p>
+                                </div>
+                                <div class="">
+                                    <a href="#" class="btn btn-primary">Go To Store</a>
                                 </div>
                             </div>
                         </div>

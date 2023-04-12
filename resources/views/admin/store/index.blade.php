@@ -28,6 +28,7 @@
                                 <th>Country</th>
                                 <th>Network</th>
                                 <th>Store Image</th>
+                                <th>Store link</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -40,6 +41,7 @@
                                     <td>{{ $store->store_des }}</td>
                                     <td>{{ $store->store_country }}</td>
                                     <td>{{ $store->store_network }}</td>
+                                    <td>{{ $store->store_link }}</td>
                                     <td>
                                         <img src="{{ asset('images/' . $store->store_img) }}" height="90px" width="90px"
                                             class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">
