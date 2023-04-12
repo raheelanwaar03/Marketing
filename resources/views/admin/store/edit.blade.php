@@ -10,7 +10,7 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-title">
-                            <h3 class="text-center my-3 text-gradient">Add New Store</h3>
+                            <h3 class="text-center my-3 text-gradient">Edit Store</h3>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('Admin.Update.Store',['id'=>$store->id]) }}" method="POST" enctype="multipart/form-data">
@@ -36,7 +36,7 @@
                                 <div class="my-3">
                                     <img src="{{ asset('images/'.$store->store_img) }}" alt="store img" height="80px" width="80px">
                                 </div>
-                                <button class="btn btn-primary">Add Store</button>
+                                <button class="btn btn-primary">Update Store</button>
                             </form>
                         </div>
                     </div>
