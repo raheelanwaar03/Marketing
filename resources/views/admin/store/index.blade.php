@@ -15,6 +15,9 @@
                                 <th>Store Id</th>
                                 <th>Store Name</th>
                                 <th>Store Description</th>
+                                <th>Country</th>
+                                <th>Network</th>
+                                <th>Store Link</th>
                                 <th>Store Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
@@ -27,8 +30,8 @@
                                 <th>Store Description</th>
                                 <th>Country</th>
                                 <th>Network</th>
+                                <th>Store Link</th>
                                 <th>Store Image</th>
-                                <th>Store link</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -49,11 +52,11 @@
                                     <td>{{ $store->created_at }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Store.Show/', $store->store_slug) }}"
-                                            class="btn btn-primary">show</a>
+                                            class="btn btn-sm btn-primary">show</a>
                                         <a href="{{ route('Admin.Edit.Store', ['id' => $store->id]) }}"
-                                            class="btn btn-info">Edit</a>
+                                            class="btn btn-sm btn-info">Edit</a>
                                         <a href="{{ route('Admin.Delete.Store', ['id' => $store->id]) }}"
-                                            class="btn btn-danger">Delete</a>
+                                            class="btn btn-sm btn-danger">Delete</a>
                                 </tr>
                             @endforeach
                             {{ $stores->withQueryString()->links('pagination::bootstrap-4') }}

@@ -43,11 +43,11 @@
                                     <td>{{ $coupon->coupon_expire }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Show.Coupon.Deals', ['id' => $coupon->id]) }}"
-                                            class="btn btn-primary">show</a>
+                                            class="btn btn-sm btn-primary">show</a>
                                         <a href="{{ route('Admin.Edit.Coupon', ['id' => $coupon->id]) }}"
-                                            class="btn btn-info">Edit</a>
+                                            class="btn btn-sm btn-info">Edit</a>
                                         <a href="{{ route('Admin.Destroy.Coupon', ['id' => $coupon->id]) }}"
-                                            class="btn btn-danger">Delete</a>
+                                            class="btn btn-sm btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

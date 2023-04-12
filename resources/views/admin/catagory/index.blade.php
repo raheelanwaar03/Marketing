@@ -43,10 +43,12 @@
                                     <td>{{ $category->created_at }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Category.Show/', $category->category_slug) }}"
-                                            class="btn btn-primary">show</a>
-                                        <a href="{{ route('Admin.Edit.Category',['id'=>$category->id]) }}"
-                                            class="btn btn-info">Edit</a>
-                                            <a href="{{ route('Admin.Delete.Category',['id'=>$category->id]) }}" onclick="return confirm('Are you really want to Delete this Category?')" class="btn btn-danger">Delete Category</a>
+                                            class="btn btn-sm btn-primary">show</a>
+                                        <a href="{{ route('Admin.Edit.Category', ['id' => $category->id]) }}"
+                                            class="btn btn-sm btn-info">Edit</a>
+                                        <a href="{{ route('Admin.Delete.Category', ['id' => $category->id]) }}"
+                                            onclick="return confirm('Are you really want to Delete this Category?')"
+                                            class="btn btn-sm btn-danger">Delete Category</a>
                                     </td>
                                 </tr>
                             @endforeach
