@@ -205,7 +205,7 @@
                         </div>
                     </div>
                 @empty
-                    <h4>No more coupons</h4>
+                    <h4>No Featured coupons</h4>
                 @endforelse
             </div>
         </div>
@@ -214,15 +214,15 @@
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2>Recent Coupons</h2>
+                    <h2>Trending Coupons</h2>
                     <hr>
-                    <p class="lead">Recent discount coupon codes from hundreds of stores. With our codes take a
+                    <p class="lead">These are our trending coupon from hundreds of stores. With our codes take a
                         few seconds you can earn unlimited discounts.</p>
                 </div>
             </div><!-- end title -->
 
             <div class="row grid-coupons">
-                @forelse ($coupons as $coupon)
+                @forelse ($trending_coupons as $coupon)
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="coupon-list">
                         <div class="coupon-wrapper">
