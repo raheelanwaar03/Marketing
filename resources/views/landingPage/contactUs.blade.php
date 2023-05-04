@@ -53,7 +53,7 @@
                                     <div class="contact-hotline">
                                         <div class="hotline-content">
                                             <p>HOTLINE</p>
-                                            <p>+94 3217 33221</p>
+                                            <p>{{env('APP_NUM')}}</p>
                                         </div>
                                         <div class="hotline-thumb">
                                             <img src="assets/img/contact/mr_helpline.jpg" alt=""
@@ -63,12 +63,11 @@
 
                                     <div class="contact-info-wrapper">
                                         <h6>Address:</h6>
-                                        <p>Apartment 6H, Dilara Tower, Bir Uttam C.R. Dutta Road, Dhaka 1205, Bangladesh</p>
+                                        <p>{{env('APP_ADDRESS')}}</p>
                                         <h6>Contact Info:</h6>
-                                        <p><i class="fa fa-phone"></i>88017544-514154, <i class="fa fa-phone"></i>881475
-                                            24456 55</p>
-                                        <p><i class="fa fa-envelope"></i>info@couponzgmail.com, <i
-                                                class="fa fa-globe"></i>www.domain.com</p>
+                                        <p><i class="fa fa-phone"></i>{{env('APP_NUM')}}, <i class="fa fa-phone"></i>{{env('APP_NUM')}}</p>
+                                        <p><i class="fa fa-envelope"></i>{{env('APP_EMAIL')}}, <i
+                                                class="fa fa-globe"></i>{{env('APP_URL')}}</p>
                                     </div>
                                 </div>
                             </div>
