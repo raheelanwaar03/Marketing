@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE META -->
-    <title>YourCoupon | Responsive Coupon Code Site Templates</title>
+    <title>{{ env('APP_NAME') }} | Brings discount on thousand of products</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
@@ -70,8 +70,8 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 center-xs">
                         <p class="topbar-text">
-                            <strong><i class="fa fa-phone"></i></strong> +90 987 123 45 67 &nbsp;&nbsp;
-                            <strong><i class="fa fa-envelope-o"></i>info@gmail.com</strong>
+                            <strong><i class="fa fa-phone"></i></strong> {{ env('APP_NUM') }} &nbsp;&nbsp;
+                            <strong><i class="fa fa-envelope-o"></i>{{ env('APP_EMAIL') }}</strong>
                         </p>
                     </div><!-- end col -->
                 </div><!-- end row -->
@@ -83,7 +83,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-6">
-                            <a class="navbar-brand" href="index.html">YourCoupon <small>Discount Coupon
+                            <a class="navbar-brand" href="index.html">{{ env('APP_NAME') }} <small>Discount Coupon
                                     Codes</small></a>
                         </div><!-- end col -->
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">

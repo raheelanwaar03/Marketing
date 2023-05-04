@@ -116,7 +116,7 @@
                         <div class="coupon-list">
                             <div class="coupon-wrapper">
                                 <div class="post-media">
-                                    <a href="coupon-single.html"><img src="{{ asset('images/' . $coupon->coupon_img) }}"
+                                    <a href="#"><img src="{{ asset('images/' . $coupon->coupon_img) }}"
                                             alt="img" class="img-responsive"></a>
                                 </div>
                                 <!-- end media -->
@@ -125,7 +125,7 @@
                                     <div class="coupon-top clearfix">
                                     </div>
                                     <!-- end coupon-top -->
-                                    <h3><a href="coupon-single.html">{{ $coupon->coupon_name }}</a></h3>
+                                    <h3><a href="#">{{ $coupon->coupon_name }}</a></h3>
                                     <p>{{ $coupon->coupon_des }}</p>
                                 </div>
                                 <!-- end meta -->
@@ -254,7 +254,7 @@
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4><a href="coupon-single.html">{{ $coupon->coupon_name }}</a></h4>
+                                        <h4><a href="#">{{ $coupon->coupon_name }}</a></h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
@@ -307,7 +307,7 @@
                 @endforelse
             </div>
             <div class="loadmorebutton text-center clearfix">
-                <a href="coupons.html" class="btn btn-custom">Browse more Coupons</a>
+                <a href="{{ route('LandingPage.All.Coupons') }}" class="btn btn-custom">Browse more Coupons</a>
             </div><!-- end loadmore -->
 
             <hr class="invis1">

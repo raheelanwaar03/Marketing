@@ -14,7 +14,7 @@
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <div class="menu">
                                         <span class="font-w500 fs-16 d-block mb-2">Total Categories</span>
-                                        <h2>{{ first() }}</h2>
+                                        <h2>{{ totalCategories() }}</h2>
                                     </div>
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"
@@ -41,8 +41,8 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <div class="menu">
-                                        <span class="font-w500 fs-16 d-block mb-2">Pending User's</span>
-                                        <h2>0</h2>
+                                        <span class="font-w500 fs-16 d-block mb-2">Total Coupons</span>
+                                        <h2>{{ totalCoupons() }}</h2>
                                     </div>
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"
@@ -69,8 +69,8 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <div class="menu">
-                                        <span class="font-w500 fs-16 d-block mb-2">Approved user's</span>
-                                        <h2>0</h2>
+                                        <span class="font-w500 fs-16 d-block mb-2">Total Stores</span>
+                                        <h2>{{ totalStores() }}</h2>
                                     </div>
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"
@@ -97,8 +97,8 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <div class="menu">
-                                        <span class="font-w500 fs-16 d-block mb-2">Rejected User's</span>
-                                        <h2>0</h2>
+                                        <span class="font-w500 fs-16 d-block mb-2">Users</span>
+                                        <h2>{{ totalUsers() }}</h2>
                                     </div>
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"

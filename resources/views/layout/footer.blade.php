@@ -105,14 +105,13 @@
             <div class="col-md-6 col-sm-6">
                 <div class="copylinks">
                     <ul class="list-inline">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Terms of Usage</a></li>
-                        <li><a href="#">Trademark</a></li>
-                        <li><a href="#">License</a></li>
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li><a href="{{ route('LandingPage.ContactUs') }}">Contact</a></li>
+                        <li><a href="{{ route('LandingPage.Categorys') }}">All Categories</a></li>
+                        <li><a href="{{ route('LandingPage.All.Stores') }}">All Stores</a></li>
+                        <li><a href="{{ route('LandingPage.All.Coupons') }}">All Coupons</a></li>
                     </ul><!-- end ul -->
-                    <p>YourCoupon &copy; 2016 - Designed by {{ env('APP_NAME') }}</a></p>
+                    <p>{{ env('APP_NAME') }} &copy; 2016 - Designed by {{ env('APP_NAME') }}</a></p>
                 </div><!-- end links -->
             </div><!-- end col -->
 
@@ -137,6 +136,6 @@
 
 </body>
 
-<!-- Mirrored from psdconverthtml.com/live/yourcoupon/coupon-v2/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Jan 2023 11:01:59 GMT -->
+<!-- Mirrored from psdconverthtml.com/live/{{ env('APP_NAME') }}/coupon-v2/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Jan 2023 11:01:59 GMT -->
 
 </html>

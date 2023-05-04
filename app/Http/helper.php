@@ -1,6 +1,30 @@
 <?php
 
-function first()
+use App\Models\admin\Coupon;
+use App\Models\admin\Store;
+use App\Models\Catagory;
+use App\Models\User;
+
+function totalCoupons()
 {
-    return 'first';
+    $totalCoupons = Coupon::get()->count();
+    return $totalCoupons;
+}
+
+function totalCategories()
+{
+    $totalCategories = Catagory::get()->count();
+    return $totalCategories;
+}
+
+function totalStores()
+{
+    $totalStores = Store::get()->count();
+    return $totalStores;
+}
+
+function totalUsers()
+{
+    $totalUsers = User::get()->count();
+    return $totalUsers;
 }
