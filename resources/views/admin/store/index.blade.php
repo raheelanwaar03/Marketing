@@ -12,12 +12,10 @@
                     <table class="table table-bordered" id="example" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Store Id</th>
                                 <th>Store Name</th>
                                 <th>Store Description</th>
-                                <th>Country</th>
-                                <th>Network</th>
                                 <th>Store Link</th>
+                                <th>Showing Status</th>
                                 <th>Store Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
@@ -25,12 +23,10 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Store Id</th>
                                 <th>Store Name</th>
                                 <th>Store Description</th>
-                                <th>Country</th>
-                                <th>Network</th>
                                 <th>Store Link</th>
+                                <th>Showing Status</th>
                                 <th>Store Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
@@ -39,12 +35,10 @@
                         <tbody>
                             @foreach ($stores as $store)
                                 <tr>
-                                    <td>{{ $store->id }}</td>
                                     <td>{{ $store->store_name }}</td>
                                     <td>{{ $store->store_des }}</td>
-                                    <td>{{ $store->store_country }}</td>
-                                    <td>{{ $store->store_network }}</td>
                                     <td>{{ $store->store_link }}</td>
+                                    <td>{{ $store->status }}</td>
                                     <td>
                                         <img src="{{ asset('images/' . $store->store_img) }}" height="90px" width="90px"
                                             class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">

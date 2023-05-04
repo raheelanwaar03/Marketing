@@ -44,6 +44,10 @@
                                     <input type="text" name="store_link" class="form-control"
                                         placeholder="Enter Store Link">
                                 </div>
+                                 <div class="form-check my-3">
+                                    <label for="" class="form-check-label mb-1 ml-2">Hide</label>
+                                    <input type="checkbox" name="status" class="form-check-input">
+                                </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Store Image</label>
                                     <input type="file" name="store_img" class="form-control">

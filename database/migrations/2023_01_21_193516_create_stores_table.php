@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('store_network');
             $table->string('store_link');
             $table->string('store_img');
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }
