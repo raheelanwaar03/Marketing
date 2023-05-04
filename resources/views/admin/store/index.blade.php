@@ -38,7 +38,7 @@
                                     <td>{{ $store->store_name }}</td>
                                     <td>{{ $store->store_des }}</td>
                                     <td>{{ $store->store_link }}</td>
-                                    <td>{{ $store->status }}</td>
+                                    <td>{{ $store->status == '1' ? 'Hide':'Showing' }}</td>
                                     <td>
                                         <img src="{{ asset('images/' . $store->store_img) }}" height="90px" width="90px"
                                             class="img-fluid img-thumbnail" alt="{{ $store->store_img }}">

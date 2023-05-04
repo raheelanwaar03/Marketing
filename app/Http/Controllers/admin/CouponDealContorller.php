@@ -47,10 +47,11 @@ class CouponDealContorller extends Controller
         $coupon->coupon_code = $validated['coupon_code'];
         $coupon->coupon_category = $validated['coupon_category'];
         $coupon->coupon_store = $validated['coupon_store'];
+        $coupon->status = $request->status == True ? '1':'0';
         $coupon->coupon_img = $imageName;
         $coupon->coupon_expire = $validated['coupon_expire'];
         $coupon->save();
-        return redirect()->back()->with('success', 'Deal Added Successfuly');
+        return redirect()->route('Admin.All.Coupon.Deals')->with('success', 'Deal Added Successfuly');
     }
 
     public function index()
@@ -85,6 +86,7 @@ class CouponDealContorller extends Controller
         $coupon->coupon_code = $request->coupon_code;
         $coupon->coupon_category = $request->coupon_category;
         $coupon->coupon_store = $request->coupon_store;
+        $coupon->status = $request->status == True ? '1': '0';
         $coupon->coupon_expire = $request->coupon_expire;
         $coupon->save();
         return redirect()->back()->with('success', 'Coupon updated successfully');

@@ -68,6 +68,10 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-check my-3">
+                                    <label for="" class="form-check-label mb-1 ml-2">Trending</label>
+                                    <input type="checkbox" name="status" class="form-check-input">
+                                </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Image</label>
                                     <input type="file" name="coupon_img" class="form-control">

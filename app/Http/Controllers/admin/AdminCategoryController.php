@@ -34,7 +34,7 @@ class AdminCategoryController extends Controller
         $category->category_des = $validated['category_des'];
         $category->category_img = $imageName;
         $category->save();
-        return redirect()->back()->with('success','Category saved successfully');
+        return redirect()->route('Admin.All.Categories')->with('success','Category saved successfully');
     }
 
     public function index()

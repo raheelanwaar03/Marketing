@@ -23,7 +23,6 @@ class StoreController extends Controller
             'store_des' => 'required',
             'store_country' => 'required',
             'store_network' => 'required',
-            'status' => 'required',
             'store_link' => 'required',
             'store_img' => 'required'
         ]);
@@ -39,7 +38,7 @@ class StoreController extends Controller
         $store->store_country = $validated['store_country'];
         $store->store_network = $validated['store_country'];
         $store->store_link = $validated['store_link'];
-        $store->status = $validated['status'] == True ? '1': '0';
+        $store->status = $request->status == True ? '1': '0';
         $store->store_img = $imageName;
         $store->save();
         return redirect()->route('Admin.All.Stores')->with('success', 'Store added successfully');
