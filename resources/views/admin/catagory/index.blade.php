@@ -15,7 +15,6 @@
                                 <th>Catagory Id</th>
                                 <th>Catagory Name</th>
                                 <th>Catagory Description</th>
-                                <th>Catagory Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -25,7 +24,6 @@
                                 <th>Catagory Id</th>
                                 <th>Catagory Name</th>
                                 <th>Catagory Description</th>
-                                <th>Catagory Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -36,10 +34,6 @@
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->category_name }}</td>
                                     <td>{{ $category->category_des }}</td>
-                                    <td>
-                                        <img src="{{ asset('images/' . $category->category_img) }}" height="90px"
-                                            width="90px" class="img-fluid img-thumbnail" alt="category_img">
-                                    </td>
                                     <td>{{ $category->created_at }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Category.Show/', $category->category_slug) }}"

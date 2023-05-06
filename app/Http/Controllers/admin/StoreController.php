@@ -36,7 +36,7 @@ class StoreController extends Controller
         $store->store_slug = Str::slug($validated['store_slug']);
         $store->store_des = $validated['store_des'];
         $store->store_country = $validated['store_country'];
-        $store->store_network = $validated['store_country'];
+        $store->store_network = $validated['store_network'];
         $store->store_link = $validated['store_link'];
         $store->status = $request->status == True ? '1': '0';
         $store->store_img = $imageName;
@@ -89,4 +89,22 @@ class StoreController extends Controller
         $store->delete();
         return redirect()->back()->with('success', 'Store Deleted successfully');
     }
+
+    public function hide($id)
+    {
+        $store = Store::find($id);
+        $store->status = '1';
+        $store->save();
+        return redirect()->back()->with('success','Store Hided successfully');
+    }
+
+    public function visible($id)
+    {
+        $store = Store::find($id);
+        $store->status = '0';
+        $store->save();
+        return redirect()->back()->with('success','Store Showing Now');
+    }
+
+
 }

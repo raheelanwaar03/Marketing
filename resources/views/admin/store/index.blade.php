@@ -46,11 +46,13 @@
                                     <td>{{ $store->created_at }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Store.Show/', $store->store_slug) }}"
-                                            class="btn btn-sm btn-primary">show</a>
+                                            class="btn btn-sm btn-primary">Details</a>
                                         <a href="{{ route('Admin.Edit.Store', ['id' => $store->id]) }}"
                                             class="btn btn-sm btn-info">Edit</a>
                                         <a href="{{ route('Admin.Delete.Store', ['id' => $store->id]) }}"
                                             class="btn btn-sm btn-danger">Delete</a>
+                                        <a href="{{ route('Admin.Hide.Store',['id'=>$store->id]) }}" class="btn btn-sm btn-warning">Hide</a>
+                                        <a href="{{ route('Admin.visible.Store',['id'=>$store->id]) }}" class="btn btn-sm btn-success">Show</a>
                                 </tr>
                             @endforeach
                             {{ $stores->withQueryString()->links('pagination::bootstrap-4') }}
