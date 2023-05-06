@@ -27,7 +27,6 @@ class CouponDealContorller extends Controller
             'coupon_des' => 'required',
             'coupon_type' => 'required',
             'coupon_link' => 'required',
-            'coupon_code' => 'required',
             'coupon_category' => 'required',
             'coupon_store' => 'required',
             'coupon_img' => 'required',
@@ -45,7 +44,7 @@ class CouponDealContorller extends Controller
         $coupon->coupon_des = $validated['coupon_des'];
         $coupon->coupon_type = $validated['coupon_type'];
         $coupon->coupon_link = $validated['coupon_link'];
-        $coupon->coupon_code = $validated['coupon_code'];
+        $coupon->coupon_code = $request->coupon_code;
         $coupon->coupon_category = $validated['coupon_category'];
         $coupon->coupon_store = $validated['coupon_store'];
         $coupon->status = $request->status == True ? '1':'0';
