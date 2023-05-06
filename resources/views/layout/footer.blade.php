@@ -8,8 +8,7 @@
                     </div>
 
                     <div class="newsletter">
-                        <p>Your email is safe with us and we hate spam as much as you do. Lorem ipsum dolor sit
-                            amet et dolore.</p>
+                        <p>Your email is safe with us and we hate spam as much as you do.</p>
                         <form class="">
                             <input type="text" class="form-control" placeholder="Enter your name..">
                             <input type="email" class="form-control" placeholder="Enter your email..">
@@ -44,16 +43,17 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse115">
-                                        <i class="fa fa-angle-down"></i> How to Use Coupon Codes?
+                                    <a data-toggle="collapse" data-parent="#accordion5" href="#collapse115">
+                                        <i class="fa fa-angle-down"></i> What is voucher?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse115" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiolore.
-                                        consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolor.
+                                    <p>
+                                        It's a code which is in numbers and letters to offer some incetive that reduces
+                                        the price of an order this SHIELD APPARELS Voucher Code is also known as
+                                        promo,discount,voucher and coupon code.
                                     </p>
                                 </div>
                             </div>
@@ -61,16 +61,17 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse215">
-                                        <i class="fa fa-angle-down"></i> Can I submit My Coupons?
+                                    <a data-toggle="collapse" data-parent="#accordion5" href="#collapse215">
+                                        <i class="fa fa-angle-down"></i> Does offer Discount Codes?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse215" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiolore.
-                                        consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolor.
+                                    <p>Yes, there are currently some discount codes and deals in the above promotions
+                                        list, if you are looking for the best Voucher Code, then simply click on the
+                                        "GET CODES" or "GET DEALS" button for the amazing savings at
+                                        {{ env('APP_NAME') }}.
                                     </p>
                                 </div>
                             </div>
@@ -78,16 +79,20 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse315">
-                                        <i class="fa fa-angle-down"></i> Coupon Submission free?
+                                    <a data-toggle="collapse" data-parent="#accordion5" href="#collapse315">
+                                        <i class="fa fa-angle-down"></i> How do I use a Voucher?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse315" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiolore.
-                                        consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolor.
+                                    <p>
+                                        If You like to save money on your Voucher, then follow these simple steps,
+                                        First; Choose from the above available discount code that you can find on the
+                                        {{ env('APP_NAME') }} Voucher page. Once you have selected the desired product
+                                        in the cart, simply copy and paste the code at the checkout page or click on the
+                                        active deal button. If they show the reduced amount of savings, then simply
+                                        continue the checkout as normal and wait for your order to be processed.
                                     </p>
                                 </div>
                             </div>
@@ -111,7 +116,9 @@
                         <li><a href="{{ route('LandingPage.All.Stores') }}">All Stores</a></li>
                         <li><a href="{{ route('LandingPage.All.Coupons') }}">All Coupons</a></li>
                     </ul><!-- end ul -->
-                    <p>{{ env('APP_NAME') }} &copy; 2016 - Designed by {{ env('APP_NAME') }}</a></p>
+                    <p>Disclaimer: The display of third-party trademarks and trade names on the site does not
+                        necessarily indicate any affiliation or service on their website, we may be paid a fee by the
+                        merchant.</a></p>
                 </div><!-- end links -->
             </div><!-- end col -->
 
