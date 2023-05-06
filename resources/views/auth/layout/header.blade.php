@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE META -->
-    <title>YourCoupon | Responsive Coupon Code Site Templates</title>
+    <title>{{ env('APP_NAME') }} | Responsive Coupon Code Site Templates</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
@@ -83,7 +83,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-6">
-                            <a class="navbar-brand" href="index.html">YourCoupon <small>Discount Coupon
+                            <a class="navbar-brand" href="index.html">{{ env('APP_NAME') }} <small>Discount Coupon
                                     Codes</small></a>
                         </div><!-- end col -->
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
