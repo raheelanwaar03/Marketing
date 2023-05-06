@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('category_name');
             $table->string('category_slug');
             $table->string('category_des');
-            $table->string('category_img');
             $table->timestamps();
         });
     }

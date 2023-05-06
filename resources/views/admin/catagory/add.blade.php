@@ -13,7 +13,7 @@
                             <h3 class="text-center my-3 text-gradient">Add New Category</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('Admin.Store.Category') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('Admin.Store.Category') }}" method="POST">
                                 @csrf
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Category Name</label>
@@ -26,10 +26,6 @@
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Category Description</label>
                                     <textarea name="category_des" class="form-control" rows="5"></textarea>
-                                </div>
-                                <div class="form-group my-3">
-                                    <label for="" class="mb-1 ml-2">Category Image</label>
-                                    <input type="file" name="category_img" class="form-control">
                                 </div>
                                 <button class="btn btn-primary">Add Category</button>
                             </form>
