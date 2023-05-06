@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText('coupon_des');
             $table->string('coupon_type');
             $table->string('coupon_link');
-            $table->string('coupon_code');
+            $table->string('coupon_code')->nullable();
             $table->string('coupon_category');
             $table->string('coupon_store');
             $table->string('coupon_img');

@@ -81,7 +81,7 @@
                                     <input type="text" name="coupon_expire" class="form-control"
                                         placeholder="2023/01/25">
                                 </div>
-                                <button class="btn btn-primary">Add Coupon Deal</button>
+                                <button class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>
