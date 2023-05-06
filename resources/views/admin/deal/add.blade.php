@@ -79,7 +79,7 @@
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Expire</label>
                                     <input type="text" name="coupon_expire" class="form-control"
-                                        placeholder="Enter Coupon Expire">
+                                        placeholder="2023/01/25">
                                 </div>
                                 <button class="btn btn-primary">Add Coupon Deal</button>
                             </form>

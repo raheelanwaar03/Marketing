@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Coupon;
 use App\Models\admin\Store;
 use App\Models\Catagory;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -49,7 +50,7 @@ class CouponDealContorller extends Controller
         $coupon->coupon_store = $validated['coupon_store'];
         $coupon->status = $request->status == True ? '1':'0';
         $coupon->coupon_img = $imageName;
-        $coupon->coupon_expire = $validated['coupon_expire'];
+        $coupon->coupon_expire = Carbon::createFromFormat('d/m/y',$validated['coupon_expire']);
         $coupon->save();
         return redirect()->route('Admin.All.Coupon.Deals')->with('success', 'Deal Added Successfuly');
     }
