@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(function () {
 
     Route::get('/Dashboard', [AdminDashboardController::class, 'index'])->name('Dashboard');
+    Route::get('/User/Messages', [AdminDashboardController::class, 'userMessages'])->name('Messages');
     // stores routes
 
     Route::get('/Add/Store', [StoreController::class, 'create'])->name('Add.Store');

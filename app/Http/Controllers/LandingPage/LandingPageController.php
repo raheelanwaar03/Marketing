@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Coupon;
 use App\Models\admin\Store;
 use App\Models\Catagory;
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -71,4 +72,16 @@ class LandingPageController extends Controller
         $coupons = Coupon::where('coupon_store', $id)->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys'));
     }
+
+    public function contact_form(Request $request)
+    {
+        $massage = new ContactUs();
+        $massage->name = $request->name;
+        $massage->email = $request->email;
+        $massage->subject = $request->subject;
+        $massage->massage = $request->message;
+        $massage->save();
+        return redirect()->back()->with('success','Thanks for connecting us we will come back to you as soon as possible');
+    }
+
 }

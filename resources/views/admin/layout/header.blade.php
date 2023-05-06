@@ -82,6 +82,11 @@
                             <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="{{ route('Admin.Messages') }}" aria-expanded="false">
+                        <i class="ti-home"></i>
+                        <span class="nav-text">User Messages</span>
+                    </a>
+                </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="ti-menu-alt"></i>
                             <span class="nav-text">Categories</span>

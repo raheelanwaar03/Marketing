@@ -16,6 +16,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/',[LandingPageController::class,'landingpage'])->name('LandingPage');
 Route::get('/ContactUs',[LandingPageController::class,'contact'])->name('LandingPage.ContactUs');
+Route::post('/ContactUs/Form',[LandingPageController::class,'contact_form'])->name('LandingPage.ContactUs.Form');
 Route::get('/Categories',[LandingPageController::class,'allCategorys'])->name('LandingPage.Categorys');
 // Coupons
 Route::get('/All/Coupons',[LandingPageController::class,'allCoupons'])->name('LandingPage.All.Coupons');
