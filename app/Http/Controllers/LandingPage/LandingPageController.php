@@ -49,7 +49,7 @@ class LandingPageController extends Controller
     {
         $categorys = Catagory::get();
         $coupons = Coupon::where('status',0)->get();
-        $stores = Store::orderBy('store_name', 'asc')->paginate(9);
+        $stores = Store::orderBy('store_name', 'asc')->where('status','0')->paginate(9);
         return view('landingPage.store.index', compact('categorys', 'stores', 'coupons'));
     }
 

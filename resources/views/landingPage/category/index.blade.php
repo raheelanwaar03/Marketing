@@ -141,16 +141,16 @@
                     </div>
 
                     <div class="text-center store-list row">
-                        @forelse ($categorys as $category)
+                        @forelse ($stores as $store)
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
-                                    <a href="#"><img src="{{ $category->category_img }}" alt=""
+                                    <a href="#"><img src="{{ $store->store_img }}" alt=""
                                             class="img-responsive"></a>
-                                    <small>{{ $category->category_name }}</small>
+                                    <small>{{ $store->store_name }}</small>
                                 </div>
                             </div>
                         @empty
-                            <h3>No category available</h3>
+                            <h3>No store available</h3>
                         @endforelse
                     </div>
                 </div>
