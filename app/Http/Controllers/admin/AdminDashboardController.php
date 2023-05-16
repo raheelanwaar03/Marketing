@@ -23,4 +23,9 @@ class AdminDashboardController extends Controller
         return view('admin.contactUs',compact('massages'));
     }
 
+    public function addUser()
+    {
+        return view('admin.addUser');
+    }
+
 }

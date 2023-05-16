@@ -158,6 +158,14 @@
                                             @endforelse
                                         </ul>
                                     </li>
+                                    @if (auth()->user())
+                                        <li>
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button class="btn btn-danger">Logout</button>
+                                            </form>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

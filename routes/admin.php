@@ -11,6 +11,7 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
 
     Route::get('/Dashboard', [AdminDashboardController::class, 'index'])->name('Dashboard');
     Route::get('/User/Messages', [AdminDashboardController::class, 'userMessages'])->name('Messages');
+    Route::get('/Add/User', [AdminDashboardController::class, 'addUser'])->name('Add.User');
     // stores routes
 
     Route::get('/Add/Store', [StoreController::class, 'create'])->name('Add.Store');

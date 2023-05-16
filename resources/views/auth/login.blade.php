@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <button type="submit" class="btn btn-primary">Login</button>
-                                        <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
+                                        <a href="{{ route('register') }}" class="btn btn-primary">New Member</a>
                                     </div>
                                 </div>
                             </div>

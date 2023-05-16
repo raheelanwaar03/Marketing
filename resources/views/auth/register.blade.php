@@ -11,26 +11,32 @@
                             <div class="row">
                                 <div class="col-md-">
                                     <div class="col-md-6 col-sm-12">
-                                        <label class="control-label">Your Name <small>Enter your company name</small></label>
-                                        <input type="text" name="name" class="form-control" placeholder="Jenny Pelt">
+                                        <label class="control-label">Name</label>
+                                        <input type="text" name="name" class="form-control"
+                                            placeholder="Enter New User Name">
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <label class="control-label">Email <small>Enter offical email here</small></label>
-                                        <input type="email" name="email" class="form-control" placeholder="info@gmail.com">
+                                        <input type="email" name="email" class="form-control"
+                                            placeholder="info@gmail.com">
                                     </div>
                                     <div class="col-md-6 col-sm-12">
-                                        <label class="control-label">New Password <small>Enter new password</small></label>
+                                        <label class="control-label">Your Password</label>
                                         <input type="password" name="password" class="form-control" placeholder="*********">
                                     </div>
                                     <div class="col-md-6 col-sm-12">
-                                        <label class="control-label">Re-New Password <small>Re-Enter new
-                                                password</small></label>
-                                        <input type="password" name="password_confirmation" class="form-control"
-                                            placeholder="*********">
+                                        <label class="control-label">Your Password</label>
+                                        <input type="password" name="password_confirmation" class="form-control" placeholder="*********">
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <label class="control-label">Role</label>
+                                        <select name="role" class="form-control">
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-12 col-sm-12">
-                                        <button type="submit" class="btn btn-primary">Register</button>
-                                        <a href="{{route('login')}}" class="btn btn-primary">Login</a>
+                                        <button type="submit" class="btn btn-primary">Add</button>
                                     </div>
                                 </div>
                             </div>
