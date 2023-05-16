@@ -12,18 +12,18 @@
                     <table class="table table-bordered" id="example" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Catagory Id</th>
                                 <th>Catagory Name</th>
                                 <th>Catagory Description</th>
+                                <th>Catagory Image</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Catagory Id</th>
                                 <th>Catagory Name</th>
                                 <th>Catagory Description</th>
+                                <th>Catagory image</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -31,9 +31,16 @@
                         <tbody>
                             @foreach ($categorys as $category)
                                 <tr>
-                                    <td>{{ $category->id }}</td>
                                     <td>{{ $category->category_name }}</td>
                                     <td>{{ $category->category_des }}</td>
+                                    <td>
+                                        @if ($category->image != null)
+                                            <img src="{{ asset('images/' . $category->image) }}" class="img-thumbnail"
+                                                height="75px" width="75px" alt="image">
+                                        @else
+                                            <p>No Image for this category</p>
+                                        @endif
+                                    </td>
                                     <td>{{ $category->created_at }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Category.Show/', $category->category_slug) }}"

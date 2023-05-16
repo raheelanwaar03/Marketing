@@ -13,7 +13,7 @@
                             <h3 class="text-center my-3 text-gradient">Edit Category</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('Admin.Update.Category',['id'=>$category->id]) }}" method="POST">
+                            <form action="{{ route('Admin.Update.Category',['id'=>$category->id]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Category Name</label>
@@ -26,6 +26,13 @@
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Category Description</label>
                                     <input type="text" name="category_des" class="form-control" value="{{ $category->category_des }}">
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="" class="mb-1 ml-2">Category image</label>
+                                    <input type="file" name="image" class="form-control">
+                                </div>
+                                <div class="">
+                                    <img src="{{ asset('images/113358.jpg') }}" height="75px" width="75px" alt="image">
                                 </div>
                                 <button class="btn btn-primary">Update Category</button>
                             </form>
