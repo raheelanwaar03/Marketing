@@ -20,7 +20,7 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
     Route::get('/Show/Store/{store_slug}', [StoreController::class, 'show'])->name('Store.Show/');
     Route::get('/Edit/Store/{id}', [StoreController::class, 'edit'])->name('Edit.Store');
     Route::post('/Update/Store/{id}', [StoreController::class, 'update'])->name('Update.Store');
-    Route::post('/Delete/Store/{id}', [StoreController::class, 'destroy'])->name('Delete.Store');
+    Route::get('/Delete/Store/{id}', [StoreController::class, 'destroy'])->name('Delete.Store');
     Route::get('/Hide/Store/{id}', [StoreController::class, 'hide'])->name('Hide.Store');
     Route::get('/Visible/Store/{id}', [StoreController::class, 'visible'])->name('visible.Store');
     // category routes
