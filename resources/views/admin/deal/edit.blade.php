@@ -74,15 +74,12 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Image</label>
-                                    <input type="file" name="coupon_img" class="form-control">
+                                    <input type="text" name="coupon_text" class="form-control" value="{{ $coupon->coupon_text }}">
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Expire</label>
                                     <input type="text" name="coupon_expire" value="{{ $coupon->coupon_expire }}"
                                         class="form-control" placeholder="Enter Coupon Expire">
-                                </div>
-                                <div class="my-3">
-                                    <img src="{{ asset('images/' . $coupon->coupon_img) }}" height="100px" width="100px" alt="">
                                 </div>
                                 <button class="btn btn-primary">Update Coupon Deal</button>
                             </form>

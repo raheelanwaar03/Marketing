@@ -73,13 +73,13 @@
                                     <input type="checkbox" name="status" class="form-check-input">
                                 </div>
                                 <div class="form-group my-3">
-                                    <label for="" class="mb-1 ml-2">Coupon Image</label>
-                                    <input type="file" name="coupon_img" class="form-control">
+                                    <label for="" class="mb-1 ml-2">Coupon Text</label>
+                                    <input type="text" name="coupon_text" class="form-control" placeholder="Enter Coupon Text Here">
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Expire</label>
                                     <input type="text" name="coupon_expire" class="form-control"
-                                        placeholder="2023/01/25">
+                                        placeholder="Date Format e.g : 2023/01/25">
                                 </div>
                                 <button class="btn btn-primary">Submit</button>
                             </form>

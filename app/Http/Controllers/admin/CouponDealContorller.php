@@ -29,14 +29,10 @@ class CouponDealContorller extends Controller
             'coupon_link' => 'required',
             'coupon_category' => 'required',
             'coupon_store' => 'required',
-            'coupon_img' => 'required',
+            'coupon_text' => 'required',
             'coupon_expire' => 'required',
         ]);
 
-
-        $image = $validated['coupon_img'];
-        $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
 
         $coupon = new Coupon();
         $coupon->coupon_name = $validated['coupon_name'];
@@ -47,8 +43,8 @@ class CouponDealContorller extends Controller
         $coupon->coupon_code = $request->coupon_code;
         $coupon->coupon_category = $validated['coupon_category'];
         $coupon->coupon_store = $validated['coupon_store'];
-        $coupon->status = $request->status == True ? '1':'0';
-        $coupon->coupon_img = $imageName;
+        $coupon->status = $request->status == True ? '1' : '0';
+        $coupon->coupon_text = $validated['coupon_text'];
         $coupon->coupon_expire = $validated['coupon_expire'];
         $coupon->save();
         return redirect()->route('Admin.All.Coupon.Deals')->with('success', 'Job Done Successfuly');
@@ -71,13 +67,6 @@ class CouponDealContorller extends Controller
     public function update(Request $request, $id)
     {
         $coupon = Coupon::find($id);
-        if ($request->has('coupon_img')) {
-            $image = $request['coupon_img'];
-            $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
-            $coupon->coupon_img = $imageName;
-        }
-
         $coupon->coupon_name = $request->coupon_name;
         $coupon->coupon_slug = Str::slug($request->coupon_slug);
         $coupon->coupon_des = $request->coupon_des;
@@ -86,7 +75,8 @@ class CouponDealContorller extends Controller
         $coupon->coupon_code = $request->coupon_code;
         $coupon->coupon_category = $request->coupon_category;
         $coupon->coupon_store = $request->coupon_store;
-        $coupon->status = $request->status == True ? '1': '0';
+        $coupon->coupon_text = $request->coupon_text;
+        $coupon->status = $request->status == True ? '1' : '0';
         $coupon->coupon_expire = $request->coupon_expire;
         $coupon->save();
         return redirect()->back()->with('success', 'Coupon updated successfully');

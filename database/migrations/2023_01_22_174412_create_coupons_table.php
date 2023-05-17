@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('coupon_code')->nullable();
             $table->string('coupon_category');
             $table->string('coupon_store');
-            $table->string('coupon_img');
+            $table->string('coupon_text');
             $table->string('status')->default('0');
             $table->date('coupon_expire');
             $table->timestamps();

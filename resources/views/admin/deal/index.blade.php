@@ -15,7 +15,7 @@
                                 <th>Name</th>
                                 <th>Type</th>
                                 <th>Trending Status</th>
-                                <th>Image</th>
+                                <th>Text</th>
                                 <th>Code</th>
                                 <th>Store</th>
                                 <th>Expire Date</th>
@@ -27,7 +27,7 @@
                                 <th>Name</th>
                                 <th>Type</th>
                                 <th>Trending Status</th>
-                                <th>Image</th>
+                                <th>Text</th>
                                 <th>Code</th>
                                 <th>Store</th>
                                 <th>Expire Date</th>
@@ -40,10 +40,7 @@
                                     <td>{{ $coupon->coupon_name }}</td>
                                     <td>{{ $coupon->coupon_type }}</td>
                                     <td>{{ $coupon->status == '1' ? 'ON':'OFF' }}</td>
-                                    <td>
-                                        <img src="{{ asset('images/' . $coupon->coupon_img) }}" height="90px"
-                                            width="90px" class="img-fluid img-thumbnail" alt="{{ $coupon->coupon_img }}">
-                                    </td>
+                                    <td>{{ $coupon->coupon_text }}</td>
                                     <td>{{ $coupon->coupon_code ?? 'Not Required' }}</td>
                                     <td>{{ $coupon->coupon_store }}</td>
                                     <td>{{ $coupon->coupon_expire }}</td>
