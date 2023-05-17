@@ -31,7 +31,7 @@
                                     <textarea name="coupon_des" class="form-control" rows="5"></textarea>
                                 </div>
                                 <div class="form-group my-3">
-                                    <label for="" class="mb-1 ml-2">Coupon Type</label>
+                                    <label for="" class="mb-1 ml-2">Type</label>
                                     <select name="coupon_type" class="form-control">
                                         <option value="Deal">Deal</option>
                                         <option value="Coupon">Coupon</option>

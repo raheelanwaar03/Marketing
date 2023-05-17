@@ -12,18 +12,20 @@
                     <table class="table table-bordered" id="example" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Coupon Name</th>
+                                <th>Name</th>
                                 <th>Trending Status</th>
-                                <th>Coupon Image</th>
+                                <th>Image</th>
+                                <th>Code</th>
                                 <th>Expire Date</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Coupon Name</th>
+                                <th>Name</th>
                                 <th>Trending Status</th>
-                                <th>Coupon Image</th>
+                                <th>Image</th>
+                                <th>Code</th>
                                 <th>Expire Date</th>
                                 <th>Action</th>
                             </tr>
@@ -37,6 +39,7 @@
                                         <img src="{{ asset('images/' . $coupon->coupon_img) }}" height="90px"
                                             width="90px" class="img-fluid img-thumbnail" alt="{{ $coupon->coupon_img }}">
                                     </td>
+                                    <td>{{ $coupon->coupon_code ?? 'Not Required' }}</td>
                                     <td>{{ $coupon->coupon_expire }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Show.Coupon.Deals', ['id' => $coupon->id]) }}"

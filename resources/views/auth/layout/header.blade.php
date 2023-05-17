@@ -70,8 +70,8 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 center-xs">
                         <p class="topbar-text">
-                            <strong><i class="fa fa-phone"></i></strong> +90 987 123 45 67 &nbsp;&nbsp;
-                            <strong><i class="fa fa-envelope-o"></i>info@gmail.com</strong>
+                            <strong><i class="fa fa-phone"></i></strong> {{ env('APP_NAME') }} &nbsp;&nbsp;
+                            <strong><i class="fa fa-envelope-o"></i>{{ env('APP_EMAIL') }}</strong>
                         </p>
                     </div><!-- end col -->
                 </div><!-- end row -->
