@@ -17,15 +17,14 @@ class adminAuth
     public function handle(Request $request, Closure $next)
     {
 
-        if(auth()->user()->role == 'admin')
-        {
-            return $next($request);
-        }
-
-        elseif(auth()->user()->role == 'user')
-        {
+        if (auth()->user()->role == 'admin') {
+            if (auth()->user()->status == 'approved') {
+                return $next($request);
+            } else {
+                return redirect()->route('LandingPage');
+            }
+        } elseif (auth()->user()->role == 'user') {
             return redirect()->route('LandingPage');
         }
-
     }
 }

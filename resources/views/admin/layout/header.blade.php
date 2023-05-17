@@ -83,18 +83,23 @@
                         </a>
                     </li>
                     <li><a class="has-arrow ai-icon" href="{{ route('Admin.Messages') }}" aria-expanded="false">
-                        <i class="ti-home"></i>
-                        <span class="nav-text">User Messages</span>
-                    </a>
-                </li>
+                            <i class="ti-comment"></i>
+                            <span class="nav-text">User Messages</span>
+                        </a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{{ route('Admin.All.Users') }}" aria-expanded="false">
+                            <i class="ti-user"></i>
+                            <span class="nav-text">All Users</span>
+                        </a>
+                    </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="ti-menu-alt"></i>
                             <span class="nav-text">Categories</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Create.Category') }}">Add New Category</a></li>
-                             <li><a href="{{ route('Admin.All.Categories') }}">All Categories</a></li>
-                           {{-- <li><a href="{{ route('Admin.Approved.Users') }}">Approved User's</a></li>
+                            <li><a href="{{ route('Admin.All.Categories') }}">All Categories</a></li>
+                            {{-- <li><a href="{{ route('Admin.Approved.Users') }}">Approved User's</a></li>
                             <li><a href="{{ route('Admin.Rejected.Users') }}">Rejected User's</a></li> --}}
                         </ul>
                     </li>
@@ -104,7 +109,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Add.Store') }}">Add New Store</a></li>
-                             <li><a href="{{ route('Admin.All.Stores') }}">All Stores</a></li>
+                            <li><a href="{{ route('Admin.All.Stores') }}">All Stores</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -114,7 +119,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Coupon.Deal') }}">Add Coupon</a></li>
                             <li><a href="{{ route('Admin.All.Coupon.Deals') }}">All Coupon Deals</a></li>
-                             {{--<li><a href="{{ route('Admin.Rejected.Widthraw') }}">Rejected Widthraw</a></li> --}}
+                            {{-- <li><a href="{{ route('Admin.Rejected.Widthraw') }}">Rejected Widthraw</a></li> --}}
                         </ul>
                     </li>
                     {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

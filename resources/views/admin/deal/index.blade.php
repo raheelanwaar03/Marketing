@@ -17,6 +17,7 @@
                                 <th>Trending Status</th>
                                 <th>Image</th>
                                 <th>Code</th>
+                                <th>Store</th>
                                 <th>Expire Date</th>
                                 <th>Action</th>
                             </tr>
@@ -28,6 +29,7 @@
                                 <th>Trending Status</th>
                                 <th>Image</th>
                                 <th>Code</th>
+                                <th>Store</th>
                                 <th>Expire Date</th>
                                 <th>Action</th>
                             </tr>
@@ -43,6 +45,7 @@
                                             width="90px" class="img-fluid img-thumbnail" alt="{{ $coupon->coupon_img }}">
                                     </td>
                                     <td>{{ $coupon->coupon_code ?? 'Not Required' }}</td>
+                                    <td>{{ $coupon->coupon_store }}</td>
                                     <td>{{ $coupon->coupon_expire }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Show.Coupon.Deals', ['id' => $coupon->id]) }}"

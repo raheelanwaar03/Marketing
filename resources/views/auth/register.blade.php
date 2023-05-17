@@ -28,13 +28,6 @@
                                         <label class="control-label">Your Password</label>
                                         <input type="password" name="password_confirmation" class="form-control" placeholder="*********">
                                     </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <label class="control-label">Role</label>
-                                        <select name="role" class="form-control">
-                                            <option value="admin">Admin</option>
-                                            <option value="user">User</option>
-                                        </select>
-                                    </div>
                                     <div class="col-md-12 col-sm-12">
                                         <button type="submit" class="btn btn-primary">Add</button>
                                     </div>
