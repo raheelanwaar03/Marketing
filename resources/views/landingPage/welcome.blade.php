@@ -8,16 +8,14 @@
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <form class="well">
+                    <form action="{{ route('LandingPage.Search.items') }}" method="GET" class="well">
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                <form action="{{ route('LandingPage.Search.items') }}" method="GET">
-                                    @csrf
-                                    <input name="search" type="text" class="form-control"
-                                        placeholder="Search for coupons..." autocomplete="off" data-provide="typeahead">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </form>
+                                @csrf
+                                <input name="search" value="" type="text" class="form-control"
+                                    placeholder="Search for stores..." autocomplete="off" data-provide="typeahead">
+                                <button type="submit" class="btn btn-primary">Search</button>
                             </div>
                         </div>
                     </form>
@@ -30,7 +28,8 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            <a href="{{ route('LandingPage.Categorys') }}"><img src="{{ asset('assets/uploads/promo_01.png') }}" alt=""
+                            <a href="{{ route('LandingPage.Categorys') }}"><img
+                                    src="{{ asset('assets/uploads/promo_01.png') }}" alt=""
                                     class="img-responsive"></a>
                             <div class="promo-desc">
                                 <img src="{{ asset('assets/uploads/small_01.png') }}" alt=""
@@ -46,7 +45,8 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            <a href="{{ route('LandingPage.Categorys') }}"><img src="{{ asset('assets/uploads/promo_02.png') }}" alt=""
+                            <a href="{{ route('LandingPage.Categorys') }}"><img
+                                    src="{{ asset('assets/uploads/promo_02.png') }}" alt=""
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
@@ -63,7 +63,8 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            <a href="{{ route('LandingPage.Categorys') }}"><img src="{{ asset('assets/uploads/promo_03.png') }}" alt=""
+                            <a href="{{ route('LandingPage.Categorys') }}"><img
+                                    src="{{ asset('assets/uploads/promo_03.png') }}" alt=""
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
@@ -226,87 +227,89 @@
 
             <div class="row grid-coupons">
                 @forelse ($trending_coupons as $coupon)
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="coupon-list">
-                        <div class="coupon-wrapper">
-                            <div class="post-media">
-                                <a href="#"><img src="{{ asset('images/'.$coupon->coupon_img) }}"
-                                        alt="" class="img-responsive"></a>
-                            </div><!-- end media -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="coupon-list">
+                            <div class="coupon-wrapper">
+                                <div class="post-media">
+                                    <a href="#"><img src="{{ asset('images/' . $coupon->coupon_img) }}"
+                                            alt="" class="img-responsive"></a>
+                                </div><!-- end media -->
 
-                            <div class="coupon-meta">
-                                <h3><a href="#">{{ $coupon->coupon_name }}</a></h3>
-                                <p>{{ $coupon->coupon_des }}</p>
-                            </div><!-- end meta -->
+                                <div class="coupon-meta">
+                                    <h3><a href="#">{{ $coupon->coupon_name }}</a></h3>
+                                    <p>{{ $coupon->coupon_des }}</p>
+                                </div><!-- end meta -->
 
-                            <div class="showcode">
-                                <a href="#" class="code-link" data-ex-link="{{ $coupon->coupon_link }}">
-                                    <span class="coupon-code">{{ $coupon->coupon_code }}</span>
-                                    <span class="show-code">Show Code</span>
-                                </a>
-                            </div><!-- end showcode -->
+                                <div class="showcode">
+                                    <a href="#" class="code-link" data-ex-link="{{ $coupon->coupon_link }}">
+                                        <span class="coupon-code">{{ $coupon->coupon_code }}</span>
+                                        <span class="show-code">Show Code</span>
+                                    </a>
+                                </div><!-- end showcode -->
 
-                            <div class="coupon-bottom clearfix">
-                                <small class="pull-left">Expire : {{ $coupon->coupon_expire }}</small>
+                                <div class="coupon-bottom clearfix">
+                                    <small class="pull-left">Expire : {{ $coupon->coupon_expire }}</small>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Modal -->
-                        <div id="{{ $coupon->coupon_slug }}" class="modal fade code-modal">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4><a href="#">{{ $coupon->coupon_name }}</a></h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <a href="store-single.html"><img
-                                                        src="{{ asset('images/'.$coupon->coupon_img) }}" alt="{{ $coupon->coupon_img }}"
-                                                        class="img-responsive"></a>
-                                                <div class="modal-button">
-                                                    <a href="{{ $coupon->coupon_link }}" target="_blank" title=""
-                                                        class="btn btn-default btn-block">Visit
-                                                        Store <i class="fa fa-angle-right"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="coupon-meta">
-                                                    <div class="coupon-top clearfix">
+                            <!-- Modal -->
+                            <div id="{{ $coupon->coupon_slug }}" class="modal fade code-modal">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4><a href="#">{{ $coupon->coupon_name }}</a></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <a href="store-single.html"><img
+                                                            src="{{ asset('images/' . $coupon->coupon_img) }}"
+                                                            alt="{{ $coupon->coupon_img }}" class="img-responsive"></a>
+                                                    <div class="modal-button">
+                                                        <a href="{{ $coupon->coupon_link }}" target="_blank"
+                                                            title="" class="btn btn-default btn-block">Visit
+                                                            Store <i class="fa fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
-                                                <p>{{ $coupon->coupon_des }}</p>
+                                                <div class="col-md-8">
+                                                    <div class="coupon-meta">
+                                                        <div class="coupon-top clearfix">
+                                                        </div>
+                                                    </div>
+                                                    <p>{{ $coupon->coupon_des }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="coupon-area">
-                                            <div class="showcode row">
-                                                <div class="col-md-4 text-left">
-                                                    <div class="coupon-vote">
-                                                        <a href="#" data-toggle="tooltip" data-placement="bottom"
-                                                            title="Work!"><i class="fa fa-smile-o"></i></a>
-                                                        <a href="#" data-toggle="tooltip" data-placement="bottom"
-                                                            title="Poor!"><i class="fa fa-frown-o"></i></a>
+                                        <div class="modal-footer">
+                                            <div class="coupon-area">
+                                                <div class="showcode row">
+                                                    <div class="col-md-4 text-left">
+                                                        <div class="coupon-vote">
+                                                            <a href="#" data-toggle="tooltip"
+                                                                data-placement="bottom" title="Work!"><i
+                                                                    class="fa fa-smile-o"></i></a>
+                                                            <a href="#" data-toggle="tooltip"
+                                                                data-placement="bottom" title="Poor!"><i
+                                                                    class="fa fa-frown-o"></i></a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-8 text-center">
-                                                    <button data-clipboard-text="{{ $coupon->coupon_code }}"
-                                                        class="coupon-code btn btn-primary btn-block" type="submit"
-                                                        title="Click to Copy">{{ $coupon->coupon_code }}</button>
-                                                    <small>Click to Copy</small>
-                                                </div>
-                                            </div><!-- end row -->
-                                        </div><!-- end coupon-area -->
-                                    </div><!-- end modal-footer -->
-                                </div><!-- end mpdal-content -->
-                            </div><!-- end modal-dialog -->
-                        </div><!-- end modal -->
-                    </div><!-- end coupon list -->
-                </div>
+                                                    <div class="col-md-8 text-center">
+                                                        <button data-clipboard-text="{{ $coupon->coupon_code }}"
+                                                            class="coupon-code btn btn-primary btn-block" type="submit"
+                                                            title="Click to Copy">{{ $coupon->coupon_code }}</button>
+                                                        <small>Click to Copy</small>
+                                                    </div>
+                                                </div><!-- end row -->
+                                            </div><!-- end coupon-area -->
+                                        </div><!-- end modal-footer -->
+                                    </div><!-- end mpdal-content -->
+                                </div><!-- end modal-dialog -->
+                            </div><!-- end modal -->
+                        </div><!-- end coupon list -->
+                    </div>
                 @empty
-                <h4>No more recent coupon</h4>
+                    <h4>No more recent coupon</h4>
                 @endforelse
             </div>
             <div class="loadmorebutton text-center clearfix">

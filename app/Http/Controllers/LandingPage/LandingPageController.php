@@ -14,25 +14,25 @@ class LandingPageController extends Controller
     public function landingpage()
     {
         $categorys = Catagory::get();
-        $stores = Store::where('status',0)->get();
-        $coupons = Coupon::where('status',0)->get();
-        $trending_coupons = Coupon::where('status',1)->get();
-        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons','trending_coupons'));
+        $stores = Store::where('status', 0)->get();
+        $coupons = Coupon::where('status', 0)->get();
+        $trending_coupons = Coupon::where('status', 1)->get();
+        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons'));
     }
 
     public function contact()
     {
         $categorys = Catagory::orderBy('category_name', 'asc')->paginate(9);
-        $stores = Store::where('status',0)->get();
-        $coupons = Coupon::where('status',0)->get();
+        $stores = Store::where('status', 0)->get();
+        $coupons = Coupon::where('status', 0)->get();
         return view('landingPage.contactUs', compact('categorys', 'stores', 'coupons'));
     }
 
     public function allCategorys()
     {
         $categorys = Catagory::orderBy('category_name', 'asc')->paginate(9);
-        $stores = Store::where('status',0)->get();
-        $coupons = Coupon::where('status',0)->get();
+        $stores = Store::where('status', 0)->get();
+        $coupons = Coupon::where('status', 0)->get();
         return view('landingPage.category.index', compact('categorys', 'stores', 'coupons'));
     }
 
@@ -41,7 +41,7 @@ class LandingPageController extends Controller
     public function allCoupons()
     {
         $categorys = Catagory::get();
-        $stores = Store::where('status',0)->get();
+        $stores = Store::where('status', 0)->get();
         $coupons = Coupon::orderBy('coupon_name', 'asc')->paginate(9);
         return view('landingPage.coupons.index', compact('categorys', 'stores', 'coupons'));
     }
@@ -49,8 +49,8 @@ class LandingPageController extends Controller
     public function allStores()
     {
         $categorys = Catagory::get();
-        $coupons = Coupon::where('status',0)->get();
-        $stores = Store::orderBy('store_name', 'asc')->where('status','0')->paginate(9);
+        $coupons = Coupon::where('status', 0)->get();
+        $stores = Store::orderBy('store_name', 'asc')->where('status', '0')->paginate(9);
         return view('landingPage.store.index', compact('categorys', 'stores', 'coupons'));
     }
 
@@ -58,7 +58,7 @@ class LandingPageController extends Controller
     {
         $category = Catagory::find($id);
         // checking coupons on this category
-        $stores = Store::where('status',0)->get();
+        $stores = Store::where('status', 0)->get();
         $categorys = Catagory::get();
         $coupons = Coupon::where('coupon_category', $id)->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.category.single', compact('category', 'categorys', 'coupons', 'stores'));
@@ -67,7 +67,7 @@ class LandingPageController extends Controller
     public function storeItems($store_slug, $id)
     {
         $store = Store::find($id);
-        $stores = Store::where('status',0)->get();
+        $stores = Store::where('status', 0)->get();
         $categorys = Catagory::get();
         $coupons = Coupon::where('coupon_store', $id)->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys'));
@@ -81,15 +81,17 @@ class LandingPageController extends Controller
         $massage->subject = $request->subject;
         $massage->massage = $request->message;
         $massage->save();
-        return redirect()->back()->with('success','Thanks for connecting us we will come back to you as soon as possible');
+        return redirect()->back()->with('success', 'Thanks for connecting us we will come back to you as soon as possible');
     }
 
     public function searchItems(Request $request)
     {
-        $search_text = $request->search;
-        $products = Coupon::where('coupon_name','Like','%'.$search_text.'%')->get();
-        return $products;
-        return view('landingPage.search',compact('products'));
+        if ($request->search) {
+            $categorys = Catagory::get();
+            $stores = Store::where('store_name', 'Like', '%' .$request->search.'%')->latest()->paginate(10);
+            return view('landingPage.search', compact('stores','categorys'));
+        } else {
+            return redirect()->back()->with('error', 'Empty Search');
+        }
     }
-
 }
