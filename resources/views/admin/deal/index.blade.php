@@ -13,6 +13,7 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Type</th>
                                 <th>Trending Status</th>
                                 <th>Image</th>
                                 <th>Code</th>
@@ -23,6 +24,7 @@
                         <tfoot>
                             <tr>
                                 <th>Name</th>
+                                <th>Type</th>
                                 <th>Trending Status</th>
                                 <th>Image</th>
                                 <th>Code</th>
@@ -34,6 +36,7 @@
                             @foreach ($coupons as $coupon)
                                 <tr>
                                     <td>{{ $coupon->coupon_name }}</td>
+                                    <td>{{ $coupon->coupon_type }}</td>
                                     <td>{{ $coupon->status == '1' ? 'ON':'OFF' }}</td>
                                     <td>
                                         <img src="{{ asset('images/' . $coupon->coupon_img) }}" height="90px"
