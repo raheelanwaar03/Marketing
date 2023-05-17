@@ -12,9 +12,12 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                <input id="typeahead" type="text" class="form-control"
-                                    placeholder="Search for coupons..." autocomplete="off" data-provide="typeahead">
-                                <button type="submit" class="btn btn-primary">Search</button>
+                                <form action="{{ route('LandingPage.Search.items') }}" method="GET">
+                                    @csrf
+                                    <input name="search" type="text" class="form-control"
+                                        placeholder="Search for coupons..." autocomplete="off" data-provide="typeahead">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </form>
                             </div>
                         </div>
                     </form>
@@ -27,7 +30,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            <a href="categories.html"><img src="{{ asset('assets/uploads/promo_01.png') }}" alt=""
+                            <a href="{{ route('LandingPage.Categorys') }}"><img src="{{ asset('assets/uploads/promo_01.png') }}" alt=""
                                     class="img-responsive"></a>
                             <div class="promo-desc">
                                 <img src="{{ asset('assets/uploads/small_01.png') }}" alt=""
@@ -43,7 +46,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            <a href="categories.html"><img src="{{ asset('assets/uploads/promo_02.png') }}" alt=""
+                            <a href="{{ route('LandingPage.Categorys') }}"><img src="{{ asset('assets/uploads/promo_02.png') }}" alt=""
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
@@ -60,7 +63,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            <a href="categories.html"><img src="{{ asset('assets/uploads/promo_03.png') }}" alt=""
+                            <a href="{{ route('LandingPage.Categorys') }}"><img src="{{ asset('assets/uploads/promo_03.png') }}" alt=""
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">

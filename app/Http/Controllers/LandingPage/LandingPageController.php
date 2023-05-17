@@ -84,4 +84,12 @@ class LandingPageController extends Controller
         return redirect()->back()->with('success','Thanks for connecting us we will come back to you as soon as possible');
     }
 
+    public function searchItems(Request $request)
+    {
+        $search_text = $request->search;
+        $products = Coupon::where('coupon_name','Like','%'.$search_text.'%')->get();
+        return $products;
+        return view('landingPage.search',compact('products'));
+    }
+
 }

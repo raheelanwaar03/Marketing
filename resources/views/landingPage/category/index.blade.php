@@ -27,8 +27,12 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                     <div class="post-media text-center">
-                                        <a href="#"><img src="{{ asset('images/' . $category->category_img) }}"
-                                                alt="" class="img-responsive"></a>
+                                        @if ($category->image != '')
+                                        <a href="#"><img src="{{ asset('images/' . $category->image) }}"
+                                            alt="" class="img-responsive"></a>
+                                        @else
+                                            <h3>{{ $category->category_name }}</h3>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -144,7 +148,7 @@
                         @forelse ($stores as $store)
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
-                                    <a href="#"><img src="{{ $store->store_img }}" alt=""
+                                    <a href="#"><img src="{{ asset('images/'.$store->store_img) }}" alt=""
                                             class="img-responsive"></a>
                                     <small>{{ $store->store_name }}</small>
                                 </div>
