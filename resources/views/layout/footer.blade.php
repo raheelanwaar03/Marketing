@@ -116,7 +116,7 @@
                         <li><a href="{{ route('LandingPage.All.Stores') }}">All Stores</a></li>
                         <li><a href="{{ route('LandingPage.All.Coupons') }}">All Coupons</a></li>
                     </ul><!-- end ul -->
-                    <p>Disclaimer: The display of third-party trademarks and trade names on the site does not
+                    <p>Disclaimer : The display of third-party trademarks and trade names on the site does not
                         necessarily indicate any affiliation or service on their website, we may be paid a fee by the
                         merchant.</a></p>
                 </div><!-- end links -->

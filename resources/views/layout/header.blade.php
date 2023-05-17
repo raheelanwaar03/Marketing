@@ -91,7 +91,7 @@
                                 <button class="dl-trigger"><i class="fa fa-tags"></i></button>
                                 <p>Browse Deal</p>
                                 <ul class="dl-menu">
-                                    <li><a href="#">Coupon Codes</a></li>
+                                    <li><a href="{{ route('LandingPage.All.Coupons') }}">Coupon Codes</a></li>
                                 </ul>
                             </div>
                         </div><!-- end col -->

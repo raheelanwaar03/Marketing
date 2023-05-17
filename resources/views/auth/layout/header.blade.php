@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 center-xs">
                         <p class="topbar-text">
-                            <strong><i class="fa fa-phone"></i></strong> {{ env('APP_NAME') }} &nbsp;&nbsp;
+                            <strong><i class="fa fa-phone"></i></strong> {{ env('APP_NUM') }} &nbsp;&nbsp;
                             <strong><i class="fa fa-envelope-o"></i>{{ env('APP_EMAIL') }}</strong>
                         </p>
                     </div><!-- end col -->
@@ -91,7 +91,7 @@
                                 <button class="dl-trigger"><i class="fa fa-tags"></i></button>
                                 <p>Browse Deal</p>
                                 <ul class="dl-menu">
-                                    <li><a href="#">Coupon Codes</a></li>
+                                    <li><a href="{{ route('LandingPage.All.Coupons') }}">Coupon Codes</a></li>
                                 </ul>
                             </div>
                         </div><!-- end col -->
