@@ -53,7 +53,7 @@
                                         <select name="coupon_category" class="form-control">
                                             @foreach ($categorys as $category)
                                                 <option class="form-control"
-                                                    value="{{ $category->id }}">
+                                                    value="{{ $category->category_name }}">
                                                     {{ $category->category_name }}</option>
                                             @endforeach
                                         </select>
@@ -62,7 +62,7 @@
                                         <label for="" class="mb-1 ml-2">Coupon Store</label>
                                         <select name="coupon_store" class="form-control">
                                             @foreach ($stores as $store)
-                                                <option class="form-control" value="{{ $store->id }}">
+                                                <option class="form-control" value="{{ $store->store_name }}">
                                                     {{ $store->store_name }}</option>
                                             @endforeach
                                         </select>

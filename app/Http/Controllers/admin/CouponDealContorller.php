@@ -52,7 +52,7 @@ class CouponDealContorller extends Controller
 
     public function index()
     {
-        $coupons = Coupon::paginate(10);
+        $coupons = Coupon::get();
         return view('admin.deal.index', compact('coupons'));
     }
 

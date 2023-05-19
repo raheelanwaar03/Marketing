@@ -23,9 +23,9 @@ Route::get('/All/Coupons',[LandingPageController::class,'allCoupons'])->name('La
 // All Stores
 Route::get('/All/Stores',[LandingPageController::class,'allStores'])->name('LandingPage.All.Stores');
 // single category link
-Route::get('Category/{category_slug}/{id}',[LandingPageController::class,'singleCategory'])->name('LandingPage.Single.Category');
+Route::get('Category/{category_slug}',[LandingPageController::class,'singleCategory'])->name('LandingPage.Single.Category');
 // single store route
-Route::get('Store/{store_slug}/{id}',[LandingPageController::class,'storeItems'])->name('LandingPage.Single.Store');
+Route::get('Store/{store_slug}',[LandingPageController::class,'storeItems'])->name('LandingPage.Single.Store');
 // search for coupons
 Route::get('/Search',[LandingPageController::class,'searchItems'])->name('LandingPage.Search.items');
 

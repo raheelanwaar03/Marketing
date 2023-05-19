@@ -119,9 +119,8 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="coupon-list">
                             <div class="coupon-wrapper">
-                                <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/' . $coupon->coupon_img) }}"
-                                            alt="img" class="img-responsive"></a>
+                                <div class="post-media min-vh-50" style="border:1px solid rgb(0,187,211);">
+                                    <h2 class="text-center mt-3" style="color:rgb(0,187,211)">{{ $coupon->coupon_text }}</h2>
                                 </div>
                                 <!-- end media -->
 

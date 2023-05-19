@@ -83,7 +83,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-6">
-                            <a class="navbar-brand" href="index.html">{{ env('APP_NAME') }} <small>Discount Coupon
+                            <a class="navbar-brand" href="{{ route('LandingPage') }}">{{ env('APP_NAME') }} <small>Discount Coupon
                                     Codes</small></a>
                         </div><!-- end col -->
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
@@ -139,7 +139,7 @@
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="{{ route('LandingPage.Categorys') }}">All Categories</a></li>
                                             @forelse ($categorys as $category)
-                                                <li><a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug,'id'=>$category->id]) }}">{{ $category->category_name }}</a>
+                                                <li><a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug]) }}">{{ $category->category_name }}</a>
                                                 </li>
                                             @empty
                                                 <h4>No more category</h4>
@@ -152,7 +152,7 @@
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="{{ route('LandingPage.All.Stores') }}">All Stores</a></li>
                                             @forelse ($stores as $store)
-                                                <li><a href="{{ route('LandingPage.Single.Store',['store_slug'=>$store->store_slug,'id'=>$store->id]) }}">{{ $store->store_name }}</a></li>
+                                                <li><a href="{{ route('LandingPage.Single.Store',['store_slug'=>$store->store_slug]) }}">{{ $store->store_name }}</a></li>
                                             @empty
                                                 <h4>No more Store</h4>
                                             @endforelse
