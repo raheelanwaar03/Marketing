@@ -12,8 +12,7 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4 col-xs-12">
                                         <div class="post-media text-center P-4" style="border: 1px solid rgb(0,187,211)">
-                                            <h1 style="color:rgb(0,187,211);font-size:30px;padding:30px;">
-                                                {{ $coupon->coupon_text }}</h1>
+                                            <h1 style="color:rgb(0,187,211);font-size:30px;padding:30px;">{{ $coupon->coupon_text }}</h1>
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -175,9 +174,8 @@
                     @forelse ($stores as $store)
                         <div class="col-md-2 col-sm-4 col-xs-6">
                             <div class="post-media">
-                                <a href="coupon-single.html"><img src="{{ asset('images/' . $store->store_img) }}"
-                                        alt="" height="100px" width="100px"
-                                        class="img-thumbnail img-responsive"></a>
+                                <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
+                                        height="100px" width="100px" class="img-thumbnail img-responsive"></a>
                                 <small>{{ $store->store_name }}</small>
                             </div>
                         </div>
