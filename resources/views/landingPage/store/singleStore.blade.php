@@ -10,7 +10,7 @@
                             <div class="col-md-3 col-sm-3 col-xs-12">
                                 <div class="post-media text-center">
                                     <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt="img"
-                                            height="70px" width="70px" class="img-responsive"></a>
+                                            height="72px" width="72px" class="img-responsive"></a>
                                 </div>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-12">
