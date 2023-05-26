@@ -118,94 +118,48 @@
             <div class="footer-content">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>We have coupon on all type of Categories</h4>
-                    </div>
-                    <!-- end col -->
-                </div>
-
-                <div class="row">
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Baby Kids</a></li>
-                            <li><a href="#">Books & Magazines</a></li>
-                            <li><a href="#">Computers</a></li>
-                            <li><a href="#">Cameras</a></li>
-                            <li><a href="#">Electronics</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Gifts</a></li>
-                            <li><a href="#">Health Beauty</a></li>
-                            <li><a href="#">Home Garden</a></li>
-                            <li><a href="#">Home Supplies</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Entertainetmen</a></li>
-                            <li><a href="#">Digital Stores</a></li>
-                            <li><a href="#">Marketplaces</a></li>
-                            <li><a href="#">Musicians</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Movies & Films</a></li>
-                            <li><a href="#">Phones</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Televisions</a></li>
-                            <li><a href="#">Telegraphers</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Baby Toys</a></li>
-                            <li><a href="#">Clothings</a></li>
-                            <li><a href="#">Jewellry</a></li>
-                            <li><a href="#">Car Supplies</a></li>
-                            <li><a href="#">Watches</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Glassess</a></li>
-                            <li><a href="#">Medical</a></li>
-                            <li><a href="#">Pet Shops</a></li>
-                            <li><a href="#">LifeStyle</a></li>
-                            <li><a href="#">Sports</a></li>
-                        </ul>
+                        <h4>Popular Categories</h4>
                     </div>
                 </div>
-                <!-- end row -->
-
-                <hr class="">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Popular Stores</h4>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <div class="text-center store-list row">
-                    @forelse ($stores as $store)
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="post-media">
-                                <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
-                                        class="img-thumbnail img-responsive"></a>
-                                <small>{{ $store->store_name }}</small>
-                            </div>
+                <div class="footer-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Popular Categories</h4>
                         </div>
-                    @empty
-                        <h3>NO Store Avaliable</h3>
-                    @endforelse
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <ul class="customlist">
+                                <li><a
+                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <hr class="">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Popular Stores</h4>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="text-center store-list row">
+                        @forelse ($stores as $store)
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+                                <div class="post-media">
+                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
+                                            class="img-responsive"></a>
+                                    <small>{{ $store->store_name }}</small>
+                                </div>
+                            </div>
+                        @empty
+                            <h3>No store available</h3>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>
