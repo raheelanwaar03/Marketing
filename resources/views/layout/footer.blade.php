@@ -33,6 +33,26 @@
                 </div><!-- end widget -->
             </div><!-- end col -->
 
+            <div class="col-md-2 col-sm-12 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h4>All Stores</h4>
+                    </div>
+
+                    <ul class="footer-links">
+
+                        @forelse ($stores as $store)
+                        <li><a
+                                href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">{{ $store->store_name }}</a>
+                        </li>
+                        @empty
+                        <h3>No Store Added yet!</h3>
+                        @endforelse
+                    </ul><!-- end links -->
+                </div><!-- end widget -->
+            </div><!-- end col -->
+
+
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
