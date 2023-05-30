@@ -90,14 +90,14 @@
             <div class="text-center store-list row">
                 @forelse ($stores as $store)
                     <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="post-media" style="height:80px;width:80px;">
-                            <a href="#"><img
-                                    src="{{ asset('images/' . $store->store_img) }}" class="img-responsive"></a>
+                        <div class="post-media">
+                            <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt="" height="80px" width="80px"
+                                    class="img-responsive"></a>
                             <small>{{ $store->store_name }}</small>
                         </div>
                     </div>
                 @empty
-                    <h4>NO Store</h4>
+                    <h4>No Store</h4>
                 @endforelse
             </div><!-- end row -->
         </div><!-- end container -->
