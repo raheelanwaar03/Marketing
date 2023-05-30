@@ -15,8 +15,8 @@ class LandingPageController extends Controller
     {
         $categorys = Catagory::get();
         $stores = Store::where('status', 0)->get();
-        $coupons = Coupon::where('status', 0)->where('coupon_type','Coupon')->get();
-        $trending_coupons = Coupon::where('status', 0)->where('coupon_type','Deal')->get();
+        $coupons = Coupon::where('status', 1)->where('coupon_type', 'Coupon')->get();
+        $trending_coupons = Coupon::where('status', 1)->where('coupon_type', 'Deal')->get();
         return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons'));
     }
 
@@ -42,7 +42,7 @@ class LandingPageController extends Controller
     {
         $categorys = Catagory::get();
         $stores = Store::where('status', 0)->get();
-        $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type','Coupon')->paginate(9);
+        $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type', 'Coupon')->paginate(9);
         return view('landingPage.coupons.index', compact('categorys', 'stores', 'coupons'));
     }
 
@@ -56,21 +56,24 @@ class LandingPageController extends Controller
 
     public function singleCategory($category_slug)
     {
-        $category = Catagory::where('category_slug',$category_slug)->first();
+        $category = Catagory::where('category_slug', $category_slug)->first();
+        $category_name = $category->category_name;
         // checking coupons on this category
         $stores = Store::where('status', 0)->get();
         $categorys = Catagory::get();
-        $coupons = Coupon::where('coupon_category', $category_slug)->orderBy('coupon_name', 'asc')->paginate(10);
+        $coupons = Coupon::where('coupon_category', $category_name)->where('status', 0)->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.category.single', compact('category', 'categorys', 'coupons', 'stores'));
     }
 
     public function storeItems($store_slug)
     {
-        $store = Store::where('store_slug',$store_slug)->first();
+        $store = Store::where('store_slug', $store_slug)->first();
+        $store_name = $store->store_name;
         $stores = Store::where('status', 0)->get();
         $categorys = Catagory::get();
-        $coupons = Coupon::where('coupon_store', $store_slug)->orderBy('coupon_name', 'asc')->paginate(10);
-        return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys'));
+        $coupons = Coupon::where('coupon_store', $store_name)->where('status', 0)->where('coupon_type', 'coupon')->orderBy('coupon_name', 'asc')->paginate(10);
+        $trending_coupons = Coupon::where('coupon_store', $store_name)->where('status', 0)->where('coupon_type', 'deal')->orderBy('coupon_name', 'asc')->paginate(10);
+        return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys', 'trending_coupons'));
     }
 
     public function contact_form(Request $request)
@@ -88,8 +91,8 @@ class LandingPageController extends Controller
     {
         if ($request->search) {
             $categorys = Catagory::get();
-            $stores = Store::where('store_name', 'Like', '%' .$request->search.'%')->latest()->paginate(10);
-            return view('landingPage.search', compact('stores','categorys'));
+            $stores = Store::where('store_name', 'Like', '%' . $request->search . '%')->latest()->paginate(10);
+            return view('landingPage.search', compact('stores', 'categorys'));
         } else {
             return redirect()->back()->with('error', 'Empty Search');
         }
@@ -99,7 +102,7 @@ class LandingPageController extends Controller
     {
         $categorys = Catagory::get();
         $stores = Store::where('status', 0)->get();
-        $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type','Deal')->paginate(9);
+        $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type', 'Deal')->paginate(9);
         return view('landingPage.allDeals', compact('categorys', 'stores', 'coupons'));
     }
 }

@@ -62,7 +62,7 @@
                                         <select name="coupon_store" value="{{ $coupon->coupon_store }}"
                                             class="form-control">
                                             @foreach ($stores as $store)
-                                                <option class="form-control" value="{{ $store->id }}">
+                                                <option class="form-control" value="{{ $store->store_name }}">
                                                     {{ $store->store_name }}</option>
                                             @endforeach
                                         </select>

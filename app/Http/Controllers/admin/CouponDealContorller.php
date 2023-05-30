@@ -79,7 +79,7 @@ class CouponDealContorller extends Controller
         $coupon->status = $request->status == True ? '1' : '0';
         $coupon->coupon_expire = $request->coupon_expire;
         $coupon->save();
-        return redirect()->back()->with('success', 'Coupon updated successfully');
+        return redirect()->route('Admin.All.Coupon.Deals')->with('success', 'Coupon updated successfully');
     }
 
     public function destroy($id)

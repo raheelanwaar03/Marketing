@@ -91,7 +91,7 @@
                 @forelse ($stores as $store)
                     <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="post-media">
-                            <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
+                            <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt="" height="80px" width="80px"
                                     class="img-responsive"></a>
                             <small>{{ $store->store_name }}</small>
                         </div>

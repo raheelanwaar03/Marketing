@@ -9,8 +9,14 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-12">
                                 <div class="post-media text-center">
-                                    <a href="#"><img src="{{ asset('images/' . $category->category_img) }}"
-                                            alt="img" height="70px" width="70px" class="img-responsive"></a>
+                                    @if ($category->image != '')
+                                        <a href="#"><img src="{{ asset('images/' . $category->image) }}" alt=""
+                                                class="img-responsive"></a>
+                                    @else
+                                        <div style="border:1px solid rgb(0,187,211);padding:40px;">
+                                            <h3 style="color:rgb(0,187,211);">{{ $category->category_name }}</h3>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-12">
@@ -28,9 +34,12 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4 col-xs-12">
                                         <div class="post-media text-center">
-                                            <a href="#"><img src="{{ asset('images/' . $coupon->coupon_img) }}"
-                                                    alt="img" class="img-responsive"></a>
-                                            <small><a href="store-single.html">View Store Coupons</a></small>
+                                            <div class="post-media text-center"
+                                                style="border:1px solid rgb(0,187,211);margin-bottom:14px;">
+                                                <h2 class="text-center mt-3" style="color:rgb(0,187,211);padding:50px;">
+                                                    {{ $coupon->coupon_text }}
+                                                </h2>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -64,9 +73,11 @@
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <a href="#"><img
-                                                                src="{{ asset('images/' . $coupon->coupon_img) }}"
-                                                                alt="" class="img-responsive"></a>
+                                                        <div style="border: 1px solid rgb(0,187,211)">
+                                                            <h2 class="text-center"
+                                                                style="color:rgb(0,187,211);padding:20px">
+                                                                {{ $coupon->coupon_text }}</h2>
+                                                        </div>
                                                         <div class="modal-button">
                                                             <a href="{{ $coupon->coupon_link }}" target="_blank"
                                                                 title="" class="btn btn-default btn-block">Visit Store
@@ -151,8 +162,8 @@
                         @forelse ($stores as $store)
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
-                                            class="img-responsive"></a>
+                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
+                                            height="80px" width="80px" alt="" class="img-responsive"></a>
                                     <small>{{ $store->store_name }}</small>
                                 </div>
                             </div>
