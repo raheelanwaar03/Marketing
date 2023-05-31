@@ -86,19 +86,17 @@
                 </div>
                 <!-- end col -->
             </div>
-
             <div class="text-center store-list row">
-                @forelse ($stores as $store)
-                    <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                @foreach ($stores as $store)
+                    <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="post-media">
-                            <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt="" height="80px" width="80px"
+                            <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}"><img
+                                    src="{{ asset('images/' . $store->store_img) }}" style="width:150px;height:150px;"
                                     class="img-responsive"></a>
                             <small>{{ $store->store_name }}</small>
-                        </div>
+                        </div><!-- end media -->
                     </div>
-                @empty
-                    <h4>No Store</h4>
-                @endforelse
+                @endforeach
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->

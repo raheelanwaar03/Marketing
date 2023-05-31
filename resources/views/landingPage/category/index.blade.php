@@ -94,7 +94,7 @@
                         @forelse ($stores as $store)
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/'.$store->store_img) }}" alt=""
+                                    <a href="#"><img src="{{ asset('images/'.$store->store_img) }}" style="width:150px;height:150px;"
                                             class="img-responsive"></a>
                                     <small>{{ $store->store_name }}</small>
                                 </div>

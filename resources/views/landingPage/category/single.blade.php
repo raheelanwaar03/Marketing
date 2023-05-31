@@ -163,7 +163,7 @@
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
                                     <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
-                                            height="80px" width="80px" alt="" class="img-responsive"></a>
+                                        style="width:150px;height:150px;" class="img-responsive"></a>
                                     <small>{{ $store->store_name }}</small>
                                 </div>
                             </div>
