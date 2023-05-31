@@ -124,6 +124,23 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">Add Home Page Images</h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="{{ route('Admin.Add.Home.Image') }}" method="POST">
+                                @csrf
+                                <label for="">Image</label>
+                                <input type="file" name="home_img" class="form-control">
+                                <button class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

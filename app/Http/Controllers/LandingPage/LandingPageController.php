@@ -7,17 +7,19 @@ use App\Models\admin\Coupon;
 use App\Models\admin\Store;
 use App\Models\Catagory;
 use App\Models\ContactUs;
+use App\Models\Home_page_Img;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
 {
     public function landingpage()
     {
+        $homeImages = Home_page_Img::get();
         $categorys = Catagory::get();
         $stores = Store::where('status', 0)->get();
         $coupons = Coupon::where('status', 1)->where('coupon_type', 'Coupon')->get();
         $trending_coupons = Coupon::where('status', 1)->where('coupon_type', 'Deal')->get();
-        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons'));
+        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons','homeImages'));
     }
 
     public function contact()

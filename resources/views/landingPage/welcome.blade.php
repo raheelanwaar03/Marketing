@@ -28,8 +28,10 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
+                            @foreach ($homeImages as $homeImage)
+                            @endforeach
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('assets/uploads/promo_01.png') }}" alt=""
+                                    src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
                                     class="img-responsive"></a>
                             <div class="promo-desc">
                                 <img src="{{ asset('assets/uploads/small_01.png') }}" alt=""
@@ -46,11 +48,11 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('assets/uploads/promo_02.png') }}" alt=""
+                                    src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
-                                <img src="{{ asset('assets/uploads/small_02.png') }}" alt=""
+                                <img src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
                                     class="alignleft img-thumbnail">
                                 <h4><a href="#">Shop for Kids</a></h4>
                                 <small>44 Available Coupons</small>

@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
                 <h2 class="mb-3 me-auto">Admin Dashboard</h2>
-                <a href="{{ route('Admin.All.Categories') }}" class="btn btn-primary">Add New</a>
+                <a href="{{ route('Admin.Create.Category') }}" class="btn btn-primary">Add New</a>
             </div>
             <div class="row">
                 <div class="col-xl-12">

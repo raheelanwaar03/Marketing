@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminCategoryController;
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\CouponDealContorller;
+use App\Http\Controllers\admin\HomePageImages;
 use App\Http\Controllers\admin\StoreController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,10 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
     Route::get('/Make/User/Admin/{id}', [AdminDashboardController::class, 'makeAdmin'])->name('Make.Admin');
     Route::get('/Approve/User/{id}', [AdminDashboardController::class, 'approveUser'])->name('Make.User.Approved');
     Route::get('/Pending/User/{id}', [AdminDashboardController::class, 'pendingUser'])->name('Make.User.Pending');
+
+    // add home page images
+    Route::post('/Home/Page/Images',[HomePageImages::class,'homeImages'])->name('Add.Home.Image');
+
     // stores routes
 
     Route::get('/Add/Store', [StoreController::class, 'create'])->name('Add.Store');
