@@ -18,7 +18,9 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
     Route::get('/Pending/User/{id}', [AdminDashboardController::class, 'pendingUser'])->name('Make.User.Pending');
 
     // add home page images
-    Route::post('/Home/Page/Images',[HomePageImages::class,'homeImages'])->name('Add.Home.Image');
+    Route::get('/Add/Home/Page/Images',[HomePageImages::class,'addHomeImages'])->name('Add.Home.Image');
+    Route::post('/Home/Page/Images',[HomePageImages::class,'homeImages'])->name('Store.Home.Image');
+    Route::get('/Delete/Home/Page/Images/{id}',[HomePageImages::class,'delHomeImages'])->name('Del.Home.Image');
 
     // stores routes
 

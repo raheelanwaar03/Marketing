@@ -10,13 +10,31 @@ class HomePageImages extends Controller
 {
     public function homeImages(Request $request)
     {
-        $image = $request->home_img;
-        $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
+        if ($request->has('home_img')) {
+            $image = $request['home_img'];
+            // return $image;
+            $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $homeImg = new Home_page_Img();
+            $homeImg->home_img = $imageName;
+            $homeImg->save();
+            return redirect()->back()->with('success', 'Image added successfully');
+        }
+        else{
+            return redirect()->back()->with('error','Please Insert an Image');
+        }
+    }
 
-        $home_img = new Home_page_Img();
-        $home_img->home_img = $imageName;
-        $home_img->save();
+    public function addHomeImages()
+    {
+        $homeImages = Home_page_Img::get();
+        return view('admin.newImages', compact('homeImages'));
+    }
 
+    public function delHomeImages($id)
+    {
+        $homeImage = Home_page_Img::find($id);
+        $homeImage->delete();
+        return redirect()->back()->with('success', 'Image deleted successfuly');
     }
 }

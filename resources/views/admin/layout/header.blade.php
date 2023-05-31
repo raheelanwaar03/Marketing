@@ -87,6 +87,11 @@
                             <span class="nav-text">User Messages</span>
                         </a>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="{{ route('Admin.Add.Home.Image') }}" aria-expanded="false">
+                            <i class="ti-save-alt"></i>
+                            <span class="nav-text">Add Images</span>
+                        </a>
+                    </li>
                     <li><a class="has-arrow ai-icon" href="{{ route('Admin.All.Users') }}" aria-expanded="false">
                             <i class="ti-user"></i>
                             <span class="nav-text">All Users</span>
