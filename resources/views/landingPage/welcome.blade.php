@@ -29,16 +29,15 @@
                     <div class="promobox">
                         <div class="post-media">
                             @foreach ($homeImages as $homeImage)
-                            @endforeach
-                            <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img) }}" style="height:300px;width:400px;"
-                                    class="img-responsive"></a>
-                            <div class="promo-desc">
-                                <img src="{{ asset('images/' . $homeImage->home_img) }}"
-                                    class="alignleft img-thumbnail">
-                                <h4><a href="#">Shop for LifeStyle</a></h4>
-                                <small>128 Available Coupons</small>
-                            </div><!-- end desc -->
+                                <a href="{{ route('LandingPage.Categorys') }}"><img
+                                        src="{{ asset('images/' . $homeImage->home_img) }}"
+                                        style="height:300px;width:400px;" class="img-responsive"></a>
+                                <div class="promo-desc">
+                                    <img src="{{ asset('images/' . $homeImage->home_img) }}"
+                                        class="alignleft img-thumbnail">
+                                    <h4><a href="#">Shop for LifeStyle</a></h4>
+                                    <small>128 Available Coupons</small>
+                                </div><!-- end desc -->
                         </div><!-- end media -->
 
                     </div><!-- end box -->
@@ -48,12 +47,11 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img) }}" style="height:300px;width:400px;"
+                                    src="{{ asset('images/' . $homeImage->home_img1) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
-                                <img src="{{ asset('images/' . $homeImage->home_img) }}"
-                                    class="alignleft img-thumbnail">
+                                <img src="{{ asset('images/' . $homeImage->home_img1) }}" class="alignleft img-thumbnail">
                                 <h4><a href="#">Shop for Kids</a></h4>
                                 <small>44 Available Coupons</small>
                             </div><!-- end desc -->
@@ -66,11 +64,11 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img) }}" style="height:300px;width:400px;"
+                                    src="{{ asset('images/' . $homeImage->home_img2) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
-                                <img src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
+                                <img src="{{ asset('images/' . $homeImage->home_img2) }}" alt=""
                                     class="alignleft img-thumbnail">
                                 <h4><a href="#">Shop for Pets</a></h4>
                                 <small>55 Available Coupons</small>
@@ -78,6 +76,7 @@
                         </div><!-- end media -->
                     </div><!-- end box -->
                 </div><!-- end col -->
+                @endforeach
             </div><!-- end row -->
 
             <hr class="invis3">

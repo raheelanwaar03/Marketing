@@ -14,8 +14,18 @@
                                 <div class="card-body">
                                     <form action="{{ route('Admin.Store.Home.Image') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        <label for="">Image</label>
-                                        <input type="file" name="home_img" class="form-control">
+                                        <div class="form-group">
+                                            <label for="">First Image</label>
+                                            <input type="file" name="home_img" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Secound Image</label>
+                                            <input type="file" name="home_img1" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Third Image</label>
+                                            <input type="file" name="home_img2" class="form-control" required>
+                                        </div>
                                         <button class="btn btn-primary mt-3">Add</button>
                                     </form>
                                 </div>
@@ -33,7 +43,9 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Image</th>
+                                <th>First Image</th>
+                                <th>Secound Image</th>
+                                <th>Third Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -43,6 +55,12 @@
                                     <td>{{ $homeImage->id }}</td>
                                     <td>
                                         <img src="{{ asset('images/'.$homeImage->home_img) }}" class="img-responsive" height="90px" width="90px">
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset('images/'.$homeImage->home_img1) }}" class="img-responsive" height="90px" width="90px">
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset('images/'.$homeImage->home_img2) }}" class="img-responsive" height="90px" width="90px">
                                     </td>
                                     <td>
                                         <a href="{{ route('Admin.Del.Home.Image',['id'=>$homeImage->id]) }}"

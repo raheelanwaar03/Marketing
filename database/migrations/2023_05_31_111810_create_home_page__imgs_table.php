@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('home_page__imgs', function (Blueprint $table) {
             $table->id();
             $table->string('home_img');
+            $table->string('home_img1');
+            $table->string('home_img2');
             $table->timestamps();
         });
     }
