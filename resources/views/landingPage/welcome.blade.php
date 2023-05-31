@@ -28,7 +28,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="promobox">
                         <div class="post-media">
-                            @foreach ($homeImages as $homeImage)
+                            @forelse ($homeImages as $homeImage)
                                 <a href="{{ route('LandingPage.Categorys') }}"><img
                                         src="{{ asset('images/' . $homeImage->home_img) }}"
                                         style="height:300px;width:400px;" class="img-responsive"></a>
@@ -76,7 +76,9 @@
                         </div><!-- end media -->
                     </div><!-- end box -->
                 </div><!-- end col -->
-                @endforeach
+                @empty
+                No Images yet
+                @endforelse
             </div><!-- end row -->
 
             <hr class="invis3">
