@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>{{ $homeImage->id }}</td>
                                     <td>
-                                        <img src="{{ asset('images/'.$homeImage->home_img) }}" class="img-responsive" height="60px" width="60px">
+                                        <img src="{{ asset('images/'.$homeImage->home_img) }}" class="img-responsive" height="90px" width="90px">
                                     </td>
                                     <td>
                                         <a href="{{ route('Admin.Del.Home.Image',['id'=>$homeImage->id]) }}"
