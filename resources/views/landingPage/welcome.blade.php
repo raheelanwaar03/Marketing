@@ -31,10 +31,10 @@
                             @foreach ($homeImages as $homeImage)
                             @endforeach
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
+                                    src="{{ asset('images/' . $homeImage->home_img) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
                             <div class="promo-desc">
-                                <img src="{{ asset('assets/uploads/small_01.png') }}" alt=""
+                                <img src="{{ asset('images/' . $homeImage->home_img) }}"
                                     class="alignleft img-thumbnail">
                                 <h4><a href="#">Shop for LifeStyle</a></h4>
                                 <small>128 Available Coupons</small>
@@ -48,11 +48,11 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
+                                    src="{{ asset('images/' . $homeImage->home_img) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
-                                <img src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
+                                <img src="{{ asset('images/' . $homeImage->home_img) }}"
                                     class="alignleft img-thumbnail">
                                 <h4><a href="#">Shop for Kids</a></h4>
                                 <small>44 Available Coupons</small>
@@ -66,11 +66,11 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('assets/uploads/promo_03.png') }}" alt=""
+                                    src="{{ asset('images/' . $homeImage->home_img) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
-                                <img src="{{ asset('assets/uploads/small_03.png') }}" alt=""
+                                <img src="{{ asset('images/' . $homeImage->home_img) }}" alt=""
                                     class="alignleft img-thumbnail">
                                 <h4><a href="#">Shop for Pets</a></h4>
                                 <small>55 Available Coupons</small>
