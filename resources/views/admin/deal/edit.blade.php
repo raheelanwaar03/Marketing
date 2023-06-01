@@ -13,7 +13,7 @@
                             <h3 class="text-center my-3 text-gradient">Edit Coupon</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('Admin.Update.Coupon',['id'=>$coupon->id]) }}" method="POST"
+                            <form action="{{ route('Admin.Update.Coupon', ['id' => $coupon->id]) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group my-3">
@@ -28,8 +28,10 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Description</label>
-                                    <input type="text" name="coupon_des" class="form-control"
-                                        value="{{ $coupon->coupon_des }}">
+                                    <select name="coupon_type" value="{{ $coupon->coupon_des }}" class="form-control">
+                                        <option value="Deal">Deal</option>
+                                        <option value="Coupon">Coupon</option>
+                                    </select>
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Type</label>
@@ -70,11 +72,13 @@
                                 </div>
                                 <div class="form-check my-3">
                                     <label for="" class="form-check-label mb-1 ml-2">Trending</label>
-                                    <input type="checkbox" name="status" {{ $coupon->status == '1' ? 'checked':'0' }} class="form-check-input">
+                                    <input type="checkbox" name="status" {{ $coupon->status == '1' ? 'checked' : '0' }}
+                                        class="form-check-input">
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Image</label>
-                                    <input type="text" name="coupon_text" class="form-control" value="{{ $coupon->coupon_text }}">
+                                    <input type="text" name="coupon_text" class="form-control"
+                                        value="{{ $coupon->coupon_text }}">
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Expire</label>
