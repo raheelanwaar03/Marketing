@@ -58,17 +58,20 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                        <div class="coupon-meta">
-                                            <h3><a href="#">{{ $coupon->coupon_name }}</a></h3>
-                                            <p>{{ $coupon->coupon_des }}.</p>
-                                        </div><!-- end meta -->
+                                        <div class="d-flex jusitfy-content-center align-items-center">
+                                            <div class="coupon-meta">
+                                                <h3><a href="#">{{ $coupon->coupon_name }}</a></h3>
+                                                <p>{{ $coupon->coupon_des }}.</p>
+                                            </div>
 
-                                        <div class="showcode">
-                                            <a href="#" style="float: right;" class="code-link" data-ex-link="{{ $coupon->coupon_link }}">
-                                                <span class="coupon-code">{{ $coupon->coupon_code }}</span>
-                                                <span class="show-code">Show Code</span>
-                                            </a>
-                                        </div><!-- end showcode -->
+                                            <div class="showcode">
+                                                <a href="#" style="float: right;" class="code-link"
+                                                    data-ex-link="{{ $coupon->coupon_link }}">
+                                                    <span class="coupon-code">{{ $coupon->coupon_code }}</span>
+                                                    <span class="show-code">Show Code</span>
+                                                </a>
+                                            </div>
+                                        </div>
 
                                         <div class="coupon-bottom clearfix">
                                             <small class="pull-left">Expire : {{ $coupon->coupon_expire }}</small>
