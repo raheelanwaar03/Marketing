@@ -4,6 +4,10 @@
     {{ $store->store_name }}
 @endsection
 
+@section('link')
+<link rel="canonical" href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}" />
+@endsection
+
 @section('content')
     <div class="section">
         <div class="container">

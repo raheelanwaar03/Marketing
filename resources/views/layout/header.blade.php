@@ -12,6 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
+    @yield('link')
 
     <!-- FAVICONS -->
     <link rel="shortcut icon" href="{{ asset('assets/imagesfavicon.ico') }}" type="image/x-icon">
@@ -49,8 +50,8 @@
         media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin9.css') }}" title="skin9"
         media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}" title="skin10"
-        media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin10.css') }}"
+        title="skin10" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin11.css') }}"
         title="skin11" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin12.css') }}"
