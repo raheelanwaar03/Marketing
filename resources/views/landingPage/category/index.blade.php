@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    <h3>All Categorys</h3>
+    All Categorys
 @endsection
 
 @section('content')

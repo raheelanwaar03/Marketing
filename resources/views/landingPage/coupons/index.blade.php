@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    <h3>All Coupons</h3>
+    All Coupons
 @endsection
 
 @section('content')

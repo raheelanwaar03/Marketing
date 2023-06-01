@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    <h3>Contact Us</h3>
+    Contact Us
 @endsection
 
 @section('content')

@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+    Search Stores
+@endsection
+
 @section('content')
     <section class="section page-title-wrapper wb">
         <div class="container">

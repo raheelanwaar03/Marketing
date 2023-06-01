@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    <h3>{{ $category->category_name }}</h3>
+    {{ $category->category_name }}
 @endsection
 
 @section('content')

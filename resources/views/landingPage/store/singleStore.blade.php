@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    <h3>{{ $store->store_name }}</h3>
+    {{ $store->store_name }}
 @endsection
 
 @section('content')
