@@ -8,10 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE META -->
-    <title> @yield('title') | Brings discount on thousand of products</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+    <title> @yield('title')|Coupons & Discount Codes - 50% Off Sitewide</title>
+    <meta name="description"
+        content="Find the best of @yield('title') deals, coupons, codes and discounts for June 2023 . Save with Newcouponsbook today!">
+    <meta name="author" content="New Coupns Book">
+    <meta name="keywords"
+        content="@yield('title')coupon code,@yield('title')promo codes, @yield('title')discount codes, latest offers, free shipping">
+    <link rel="canonical" href="" />
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
     @yield('link')
 
     <!-- FAVICONS -->
