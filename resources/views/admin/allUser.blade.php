@@ -61,7 +61,7 @@
             <h3 class="my-3 mb-4 text-center">All Approved Users</h3>
             <div class="row">
                 <div class="col-xl-12">
-                    <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+                    <table class="table table-responsive table-bordered" id="example" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Id</th>

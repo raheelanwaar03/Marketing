@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-xl-12">
-                    <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+                    <table class="table table-responsive table-bordered" id="example" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Store Name</th>
