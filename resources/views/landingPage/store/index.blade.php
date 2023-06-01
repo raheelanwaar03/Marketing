@@ -28,8 +28,7 @@
                 @forelse ($stores as $store)
                     <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
                         <div class="col-md-2">
-                            <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive" height="100px"
-                                width="100px" alt="image">
+                            <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive" style="width:150px;height:150px;" alt="image">
                         </div>
                     </a>
                 @empty

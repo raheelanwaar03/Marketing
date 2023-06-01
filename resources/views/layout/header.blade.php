@@ -25,15 +25,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/imagesapple-touch-icon-152x152.png') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <!-- TEMPLATE STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/style.css') }}">
-    <!-- RESPONSIVE STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
-    <!-- COLORS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors.css') }}">
-    <!-- CUSTOM STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
-
 
     <!-- Skin Examples -->
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin1.css') }}" title="skin1"
