@@ -64,7 +64,7 @@
                                         </div><!-- end meta -->
 
                                         <div class="showcode">
-                                            <a href="#" class="code-link" data-ex-link="{{ $coupon->coupon_link }}">
+                                            <a href="#" style="float: right;" class="code-link" data-ex-link="{{ $coupon->coupon_link }}">
                                                 <span class="coupon-code">{{ $coupon->coupon_code }}</span>
                                                 <span class="show-code">Show Code</span>
                                             </a>
