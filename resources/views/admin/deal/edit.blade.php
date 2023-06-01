@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Description</label>
-                                    <textarea name="coupon_des" cols="30" rows="10">{{ $coupon->coupon_des }}</textarea>
+                                    <textarea name="coupon_des" rows="10" cols="14" class="form-control">{{ $coupon->coupon_des }}</textarea>
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="" class="mb-1 ml-2">Coupon Type</label>
