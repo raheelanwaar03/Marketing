@@ -24,7 +24,7 @@ class LandingPageController extends Controller
 
     public function contact()
     {
-        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(9);
+        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(10);
         $stores = Store::where('status', 0)->get();
         $coupons = Coupon::where('status', 0)->get();
         return view('landingPage.contactUs', compact('categorys', 'stores', 'coupons'));
@@ -32,7 +32,7 @@ class LandingPageController extends Controller
 
     public function allCategorys()
     {
-        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(9);
+        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(10);
         $stores = Store::where('status', 0)->get();
         $coupons = Coupon::where('status', 0)->get();
         return view('landingPage.category.index', compact('categorys', 'stores', 'coupons'));
@@ -44,7 +44,7 @@ class LandingPageController extends Controller
     {
         $categorys = Catagory::get();
         $stores = Store::where('status', 0)->get();
-        $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type', 'Coupon')->paginate(9);
+        $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type', 'Coupon')->paginate(10);
         return view('landingPage.coupons.index', compact('categorys', 'stores', 'coupons'));
     }
 
@@ -63,7 +63,7 @@ class LandingPageController extends Controller
         // checking coupons on this category
         $stores = Store::where('status', 0)->get();
         $categorys = Catagory::get();
-        $coupons = Coupon::where('coupon_category', $category_name)->where('status', 1)->orderBy('coupon_name', 'asc')->paginate(10);
+        $coupons = Coupon::where('coupon_category', $category_name)->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.category.single', compact('category', 'categorys', 'coupons', 'stores'));
     }
 
@@ -73,8 +73,8 @@ class LandingPageController extends Controller
         $store_name = $store->store_name;
         $stores = Store::where('status', 0)->get();
         $categorys = Catagory::get();
-        $coupons = Coupon::where('coupon_store', $store_name)->where('status', 1)->where('coupon_type', 'coupon')->orderBy('coupon_name', 'asc')->paginate(10);
-        $trending_coupons = Coupon::where('coupon_store', $store_name)->where('status', 1)->where('coupon_type', 'deal')->orderBy('coupon_name', 'asc')->paginate(10);
+        $coupons = Coupon::where('coupon_store', $store_name)->where('coupon_type', 'coupon')->orderBy('coupon_name', 'asc')->paginate(10);
+        $trending_coupons = Coupon::where('coupon_store', $store_name)->where('coupon_type', 'deal')->orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.store.singleStore', compact('store', 'stores', 'coupons', 'categorys', 'trending_coupons'));
     }
 
