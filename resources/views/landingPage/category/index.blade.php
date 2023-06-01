@@ -26,38 +26,18 @@
         <div class="container">
             <div class="row">
                 <div class="content col-md-12">
-                    <div class="post-wrapper single-store">
-                        @forelse ($categorys as $category)
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <div class="post-media text-center">
-                                        @if ($category->image != '')
-                                        <a href="#"><img src="{{ asset('images/' . $category->image) }}"
-                                            alt="" class="img-responsive"></a>
-                                        @else
-                                            <h3>{{ $category->category_name }}</h3>
-                                        @endif
+                    <div class="container">
+                        <div class="row">
+                            @forelse ($stores as $store)
+                                <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
+                                    <div class="col-md-2">
+                                        <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive" style="width:150px;height:150px;" alt="image">
                                     </div>
-                                </div>
-                                <div class="col-md-8 col-sm-8 col-xs-12">
-                                    <div class="coupon-meta">
-                                        <h3>{{ $category->category_name }}</h3>
-                                        <p>{{ $category->category_des }}</p>
-                                    </div>
-                                    <div class="coupon-bottom clearfix">
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug, 'id' => $category->id]) }}"
-                                                        class="fb-button btn btn-primary"><span class="hidden-xs">See All
-                                                            Coupons on this category</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <h3>NO Category avaliable</h3>
-                        @endforelse
+                                </a>
+                            @empty
+                                <h4>No Store</h4>
+                            @endforelse
+                        </div>
                     </div>
                     <hr class="invis3">
                     <div class="">
