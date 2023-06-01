@@ -1,4 +1,9 @@
 @extends('layout.app')
+
+@section('title')
+    <h3>NewCouponsBook</h3>
+@endsection
+
 @section('content')
     <div class="section wb">
         <div class="container">

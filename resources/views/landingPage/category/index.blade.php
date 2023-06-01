@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+    <h3>All Categorys</h3>
+@endsection
+
 @section('content')
     <section class="section page-title-wrapper wb">
         <div class="container">
