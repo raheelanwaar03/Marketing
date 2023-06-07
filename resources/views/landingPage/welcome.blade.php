@@ -36,7 +36,7 @@
                             @forelse ($homeImages as $homeImage)
                                 <a href="{{ route('LandingPage.Categorys') }}"><img
                                         src="{{ asset('images/' . $homeImage->home_img) }}"
-                                        style="height:300px;width:400px;" class="img-responsive"></a>
+                                        style="height:200px;width:250px;" class="img-responsive"></a>
                                 <div class="promo-desc">
                                     <img src="{{ asset('images/' . $homeImage->home_img) }}"
                                         class="alignleft img-thumbnail">
@@ -52,7 +52,7 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img1) }}" style="height:300px;width:400px;"
+                                    src="{{ asset('images/' . $homeImage->home_img1) }}" style="height:200px;width:250px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
@@ -69,7 +69,7 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img2) }}" style="height:300px;width:400px;"
+                                    src="{{ asset('images/' . $homeImage->home_img2) }}" style="height:200px;width:250px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
@@ -99,7 +99,7 @@
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}"><img
-                                    src="{{ asset('images/' . $store->store_img) }}" style="width:80px;height:80px;"
+                                    src="{{ asset('images/' . $store->store_img) }}" style="width:150px;height:150px;"
                                     class="img-responsive"></a>
                             <small>{{ $store->store_name }}</small>
                         </div><!-- end media -->
