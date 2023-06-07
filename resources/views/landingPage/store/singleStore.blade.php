@@ -5,7 +5,7 @@
 @endsection
 
 @section('link')
-<link rel="canonical" href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}" />
+    <link rel="canonical" href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}" />
 @endsection
 
 @section('content')
@@ -43,7 +43,7 @@
                                 <div class="">
                                     <h1 class="text-center">All Coupons</h1>
                                 </div>
-                                <div class="text-center m-3">
+                                <div class="text-center mb-3">
                                     <a href="#deals" class="btn btn-primary mb-2">See Deals in this Store</a>
                                 </div>
                             </div>
@@ -67,21 +67,20 @@
                                                 <h3><a href="#">{{ $coupon->coupon_name }}</a></h3>
                                                 <p>{{ $coupon->coupon_des }}.</p>
                                             </div>
-
-                                            <div class="showcode">
-                                                <a href="#" style="float: right;" class="code-link"
-                                                    data-ex-link="{{ $coupon->coupon_link }}">
-                                                    <span class="coupon-code">{{ $coupon->coupon_code }}</span>
-                                                    <span class="show-code">Show Code</span>
-                                                </a>
-                                            </div>
                                         </div>
 
                                         <div class="coupon-bottom clearfix">
                                             <small class="pull-left">Expire : {{ $coupon->coupon_expire }}</small>
-                                        </div><!-- end coupon-top -->
-                                    </div><!-- end col -->
-                                </div><!-- end row -->
+                                        </div>
+                                    </div>
+                                    <div class="showcode">
+                                        <a href="#" style="float: right;" class="code-link"
+                                            data-ex-link="{{ $coupon->coupon_link }}">
+                                            <span class="coupon-code">{{ $coupon->coupon_code }}</span>
+                                            <span class="show-code">Show Code</span>
+                                        </a>
+                                    </div>
+                                </div>
 
                                 <!-- Modal -->
                                 <div id="{{ $coupon->coupon_slug }}" class="modal fade code-modal">
@@ -271,7 +270,7 @@
                         <div class="col-md-2 col-sm-4 col-xs-6">
                             <div class="post-media">
                                 <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
-                                    style="width:150px;height:150px;" class="img-thumbnail img-responsive"></a>
+                                        style="width:150px;height:150px;" class="img-thumbnail img-responsive"></a>
                                 <small>{{ $store->store_name }}</small>
                             </div>
                         </div>
