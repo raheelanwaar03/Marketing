@@ -31,7 +31,8 @@
                             @forelse ($stores as $store)
                                 <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
                                     <div class="col-md-2">
-                                        <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive" style="width:150px;height:150px;" alt="image">
+                                        <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive"
+                                            style="width:150px;height:150px;" alt="image">
                                     </div>
                                 </a>
                             @empty
@@ -56,15 +57,17 @@
                             <h4>Popular Categories</h4>
                         </div>
                     </div>
-                    @foreach ($categorys as $category)
                     <div class="row">
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                            <ul class="customlist">
-                                <li><a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug]) }}">{{ $category->category_name }}</a></li>
-                            </ul>
-                        </div>
+                        @foreach ($categorys as $category)
+                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                <ul class="customlist">
+                                    <li><a
+                                            href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endforeach
                     </div>
-                    @endforeach
                     <!-- end row -->
 
                     <hr class="">
@@ -80,8 +83,8 @@
                         @forelse ($stores as $store)
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/'.$store->store_img) }}" style="width:150px;height:150px;"
-                                            class="img-responsive"></a>
+                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
+                                            style="width:150px;height:150px;" class="img-responsive"></a>
                                     <small>{{ $store->store_name }}</small>
                                 </div>
                             </div>
