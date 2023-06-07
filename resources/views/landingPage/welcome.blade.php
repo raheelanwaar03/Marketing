@@ -99,7 +99,7 @@
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}"><img
-                                    src="{{ asset('images/' . $store->store_img) }}" style="width:150px;height:150px;"
+                                    src="{{ asset('images/' . $store->store_img) }}" style="width:120px;height:120px;"
                                     class="img-responsive"></a>
                             <small>{{ $store->store_name }}</small>
                         </div><!-- end media -->
