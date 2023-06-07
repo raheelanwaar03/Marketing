@@ -44,7 +44,7 @@
                                     <h1 class="text-center">All Coupons</h1>
                                 </div>
                                 <div class="text-center m-3">
-                                    <a href="#deals" class="btn btn-primary">See Deals in this Store</a>
+                                    <a href="#deals" class="btn btn-primary mb-2">See Deals in this Store</a>
                                 </div>
                             </div>
                         </div>

@@ -17,18 +17,6 @@
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
     @yield('link')
 
-    {{-- Second time --}}
-
-    <!-- SITE META -->
-    <title> @yield('title')| Coupons & Discount Codes - 50% Off Sitewide</title>
-    <meta name="description"
-        content="Find the best of @yield('title') deals, coupons, codes and discounts for June 2023 . Save with Newcouponsbook today!">
-    <meta name="author" content="New Coupns Book">
-    <meta name="keywords"
-        content="@yield('title')coupon code,@yield('title')promo codes, @yield('title')discount codes, latest offers, free shipping">
-    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
-    @yield('link')
-
     <!-- FAVICONS -->
     <link rel="shortcut icon" href="{{ asset('assets/imagesfavicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('assets/imagesapple-touch-icon.png') }}">
@@ -63,8 +51,8 @@
         media="all" />
     <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin11.css') }}" title="skin11"
         media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin12.css') }}"
-        title="skin12" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/css/skins/skin12.css') }}" title="skin12"
+        media="all" />
 
 </head>
 
