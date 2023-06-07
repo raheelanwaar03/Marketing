@@ -56,6 +56,7 @@
                             <h4>Popular Categories</h4>
                         </div>
                     </div>
+                    @foreach ($categorys as $category)
                     <div class="row">
                         <div class="col-md-2 col-sm-2 col-xs-12">
                             <ul class="customlist">
@@ -63,6 +64,7 @@
                             </ul>
                         </div>
                     </div>
+                    @endforeach
                     <!-- end row -->
 
                     <hr class="">
