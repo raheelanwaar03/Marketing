@@ -11,7 +11,7 @@ class HomePageImages extends Controller
     public function homeImages(Request $request)
     {
         $total = Home_page_Img::get()->count();
-        if ($total >= 3) {
+        if ($total >= 1) {
             return redirect()->back()->with('error', 'You have added three images already');
         } else {
             if ($request->has('home_img','home_img1','home_img2')) {
