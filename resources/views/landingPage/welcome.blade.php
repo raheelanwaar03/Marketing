@@ -36,7 +36,7 @@
                             @forelse ($homeImages as $homeImage)
                                 <a href="{{ route('LandingPage.Categorys') }}"><img
                                         src="{{ asset('images/' . $homeImage->home_img) }}"
-                                        style="height:200px;width:250px;" class="img-responsive"></a>
+                                        style="height:300px;width:400px;" class="img-responsive"></a>
                                 <div class="promo-desc">
                                     <img src="{{ asset('images/' . $homeImage->home_img) }}"
                                         class="alignleft img-thumbnail">
@@ -52,7 +52,7 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img1) }}" style="height:200px;width:250px;"
+                                    src="{{ asset('images/' . $homeImage->home_img1) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
@@ -69,7 +69,7 @@
                     <div class="promobox">
                         <div class="post-media">
                             <a href="{{ route('LandingPage.Categorys') }}"><img
-                                    src="{{ asset('images/' . $homeImage->home_img2) }}" style="height:200px;width:250px;"
+                                    src="{{ asset('images/' . $homeImage->home_img2) }}" style="height:300px;width:400px;"
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
