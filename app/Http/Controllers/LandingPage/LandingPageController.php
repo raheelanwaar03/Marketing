@@ -24,7 +24,7 @@ class LandingPageController extends Controller
 
     public function contact()
     {
-        $categorys = Catagory::orderBy('category_name', 'asc')->get();
+        $categorys = Catagory::get();
         $stores = Store::where('status', 0)->get();
         $coupons = Coupon::where('status', 0)->get();
         return view('landingPage.contactUs', compact('categorys', 'stores', 'coupons'));
