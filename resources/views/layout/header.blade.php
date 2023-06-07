@@ -67,10 +67,10 @@
                             <strong><i class="fa fa-phone"></i></strong> {{ env('APP_NUM') }} &nbsp;&nbsp;
                             <strong><i class="fa fa-envelope-o"></i>{{ env('APP_EMAIL') }}</strong>
                         </p>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </div><!-- end topbar -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="header">
             <div class="logo-wrapper">

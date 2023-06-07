@@ -48,29 +48,14 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input type="submit" value="Send Your Message"
-                                                        class="btn btn-block btn-brand btn-lg">
+                                                        class="btn btn-block btn-primary btn-lg">
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="contact-hotline">
-                                        <div class="hotline-content">
-                                            <p>HOTLINE</p>
-                                            <p>{{ env('APP_NUM') }}</p>
-                                        </div>
-                                        <div class="hotline-thumb">
-                                            <img src="assets/img/contact/mr_helpline.jpg" alt=""
-                                                class="img-responsive img-rounded" />
-                                        </div>
-                                    </div>
-
                                     <div class="contact-info-wrapper">
-                                        <h6>Address:</h6>
-                                        <p>{{ env('APP_ADDRESS') }}</p>
-                                        <h6>Contact Info:</h6>
-                                        <p><i class="fa fa-phone"></i>{{ env('APP_NUM') }}</p>
                                         <p><i class="fa fa-envelope"></i>{{ env('APP_EMAIL') }}, <i
                                                 class="fa fa-globe"></i>{{ env('APP_URL') }}</p>
                                     </div>
