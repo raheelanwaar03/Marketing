@@ -4,6 +4,25 @@
     All Categorys
 @endsection
 
+@section('breadcrum')
+<section class="section page-title-wrapper wb">
+    <div class="container">
+        <div class="page-title pull-left">
+            <h3>Categories</h3>
+        </div><!-- end title -->
+        <div class="pull-right hidden-xs">
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                    <li class="active">All Categories</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div>
+</section>
+@endsection
+
+
 @section('content')
     <section class="section page-title-wrapper wb">
         <div class="container">

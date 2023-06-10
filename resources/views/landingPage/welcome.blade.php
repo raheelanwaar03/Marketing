@@ -90,7 +90,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Popular Stores</h4>
+                    <h4 class="">Popular Stores</h4>
                 </div>
                 <!-- end col -->
             </div>

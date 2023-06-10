@@ -4,6 +4,24 @@
     {{ $category->category_name }}
 @endsection
 
+@section('breadcrum')
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <h3>Categories</h3>
+            </div><!-- end title -->
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">{{ $category->category_name }}</li>
+                    </ol>
+                </div><!-- end bread -->
+            </div><!-- /.pull-right -->
+        </div>
+    </section>
+@endsection
+
 @section('content')
     <div class="section">
         <div class="container">
@@ -14,8 +32,8 @@
                             <div class="col-md-3 col-sm-3 col-xs-12">
                                 <div class="post-media text-center">
                                     @if ($category->image != '')
-                                        <a href="#"><img src="{{ asset('images/' . $category->image) }}" alt=""
-                                                class="img-responsive"></a>
+                                        <a href="#"><img src="{{ asset('images/' . $category->image) }}"
+                                                alt="" class="img-responsive"></a>
                                     @else
                                         <div style="border:1px solid rgb(0,187,211);padding:40px;">
                                             <h3 style="color:rgb(0,187,211);">{{ $category->category_name }}</h3>
@@ -167,7 +185,7 @@
                             <div class="col-md-2 col-sm-4 col-xs-6">
                                 <div class="post-media">
                                     <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
-                                        style="width:150px;height:150px;" class="img-responsive"></a>
+                                            style="width:150px;height:150px;" class="img-responsive"></a>
                                     <small>{{ $store->store_name }}</small>
                                 </div>
                             </div>

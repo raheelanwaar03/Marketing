@@ -169,3 +169,7 @@
                     </div>
                 </div>
             </div>
+
+            {{-- breadcrumb yield --}}
+
+            @yield('breadcrum')
