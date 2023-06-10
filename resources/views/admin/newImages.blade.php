@@ -11,8 +11,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
+                                <div class="card-header">
+                                    <p>Image Dimension must be <b>( height:300px , width:400px )</b></p>
+                                </div>
                                 <div class="card-body">
-                                    <form action="{{ route('Admin.Store.Home.Image') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('Admin.Store.Home.Image') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label for="">First Image</label>
@@ -54,16 +58,19 @@
                                 <tr>
                                     <td>{{ $homeImage->id }}</td>
                                     <td>
-                                        <img src="{{ asset('images/'.$homeImage->home_img) }}" class="img-responsive" height="90px" width="90px">
+                                        <img src="{{ asset('images/' . $homeImage->home_img) }}" class="img-responsive"
+                                            height="90px" width="90px">
                                     </td>
                                     <td>
-                                        <img src="{{ asset('images/'.$homeImage->home_img1) }}" class="img-responsive" height="90px" width="90px">
+                                        <img src="{{ asset('images/' . $homeImage->home_img1) }}" class="img-responsive"
+                                            height="90px" width="90px">
                                     </td>
                                     <td>
-                                        <img src="{{ asset('images/'.$homeImage->home_img2) }}" class="img-responsive" height="90px" width="90px">
+                                        <img src="{{ asset('images/' . $homeImage->home_img2) }}" class="img-responsive"
+                                            height="90px" width="90px">
                                     </td>
                                     <td>
-                                        <a href="{{ route('Admin.Del.Home.Image',['id'=>$homeImage->id]) }}"
+                                        <a href="{{ route('Admin.Del.Home.Image', ['id' => $homeImage->id]) }}"
                                             class="btn btn-sm btn-danger">Delete</a>
                                     </td>
                                 </tr>
