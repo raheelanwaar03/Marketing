@@ -8,7 +8,7 @@
 <link rel="canonical" href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}" />
 @endsection
 
-@section('breadcrumb')
+@section('breadcrum')
 <section class="section page-title-wrapper wb">
     <div class="container">
         <div class="page-title pull-left">

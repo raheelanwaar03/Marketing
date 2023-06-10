@@ -4,7 +4,7 @@
     All Coupons
 @endsection
 
-@section('breadcrumb')
+@section('breadcrum')
 <section class="section page-title-wrapper wb">
     <div class="container">
         <div class="page-title pull-left">
