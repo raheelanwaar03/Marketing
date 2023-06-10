@@ -8,13 +8,14 @@
     <section class="section page-title-wrapper wb">
         <div class="container">
             <div class="page-title pull-left">
+                <p>Here is all data of this category</p>
                 <h3>Categories</h3>
             </div><!-- end title -->
             <div class="pull-right hidden-xs">
                 <div class="bread">
                     <ol class="breadcrumb">
                         <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li class="active">{{ $category->category_name }}</li>
+                        <li class="active">Category->{{ $category->category_name }}</li>
                     </ol>
                 </div><!-- end bread -->
             </div><!-- /.pull-right -->

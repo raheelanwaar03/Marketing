@@ -4,6 +4,25 @@
     All Coupons
 @endsection
 
+@section('breadcrumb')
+<section class="section page-title-wrapper wb">
+    <div class="container">
+        <div class="page-title pull-left">
+            <p>Here is all Coupons</p>
+            <h3>All Coupons</h3>
+        </div><!-- end title -->
+        <div class="pull-right hidden-xs">
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                    <li class="active">All Coupons</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div>
+</section><!-- end section -->
+@endsection
+
 @section('content')
     <div class="section">
         <div class="container">

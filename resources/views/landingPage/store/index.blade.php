@@ -4,23 +4,27 @@
     All Stores
 @endsection
 
+@section('breadcrumb')
+<section class="section page-title-wrapper wb">
+    <div class="container">
+        <div class="page-title pull-left">
+            <p>Here is all stores</p>
+            <h3>All Stores</h3>
+        </div><!-- end title -->
+        <div class="pull-right hidden-xs">
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                    <li class="active">Stores</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div>
+</section><!-- end section -->
+
+@endsection
+
 @section('content')
-    <section class="section page-title-wrapper wb">
-        <div class="container">
-            <div class="page-title pull-left">
-                <p>Here is all stores</p>
-                <h3>All Stores</h3>
-            </div><!-- end title -->
-            <div class="pull-right hidden-xs">
-                <div class="bread">
-                    <ol class="breadcrumb">
-                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li class="active">Stores</li>
-                    </ol>
-                </div><!-- end bread -->
-            </div><!-- /.pull-right -->
-        </div>
-    </section><!-- end section -->
 
     <div class="section">
         <div class="container">

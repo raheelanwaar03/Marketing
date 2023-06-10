@@ -8,6 +8,27 @@
 <link rel="canonical" href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}" />
 @endsection
 
+@section('breadcrumb')
+<section class="section page-title-wrapper wb">
+    <div class="container">
+        <div class="page-title pull-left">
+            <p>Here is all store data</p>
+            <h3>Stores</h3>
+        </div><!-- end title -->
+        <div class="pull-right hidden-xs">
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                    <li class="active">Stores->{{ $store->store_name }}</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div>
+</section><!-- end section -->
+
+@endsection
+
+
 @section('content')
     <div class="section">
         <div class="container">
