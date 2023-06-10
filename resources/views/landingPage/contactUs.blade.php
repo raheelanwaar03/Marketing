@@ -4,6 +4,25 @@
     Contact Us
 @endsection
 
+@section('breadcrumb')
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <p>We are here to help you</p>
+                <h3>Contact Us</h3>
+            </div>
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">Contact Us</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
 @section('content')
     <div class="contact-wrapper">
         <div class="contact-wrapper-inner">

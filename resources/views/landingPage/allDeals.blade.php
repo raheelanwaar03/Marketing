@@ -4,6 +4,26 @@
     All Deals
 @endsection
 
+@section('breadcrumb')
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <p>Here is all Deals</p>
+                <h3>All Deals</h3>
+            </div>
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">Deals</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+
 @section('content')
     <div class="section">
         <div class="container">
@@ -16,7 +36,8 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4 col-xs-12">
                                         <div class="post-media text-center P-4" style="border: 1px solid rgb(0,187,211)">
-                                            <h1 style="color:rgb(0,187,211);font-size:30px;padding:30px;">{{ $coupon->coupon_text }}</h1>
+                                            <h1 style="color:rgb(0,187,211);font-size:30px;padding:30px;">
+                                                {{ $coupon->coupon_text }}</h1>
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -104,67 +125,16 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Baby Kids</a></li>
-                            <li><a href="#">Books & Magazines</a></li>
-                            <li><a href="#">Computers</a></li>
-                            <li><a href="#">Cameras</a></li>
-                            <li><a href="#">Electronics</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Gifts</a></li>
-                            <li><a href="#">Health Beauty</a></li>
-                            <li><a href="#">Home Garden</a></li>
-                            <li><a href="#">Home Supplies</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Entertainetmen</a></li>
-                            <li><a href="#">Digital Stores</a></li>
-                            <li><a href="#">Marketplaces</a></li>
-                            <li><a href="#">Musicians</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Movies & Films</a></li>
-                            <li><a href="#">Phones</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Televisions</a></li>
-                            <li><a href="#">Telegraphers</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Baby Toys</a></li>
-                            <li><a href="#">Clothings</a></li>
-                            <li><a href="#">Jewellry</a></li>
-                            <li><a href="#">Car Supplies</a></li>
-                            <li><a href="#">Watches</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <ul class="customlist">
-                            <li><a href="#">Glassess</a></li>
-                            <li><a href="#">Medical</a></li>
-                            <li><a href="#">Pet Shops</a></li>
-                            <li><a href="#">LifeStyle</a></li>
-                            <li><a href="#">Sports</a></li>
-                        </ul>
-                    </div>
+                    @foreach ($categorys as $category)
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <ul class="customlist">
+                                <li><a
+                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    @endforeach
                 </div>
-                <!-- end row -->
 
                 <hr class="">
 
@@ -179,7 +149,7 @@
                         <div class="col-md-2 col-sm-4 col-xs-6">
                             <div class="post-media">
                                 <a href="#"><img src="{{ asset('images/' . $store->store_img) }}" alt=""
-                                    style="width:150px;height:150px;" class="img-thumbnail img-responsive"></a>
+                                        style="width:150px;height:150px;" class="img-thumbnail img-responsive"></a>
                                 <small>{{ $store->store_name }}</small>
                             </div>
                         </div>
