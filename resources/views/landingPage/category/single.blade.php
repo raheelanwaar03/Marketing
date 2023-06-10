@@ -15,7 +15,7 @@
                 <div class="bread">
                     <ol class="breadcrumb">
                         <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li class="active">Category->{{ $category->category_name }}</li>
+                        <li class="active"><b>Category</b>/{{ $category->category_name }}</li>
                     </ol>
                 </div><!-- end bread -->
             </div><!-- /.pull-right -->
