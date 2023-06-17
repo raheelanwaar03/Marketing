@@ -5,39 +5,40 @@
 @endsection
 
 @section('breadcrum')
-<section class="section page-title-wrapper wb">
-    <div class="container">
-        <div class="page-title pull-left">
-            <p>Here is all stores</p>
-            <h3>All Stores</h3>
-        </div><!-- end title -->
-        <div class="pull-right hidden-xs">
-            <div class="bread">
-                <ol class="breadcrumb">
-                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                    <li class="active">Stores</li>
-                </ol>
-            </div><!-- end bread -->
-        </div><!-- /.pull-right -->
-    </div>
-</section><!-- end section -->
-
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <p>Here is all stores</p>
+                <h3>All Stores</h3>
+            </div><!-- end title -->
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">Stores</li>
+                    </ol>
+                </div><!-- end bread -->
+            </div><!-- /.pull-right -->
+        </div>
+    </section><!-- end section -->
 @endsection
 
 @section('content')
-
     <div class="section">
         <div class="container">
             <div class="row">
-                @forelse ($stores as $store)
-                    <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
-                        <div class="col-md-2">
-                            <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive" style="width:150px;height:150px;" alt="image">
-                        </div>
-                    </a>
-                @empty
-                    <h4>No Store</h4>
-                @endforelse
+                <div class="col-sm-12">
+                    @forelse ($stores as $store)
+                        <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
+                            <div class="col-sm-2">
+                                <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive"
+                                    style="width:150px;height:150px;" alt="image">
+                            </div>
+                        </a>
+                    @empty
+                        <h4>No Store</h4>
+                    @endforelse
+                </div>
             </div>
         </div>
         <div class="container">

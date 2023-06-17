@@ -9,8 +9,7 @@
         <div class="container">
             <div class="section-title m30 text-center">
                 <h1>4.000+ Stores Publishes 20.000+ <span class="element"></span></h1>
-            </div><!-- end title -->
-
+            </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <form action="{{ route('LandingPage.Search.items') }}" method="GET" class="well">
@@ -56,7 +55,7 @@
                                     class="img-responsive"></a>
 
                             <div class="promo-desc">
-                                <img src="{{ asset('images/' . $homeImage->home_img1) }}" class="alignleft img-thumbnail">
+                                <img src="{{ asset('images/' . $homeImage->home_img1) }}" class="align-left img-thumbnail">
                                 <h4><a href="#">Shop for Kids</a></h4>
                                 <small>44 Available Coupons</small>
                             </div><!-- end desc -->
@@ -81,7 +80,7 @@
                         </div><!-- end media -->
                     </div><!-- end box -->
                 </div><!-- end col -->
-                @empty
+            @empty
                 No Images yet
                 @endforelse
             </div><!-- end row -->
@@ -102,7 +101,7 @@
                                     src="{{ asset('images/' . $store->store_img) }}" style="width:150px;height:150px;"
                                     class="img-responsive"></a>
                             <small>{{ $store->store_name }}</small>
-                        </div><!-- end media -->
+                        </div>
                     </div>
                 @endforeach
             </div><!-- end row -->

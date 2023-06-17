@@ -19,7 +19,7 @@ class LandingPageController extends Controller
         $stores = Store::where('status', 0)->get();
         $coupons = Coupon::where('status', 1)->where('coupon_type', 'Coupon')->get();
         $trending_coupons = Coupon::where('status', 1)->where('coupon_type', 'Deal')->get();
-        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons','homeImages'));
+        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons', 'homeImages'));
     }
 
     public function contact()
@@ -107,4 +107,23 @@ class LandingPageController extends Controller
         $coupons = Coupon::orderBy('coupon_name', 'asc')->where('coupon_type', 'Deal')->paginate(9);
         return view('landingPage.allDeals', compact('categorys', 'stores', 'coupons'));
     }
+
+
+    public function terms()
+    {
+        $categorys = Catagory::get();
+        $stores = Store::where('status', 0)->get();
+        $coupons = Coupon::where('status', 0)->get();
+        return view('landingPage.terms', compact('categorys', 'stores', 'coupons'));
+    }
+
+    public function about()
+    {
+        $categorys = Catagory::get();
+        $stores = Store::where('status', 0)->get();
+        $coupons = Coupon::where('status', 0)->get();
+        return view('landingPage.about', compact('categorys', 'stores', 'coupons'));
+    }
+
+
 }

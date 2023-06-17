@@ -87,7 +87,6 @@
     }
     .single-store .coupon-meta h3 {
         font-size: 21px;
-        margin-top: 20px;
     }
     .page-title h3 {
         font-size: 21px;
@@ -121,7 +120,7 @@
     }
     .ttmenu .navbar-default .ttmenu-content,
     .ttmenu .navbar-collapse {
-        padding: 15px;
+        padding: 2px;
     }
     .navbar-toggle {
         margin-top: 0;
@@ -157,7 +156,7 @@
 @media (max-width: 1280px) {
     .section .device-showcase {
         position: absolute;
-        bottom: -370px;
+        bottom: -270px;
         right: 70%;
     }
 }

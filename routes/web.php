@@ -19,6 +19,8 @@ Route::get('/ContactUs',[LandingPageController::class,'contact'])->name('Landing
 Route::post('/ContactUs/Form',[LandingPageController::class,'contact_form'])->name('LandingPage.ContactUs.Form');
 Route::get('/Categories',[LandingPageController::class,'allCategorys'])->name('LandingPage.Categorys');
 Route::get('/All/Deals',[LandingPageController::class,'dealsPage'])->name('LandingPage.Deals');
+Route::get('/Terms/Conditions',[LandingPageController::class,'terms'])->name('LandingPage.Terms');
+Route::get('/About/Us',[LandingPageController::class,'about'])->name('LandingPage.About');
 // Coupons
 Route::get('/All/Coupons',[LandingPageController::class,'allCoupons'])->name('LandingPage.All.Coupons');
 // All Stores

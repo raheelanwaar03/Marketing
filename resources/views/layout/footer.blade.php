@@ -25,33 +25,25 @@
 
                     <ul class="footer-links">
                         <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                        <li><a href="{{ route('LandingPage.ContactUs') }}">Contact us</a></li>
                         <li><a href="{{ route('LandingPage.All.Coupons') }}">All Coupons</a></li>
                         <li><a href="{{ route('LandingPage.All.Stores') }}">All Stores</a></li>
                         <li><a href="{{ route('LandingPage.Categorys') }}">All Categories</a></li>
                     </ul><!-- end links -->
                 </div><!-- end widget -->
             </div><!-- end col -->
-
             <div class="col-md-2 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h4>All Stores</h4>
+                        <h4>Quick Links</h4>
                     </div>
 
                     <ul class="footer-links">
-
-                        @forelse ($stores as $store)
-                            <li><a
-                                    href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">{{ $store->store_name }}</a>
-                            </li>
-                        @empty
-                            <h3>No Store Added yet!</h3>
-                        @endforelse
+                        <li><a href="{{ route('LandingPage.ContactUs') }}">Contact us</a></li>
+                        <li><a href="{{ route('LandingPage.About') }}">About us</a></li>
+                        <li><a href="{{ route('LandingPage.Terms') }}">Terms & Condition</a></li>
                     </ul><!-- end links -->
                 </div><!-- end widget -->
-            </div><!-- end col -->
-
+            </div>
 
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="widget clearfix">
