@@ -160,7 +160,9 @@
                         <div class="col-md-12">
                             <h4>Popular Categories</h4>
                         </div>
+                        <!-- end col -->
                     </div>
+
                     <div class="row">
                         @foreach ($categorys as $category)
                             <div class="col-md-2 col-sm-2 col-xs-12">
@@ -171,9 +173,7 @@
                                 </ul>
                             </div>
                         @endforeach
-                    </div>
-                    <!-- end row -->
-
+                        </div>
                     <hr class="">
 
                     <div class="row">
