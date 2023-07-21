@@ -5,21 +5,21 @@
 @endsection
 
 @section('breadcrum')
-<section class="section page-title-wrapper wb">
-    <div class="container">
-        <div class="page-title pull-left">
-            <h3>Categories</h3>
-        </div><!-- end title -->
-        <div class="pull-right hidden-xs">
-            <div class="bread">
-                <ol class="breadcrumb">
-                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                    <li class="active">All Categories</li>
-                </ol>
-            </div><!-- end bread -->
-        </div><!-- /.pull-right -->
-    </div>
-</section>
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <h3>Categories</h3>
+            </div><!-- end title -->
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">All Categories</li>
+                    </ol>
+                </div><!-- end bread -->
+            </div><!-- /.pull-right -->
+        </div>
+    </section>
 @endsection
 
 
@@ -60,15 +60,15 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($categorys as $category)
-                            <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            @foreach ($categorys as $category)
                                 <ul class="customlist">
                                     <li><a
                                             href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
                                     </li>
                                 </ul>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                     <!-- end row -->
 
