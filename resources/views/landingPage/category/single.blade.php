@@ -164,9 +164,14 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-2 col-xs-12">
                             <ul class="customlist">
-                                <li><a
-                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
-                                </li>
+                                @forelse ($categorys as $category)
+                                    <li>
+                                        <a
+                                            href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                    </li>
+                                @empty
+                                    <h2>No category added yet</h2>
+                                @endforelse
                             </ul>
                         </div>
                     </div>

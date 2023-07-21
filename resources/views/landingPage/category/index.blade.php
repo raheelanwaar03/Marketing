@@ -61,13 +61,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-2 col-xs-12">
-                            @foreach ($categorys as $category)
-                                <ul class="customlist">
-                                    <li><a
+                            <ul class="customlist">
+                                @forelse ($categorys as $category)
+                                    <li>
+                                        <a
                                             href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
                                     </li>
-                                </ul>
-                            @endforeach
+                                @empty
+                                    <h2>No category added yet</h2>
+                                @endforelse
+                            </ul>
                         </div>
                     </div>
                     <!-- end row -->
