@@ -5,22 +5,22 @@
 @endsection
 
 @section('breadcrum')
-<section class="section page-title-wrapper wb">
-    <div class="container">
-        <div class="page-title pull-left">
-            <p>Here is all Coupons</p>
-            <h3>All Coupons</h3>
-        </div><!-- end title -->
-        <div class="pull-right hidden-xs">
-            <div class="bread">
-                <ol class="breadcrumb">
-                    <li><a href="{{ route('LandingPage') }}">Home</a></li>
-                    <li class="active">All Coupons</li>
-                </ol>
-            </div><!-- end bread -->
-        </div><!-- /.pull-right -->
-    </div>
-</section><!-- end section -->
+    <section class="section page-title-wrapper wb">
+        <div class="container">
+            <div class="page-title pull-left">
+                <p>Here is all Coupons</p>
+                <h3>All Coupons</h3>
+            </div><!-- end title -->
+            <div class="pull-right hidden-xs">
+                <div class="bread">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('LandingPage') }}">Home</a></li>
+                        <li class="active">All Coupons</li>
+                    </ol>
+                </div><!-- end bread -->
+            </div><!-- /.pull-right -->
+        </div>
+    </section><!-- end section -->
 @endsection
 
 @section('content')
@@ -129,10 +129,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-2 col-xs-12">
-                            <ul class="customlist">
-                                <li><a
-                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
-                                </li>
+                            <ul clas1s="customlist">
+                                @forelse ($categorys as $category)
+                                    <li>
+                                        <a
+                                            href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                    </li>
+                                @empty
+                                    <h2>No category added yet</h2>
+                                @endforelse
                             </ul>
                         </div>
                     </div>
