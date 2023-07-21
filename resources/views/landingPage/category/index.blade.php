@@ -52,50 +52,20 @@
                     <div class="col-md-12">
                         <h4>Popular Categories</h4>
                     </div>
+                    <!-- end col -->
                 </div>
-                <div class="footer-content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Popular Categories</h4>
+
+                <div class="row">
+                    @foreach ($categorys as $category)
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <ul class="customlist">
+                                <li><a
+                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- end col -->
-                    </div>
-
-                    <div class="row">
-                        @foreach ($categorys as $category)
-                            <div class="col-md-2 col-sm-2 col-xs-12">
-                                <ul class="customlist">
-                                    <li><a
-                                            href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <hr class="">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Popular Stores</h4>
-                        </div>
-                        <!-- end col -->
-                    </div>
-
-                    <div class="text-center store-list row">
-                        @forelse ($stores as $store)
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
-                                            style="width:150px;height:150px;" class="img-responsive"></a>
-                                    <small>{{ $store->store_name }}</small>
-                                </div>
-                            </div>
-                        @empty
-                            <h3>No store available</h3>
-                        @endforelse
-                    </div>
-                </div>
+                    @endforeach
+                </div><!-- end row -->
             </div>
         </div>
     @endsection

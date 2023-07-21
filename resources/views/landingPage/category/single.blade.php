@@ -173,29 +173,7 @@
                                 </ul>
                             </div>
                         @endforeach
-                        </div>
-                    <hr class="">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Popular Stores</h4>
-                        </div>
-                        <!-- end col -->
-                    </div>
-
-                    <div class="text-center store-list row">
-                        @forelse ($stores as $store)
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
-                                            style="width:150px;height:150px;" class="img-responsive"></a>
-                                    <small>{{ $store->store_name }}</small>
-                                </div>
-                            </div>
-                        @empty
-                            <h3>No store available</h3>
-                        @endforelse
-                    </div>
+                    </div><!-- end row -->
                 </div>
             </div>
         </div>
