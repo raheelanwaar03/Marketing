@@ -126,45 +126,20 @@
                         <div class="col-md-12">
                             <h4>Popular Categories</h4>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                            <ul clas1s="customlist">
-                                @forelse ($categorys as $category)
-                                    <li>
-                                        <a
-                                            href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
-                                    </li>
-                                @empty
-                                    <h2>No category added yet</h2>
-                                @endforelse
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end row -->
-
-                    <hr class="">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Popular Stores</h4>
-                        </div>
                         <!-- end col -->
                     </div>
 
-                    <div class="text-center store-list row">
-                        @forelse ($stores as $store)
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="post-media">
-                                    <a href="#"><img src="{{ asset('images/' . $store->store_img) }}"
-                                            style="width:150px;height:150px;" class="img-responsive"></a>
-                                    <small>{{ $store->store_name }}</small>
-                                </div>
+                    <div class="row">
+                        @foreach ($categorys as $category)
+                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                <ul class="customlist">
+                                    <li><a
+                                            href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                                    </li>
+                                </ul>
                             </div>
-                        @empty
-                            <h3>No store available</h3>
-                        @endforelse
-                    </div>
+                        @endforeach
+                    </div><!-- end row -->
                 </div>
             </div>
         </div>
