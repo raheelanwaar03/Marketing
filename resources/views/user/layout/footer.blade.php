@@ -1,162 +1,156 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h4>Email Newsletter</h4>
-                    </div>
-
-                    <div class="newsletter">
-                        <p>Your email is safe with us and we hate spam as much as you do. Lorem ipsum dolor sit
-                            amet et dolore.</p>
-                        <form class="">
-                            <input type="text" class="form-control" placeholder="Enter your name..">
-                            <input type="email" class="form-control" placeholder="Enter your email..">
-                            <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
-                        </form>
-                    </div>
+<footer>
+    <div class="ftr-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12  ftr-about-text">
+                    <h6>About Us</h6>
+                    <p class="marbtm20 line-height26">Figarodeals rated offers from all stores and brands which one you
+                        more desire.We provides best offers on your specaildays and majour holiydays like Black Friday,
+                        Mother's day, Father's day, Cyber Monday and others.</p>
+                    <a class="ftr-read-more" href="https://www.figarodeals.com/about.php">Read More</a>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h4>Twitter Feed's</h4>
-                    </div>
-                    <div class="twitter-widget">
-                        <ul class="twitter_feed">
-                            <li><span></span>
-                                <p>Envato Market wishes you and your family a merry Christmas and a happy new!
-                                    You are awesome! <a href="#">about 2 days ago</a></p>
-                            </li>
-                            <li><span></span>
-                                <p>PSD Convert HTML, thanks for support and a merry Christmas and a happy new
-                                    years! <a href="#">about 9 days ago</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-12 col-xs-12">
-                <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h4>Company Info</h4>
-                    </div>
-
-                    <ul class="footer-links">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Terms of Usage</a></li>
-                        <li><a href="#">Copyrights</a></li>
-                        <li><a href="#">Coupon a Report</a></li>
-                        <li><a href="#">License</a></li>
-                        <li><a href="#">Trademarks</a></li>
-                    </ul><!-- end links -->
-                </div><!-- end widget -->
-            </div><!-- end col -->
-
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h4>Frequently Asked Questions</h4>
-                    </div>
-
-                    <div class="first_accordion withicon withcolorful panel-group" id="accordion5">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse115">
-                                        <i class="fa fa-angle-down"></i> How to Use Coupon Codes?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse115" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiolore.
-                                        consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolor.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse215">
-                                        <i class="fa fa-angle-down"></i> Can I submit My Coupons?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse215" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiolore.
-                                        consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolor.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion5"
-                                        href="#collapse315">
-                                        <i class="fa fa-angle-down"></i> Coupon Submission free?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse315" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiolore.
-                                        consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolor.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end panel -->
-                </div><!-- end widget -->
-            </div><!-- end col -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</footer><!-- end footer -->
-
-<div class="copyrights">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="copylinks">
-                    <ul class="list-inline">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Terms of Usage</a></li>
-                        <li><a href="#">Trademark</a></li>
-                        <li><a href="#">License</a></li>
-                    </ul><!-- end ul -->
-                    <p>YourCoupon &copy; 2016 - Designed by <a href="raheelanwaar.com" target="_blank">Raheel Anwaar</a></p>
-                </div><!-- end links -->
-            </div><!-- end col -->
-
-            <div class="col-md-6 col-sm-6">
-                <div class="footer-social text-right">
-                    <ul class="list-inline social-small">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                <div class="col-md-3 col-sm-6 col-xs-12 ftr-sol-column">
+                    <h6>Special Offers</h6>
+                    <ul class="footer-link">
+                        <li><a href="https://www.figarodeals.com/christmas.php">Christmax Coupons</a></li>
+                        <li><a href="https://www.figarodeals.com/cyber-monday.php">Cyber Monday Coupons</a></li>
+                        <li><a href="https://www.figarodeals.com/black-friday.php">Black Friday Coupons</a></li>
+                        <li><a href="https://www.figarodeals.com/halloween.php">Halloween Coupons</a></li>
                     </ul>
                 </div>
-            </div><!-- end col -->
-        </div><!-- end row -->
-    </div><!-- end container -->
+                <div class="col-md-2 col-sm-6 col-xs-12 ftr-link-column">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-link">
+                        <li><a href="https://www.figarodeals.com/about.php">- About Us</a></li>
+                        <li><a href="https://www.figarodeals.com/term_of_use.php">- Term of Use</a></li>
+                        <li><a href="https://www.figarodeals.com/privacy_policy.php">- Privacy Policy</a></li>
+                        <!-- <li><a href="https://www.figarodeals.com/faq.php">- FAQs</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 ftr-follow-column pull-right">
+                    <h6>Follow Us</h6>
+                    <div class="header-socials footer-socials">
+                        <a href="https://www.facebook.com/people/Figaro-Deals/100088404408846/"><i
+                                class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/figarodeals"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/figarodeals/"><i class="fa fa-instagram"
+                                aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/fagaro-deals-18757525a"><i class="fa fa-linkedin"
+                                aria-hidden="true"></i></a>
+                    </div>
+                    <span class="ftr-logo" id="footer_img"><img src="https://www.figarodeals.com//images/logo-white.png"
+                            class="img-responsive" alt="logo-image"></span>
+                </div>
+            </div>
+            <div class="footer-btm">
+                <div class="col-md-6 col-sm-6 col-xs-12 pad-left_zero pad-right_zero">
+                    <p>Copyright © 23 Figarodeals.com. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 pad-left_zero pad-right_zero pull-right">
+                    <p class="text-right">Powered by: <a href="#">FigaroDeals.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Search</h3>
+                <div class="search-form">
+                    <input type="text" class="search_lightbox_input" placeholder="Search...">
+                    <input type="text" class="search_lghtbox_btn">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-{{-- js files --}}
-<script src="{{ asset('assets/js/all.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.touchSwipe.min.js') }}"></script>
+<script src="{{ asset('assets/js/responsive_bootstrap_carousel.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
-<script src="{{ asset('assets/switcher/switcher.js') }}"></script>
+<script src="{{ asset('assets/js/theme.js') }}"></script>
+<script src="{{ asset('assets/js/slick.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".myBtn").click(function() {
+            $('#{{ $coupon->coupon_slug }}').modal({
+                show: true
+            });
+        });
+    });
+    popid = 0;
+    poplink = "";
+    popstore = "";
 
+    function redirect2() {
+        window.open(poplink);
+    }
+
+    function redirect(e) {
+        var copyText = document.getElementById("ccode");
+        copyText.select();
+        document.execCommand("copy");
+        $("#popup button").html("Go to Site");
+        $("#popup input").css("background", "grey");
+        $("#popup p").html("Code Copied. Paste the code at <a target='_blank' id='newtab' href='" + poplink + "'>" +
+            popstore + "</a>");
+        $("#popup button").attr("onclick", "redirect2()");
+    }
+
+    function fun(store, c, link, text, id, logo) {
+        popid = id;
+        poplink = link;
+        popstore = store;
+        $("#popup button").show();
+        $("#popup button + span").hide();
+        $("#popupoffer").html(text);
+        $("#getcodemodelLabel").html(store);
+        $("#popup > p").css({
+            "padding": "12px 0",
+            "font-size": "18px"
+        });
+        $("#popup img").attr("src", "{{ asset('adminimages/logo.png') }}" + logo);
+
+        if (c.trim() == "") // GET Deal
+        {
+            $("#popup button").html("Continue to Store");
+            $("#popup button").attr("onclick", "redirect2()");
+            $("#popup button + span").html("<a style='color:white;' href='couponstoredetail.php?id=" + 3 +
+                "'>Continue to Store</a>");
+            $("#ccode").hide();
+            $("#popup > button").css({
+                "background": "rgb(72,16,100)",
+                "padding": "10px 50px",
+                "font-size": "20px"
+            });
+            $("#popup p").html("Tip: No Code Needed!");
+            window.open(link);
+        } else // GET CODE
+        {
+            var x = "txt_" + id;
+            var copyText = document.getElementById(x);
+            copyText.select();
+            document.execCommand("copy");
+            window.open("{{ $coupon->coupon_link }}" + id, "_blank");
+            $("#popup button").attr("onclick", "redirect()");
+            $("#popup input").css("background", "white");
+            $("#popup button").html("COPY");
+            $("#ccode").show();
+            $("#ccode").attr('value', c);
+            // $("#popup p").html("Copy the code below <a target='_blank' id='newtab' href='"+link+"'>"+store+"</a>");
+            $("#popup p").html("Copy the code below");
+            $("#popup > button").css({
+                "background": "rgb(72,16,100)",
+                "font-size": "14px"
+            });
+        }
+    }
+
+    function showall(detail, d) {
+        $("#d_" + d).html(detail);
+    }
+</script>
 </body>
+
 </html>

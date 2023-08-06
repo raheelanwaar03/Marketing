@@ -24,48 +24,24 @@
 
 
 @section('content')
-    <div class="section">
+    <section class="pad100-50-top-bottom">
         <div class="container">
-            <div class="row">
-                <div class="content col-md-12">
-                    <div class="container">
-                        <div class="row">
-                            @forelse ($stores as $store)
-                                <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
-                                    <div class="col-md-2">
-                                        <img src="{{ asset('images/' . $store->store_img) }}" class="img-responsive"
-                                            style="width:150px;height:150px;" alt="image">
-                                    </div>
-                                </a>
-                            @empty
-                                <h4>No Store</h4>
-                            @endforelse
+            <div class="row ">
+                @forelse ($categorys as $category)
+                <div class="col-md-3 col-sm-3 col-xs-12 marbtm50 service-list-column">
+                    <a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug]) }}">
+                        <span class="image_hover"> <img src="{{ asset('images/'.$category->image) }}"
+                                class="img-responsive zoom_img_effect" alt="Kitchen Appliances-image"></span>
+                        <div class="service-heading service-manufactureicon" style="min-height: 86px;">
+                            <h5>{{ $category->category_name }}</h5>
+                            <span class="read-more-link btn"><a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug]) }}">View Coupons</a></span>
                         </div>
-                    </div>
-                    <hr class="invis3">
-                    <div class="">
-                    </div>
+                    </a>
                 </div>
-            </div>
-            <div class="footer-content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Popular Categories</h4>
-                    </div>
-                    <!-- end col -->
-                </div>
-
-                <div class="row">
-                    @foreach ($categorys as $category)
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                            <ul class="customlist">
-                                <li><a
-                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    @endforeach
-                </div><!-- end row -->
+                @empty
+                <h3>No category added Yet</h3>
+                @endforelse
             </div>
         </div>
-    @endsection
+    </section>
+@endsection

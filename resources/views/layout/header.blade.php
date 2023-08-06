@@ -74,6 +74,9 @@
                         <li class="dropdown">
                             <a href="#">Categories</a><i class="fa fa-chevron-down"></i>
                             <ul class="dropdown-submenu">
+                                <li>
+                                    <a href="{{ route('LandingPage.Categorys') }}">All Categorys</a>
+                                </li>
                                 @foreach ($categorys as $category)
                                     <li><a
                                             href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
