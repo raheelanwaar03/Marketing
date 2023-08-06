@@ -9,7 +9,6 @@
         <div id="leftpan">
             <a href=""><img src="{{ asset('images/' . $category->image) }}" width="100%"
                     alt="{{ $category->category_name }} logo" /></a>
-            <p id="count-coupon">2 Offers Available</p>
             <fieldset id="about">
                 <legend>{{ $category->category_name }}</legend>
                 <legend style="margin-top: 10px;">About {{ env('APP_NAME') }}</legend>
@@ -38,11 +37,17 @@
                                 {{ $coupon->coupon_des }}
                             </p>
                         </div>
-                        <div class="store-btn">
+                        @if ($coupon->coupon_type === 'Coupon')
+                            <div class="store-btn">
+                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                    <div>Get Coupon</div>
+                                </a>
+                            </div>
+                        @elseif($coupon->coupon_type === 'Deal')
                             <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
-                                <div>Get Coupon</div>
+                                <div>Get Deal</div>
                             </a>
-                        </div>
+                        @endif
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -62,9 +67,15 @@
                                         id="newtab"
                                         style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
                                 </p>
-                                <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
-                                    style="color:brown" />
-                                <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
+                                @if ($coupon->coupon_type === 'Coupon')
+                                    <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
+                                        style="color:brown" />
+                                    <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
+                                @elseif ($coupon->coupon_type === 'Deal')
+                                    <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}" readonly
+                                        style="color:brown" />
+                                    <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
+                                @endif
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -77,6 +88,87 @@
                                     window.getSelection().removeAllRanges();
                                     alert("Copied: " + inputElement.value);
                                 });
+                            </script>
+                            {{-- second script --}}
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $(".myBtn").click(function() {
+                                        $('#{{ $coupon->coupon_slug }}').modal({
+                                            show: true
+                                        });
+                                    });
+                                });
+                                popid = 0;
+                                poplink = "";
+                                popstore = "";
+
+                                function redirect2() {
+                                    window.open(poplink);
+                                }
+
+                                function redirect(e) {
+                                    var copyText = document.getElementById("ccode");
+                                    copyText.select();
+                                    document.execCommand("copy");
+                                    $("#popup button").html("Go to Site");
+                                    $("#popup input").css("background", "grey");
+                                    $("#popup p").html("Code Copied. Paste the code at <a target='_blank' id='newtab' href='" + poplink + "'>" +
+                                        popstore + "</a>");
+                                    $("#popup button").attr("onclick", "redirect2()");
+                                }
+
+                                function fun(store, c, link, text, id, logo) {
+                                    popid = id;
+                                    poplink = link;
+                                    popstore = store;
+                                    $("#popup button").show();
+                                    $("#popup button + span").hide();
+                                    $("#popupoffer").html(text);
+                                    $("#getcodemodelLabel").html(store);
+                                    $("#popup > p").css({
+                                        "padding": "12px 0",
+                                        "font-size": "18px"
+                                    });
+                                    $("#popup img").attr("src", "{{ asset('adminimages/logo.png') }}" + logo);
+
+                                    if (c.trim() == "") // GET Deal
+                                    {
+                                        $("#popup button").html("Continue to Store");
+                                        $("#popup button").attr("onclick", "redirect2()");
+                                        $("#popup button + span").html("<a style='color:white;' href='couponstoredetail.php?id=" + 3 +
+                                            "'>Continue to Store</a>");
+                                        $("#ccode").hide();
+                                        $("#popup > button").css({
+                                            "background": "rgb(72,16,100)",
+                                            "padding": "10px 50px",
+                                            "font-size": "20px"
+                                        });
+                                        $("#popup p").html("Tip: No Code Needed!");
+                                        window.open(link);
+                                    } else // GET CODE
+                                    {
+                                        var x = "txt_" + id;
+                                        var copyText = document.getElementById(x);
+                                        copyText.select();
+                                        document.execCommand("copy");
+                                        window.open("{{ $coupon->coupon_link }}" + id, "_blank");
+                                        $("#popup button").attr("onclick", "redirect()");
+                                        $("#popup input").css("background", "white");
+                                        $("#popup button").html("COPY");
+                                        $("#ccode").show();
+                                        $("#ccode").attr('value', c);
+                                        // $("#popup p").html("Copy the code below <a target='_blank' id='newtab' href='"+link+"'>"+store+"</a>");
+                                        $("#popup p").html("Copy the code below");
+                                        $("#popup > button").css({
+                                            "background": "rgb(72,16,100)",
+                                            "font-size": "14px"
+                                        });
+                                    }
+                                }
+
+                                function showall(detail, d) {
+                                    $("#d_" + d).html(detail);
+                                }
                             </script>
                         </div>
                     </div>
