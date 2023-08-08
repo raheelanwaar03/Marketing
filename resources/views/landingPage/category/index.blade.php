@@ -23,15 +23,17 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="text-center">
-                <p style="border: 1px solid red;color:red;">
-                    Categories
-                </p>
-            </div>
+
+
+<section class="pad100-50-top-bottom">
+    <div class="container">
+        <div class="row ">
+           <div class="text-center">
+            <h2 style="border: 1px solid red;color:red;margin-top:8px;margin-bottom:8px;">Categories</h2>
+           </div>
         </div>
     </div>
+</section>
 
     <section class="pad100-50-top-bottom">
         <div class="container">
