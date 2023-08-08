@@ -65,7 +65,7 @@
                             </div>
                             <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
                                 <div id="popupoffer">{{ $coupon->coupon_name }}</div>
-                                <p>Open this store to avail this offer <a target='_blank' href='{{ $coupon->coupon_link }}'
+                                <p>Open store to avail this offer <a target='_blank' href='{{ $coupon->coupon_link }}'
                                         id="newtab"
                                         style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
                                 </p>

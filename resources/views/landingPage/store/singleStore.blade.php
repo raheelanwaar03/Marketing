@@ -44,9 +44,11 @@
                                 </a>
                             </div>
                         @elseif($coupon->coupon_type === 'Deal')
-                            <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
-                                <div>Get Deal</div>
-                            </a>
+                            <div class="store-btn">
+                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                    <div>Get Deal</div>
+                                </a>
+                            </div>
                         @endif
                     </div>
                     <div class="clear"></div>
@@ -63,7 +65,7 @@
                             </div>
                             <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
                                 <div id="popupoffer">{{ $coupon->coupon_name }}</div>
-                                <p>Copy and paste this code at <a target='_blank' href='{{ $coupon->coupon_link }}'
+                                <p>Open store to avail this offer <a target='_blank' href='{{ $coupon->coupon_link }}'
                                         id="newtab"
                                         style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
                                 </p>
