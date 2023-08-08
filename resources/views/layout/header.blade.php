@@ -88,6 +88,7 @@
                             <a href="{{ route('LandingPage.All.Stores') }}">Stores</a><i
                                 class="fa fa-chevron-down"></i>
                             <ul class="dropdown-submenu">
+                                <li><a href="{{ route('LandingPage.All.Stores') }}">All Stores</a></li>
                                 @forelse ($stores as $store)
                                     <li><a
                                             href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">{{ $store->store_name }}</a>
