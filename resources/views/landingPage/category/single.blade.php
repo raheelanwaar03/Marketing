@@ -44,9 +44,11 @@
                                 </a>
                             </div>
                         @elseif($coupon->coupon_type === 'Deal')
-                            <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
-                                <div>Get Deal</div>
-                            </a>
+                            <div class="store-btn">
+                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                    <div>Get Deal</div>
+                                </a>
+                            </div>
                         @endif
                     </div>
                     <div class="clear"></div>
@@ -61,37 +63,22 @@
                                 <button type="button" class="close" data-dismiss="modal">×</button>
                                 <h4 class="modal-title" id="getcodemodelLabel">{{ $coupon->coupon_name }}</h4>
                             </div>
-                            @if ($coupon->coupon_type === 'Coupon')
-                                <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
-                                    <div id="popupoffer">{{ $coupon->coupon_name }}</div>
-                                    <p>Copy and paste this code at <a target='_blank' href='{{ $coupon->coupon_link }}'
-                                            id="newtab"
-                                            style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
-                                    </p>
+                            <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
+                                <div id="popupoffer">{{ $coupon->coupon_name }}</div>
+                                <p>Copy and paste this code at <a target='_blank' href='{{ $coupon->coupon_link }}'
+                                        id="newtab"
+                                        style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
+                                </p>
+                                @if ($coupon->coupon_type === 'Coupon')
                                     <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
                                         style="color:brown" />
                                     <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
-
+                                @elseif ($coupon->coupon_type === 'Deal')
                                     <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}" readonly
                                         style="color:brown" />
                                     <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
-                                </div>
-                            @elseif ($coupon->coupon_type === 'Deal')
-                                <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
-                                    <div id="popupoffer">{{ $coupon->coupon_name }}</div>
-                                    <p>Copy and paste this code at <a target='_blank' href='{{ $coupon->coupon_link }}'
-                                            id="newtab"
-                                            style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
-                                    </p>
-                                    <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
-                                        style="color:brown" />
-                                    <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
-
-                                    <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}" readonly
-                                        style="color:brown" />
-                                    <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
-                                </div>
-                            @endif
+                                @endif
+                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
