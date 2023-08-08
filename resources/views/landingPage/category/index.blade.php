@@ -16,20 +16,19 @@
                         <li><a href="{{ route('LandingPage') }}">Home</a></li>
                         <li class="active">All Categories</li>
                     </ol>
-                </div><!-- end bread -->
-            </div><!-- /.pull-right -->
+                </div>
+            </div>
         </div>
     </section>
 @endsection
-
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="text-center">
-                <h3 style="border: 1px solid red;color:red;">
+                <p style="border: 1px solid red;color:red;">
                     Categories
-                </h3>
+                </p>
             </div>
         </div>
     </div>
