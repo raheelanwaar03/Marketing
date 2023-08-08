@@ -24,22 +24,34 @@
 
 
 @section('content')
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h3 style="border: 1px solid red;color:red;">
+                    Categories
+                </h3>
+            </div>
+        </div>
+    </div>
+
     <section class="pad100-50-top-bottom">
         <div class="container">
             <div class="row ">
                 @forelse ($categorys as $category)
-                <div class="col-md-3 col-sm-3 col-xs-12 marbtm50 service-list-column">
-                    <a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug]) }}">
-                        <span class="image_hover"> <img src="{{ asset('images/'.$category->image) }}"
-                                class="img-responsive zoom_img_effect" alt="Kitchen Appliances-image"></span>
-                        <div class="service-heading service-manufactureicon" style="min-height: 86px;">
-                            <h5>{{ $category->category_name }}</h5>
-                            <span class="read-more-link btn"><a href="{{ route('LandingPage.Single.Category',['category_slug'=>$category->category_slug]) }}">View Coupons</a></span>
-                        </div>
-                    </a>
-                </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 marbtm50 service-list-column">
+                        <a href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">
+                            <span class="image_hover"> <img src="{{ asset('images/' . $category->image) }}"
+                                    class="img-responsive zoom_img_effect" alt="Kitchen Appliances-image"></span>
+                            <div class="service-heading service-manufactureicon" style="min-height: 86px;">
+                                <h5>{{ $category->category_name }}</h5>
+                                <span class="read-more-link btn"><a
+                                        href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">View
+                                        Coupons</a></span>
+                            </div>
+                        </a>
+                    </div>
                 @empty
-                <h3>No category added Yet</h3>
+                    <h3>No category added Yet</h3>
                 @endforelse
             </div>
         </div>

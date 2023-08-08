@@ -95,7 +95,7 @@
                             <script type="text/javascript">
                                 $(document).ready(function() {
                                     $(".myBtn").click(function() {
-                                        $('#{{ $coupon->coupon_slug }}').modal({
+                                        $(#'{{ $coupon->coupon_slug }}').modal({
                                             show: true
                                         });
                                     });
