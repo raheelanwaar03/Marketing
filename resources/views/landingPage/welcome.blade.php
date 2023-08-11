@@ -18,9 +18,9 @@
                                 <p data-animation="animated fadeInDown">Find best coupons offers available on popoular
                                     brands in all categories like Clothing, Jewellery, Shoes, Electronics and baby products
                                     ...</p>
-                                <a data-animation="animated fadeInUp" href="coupon_brands.html"
-                                    class="header-requestbtn learn-more hvr-bounce-to-right">Visit Brands</a>
-                                <a data-animation="animated fadeInUp" href="category-list.html"
+                                <a data-animation="animated fadeInUp" href="{{ route('LandingPage.All.Stores') }}"
+                                    class="header-requestbtn learn-more hvr-bounce-to-right">Visit Stores</a>
+                                <a data-animation="animated fadeInUp" href="{{ route('LandingPage.Categorys') }}"
                                     class="header-requestbtn learn-more our-solution hvr-bounce-to-right">Categories</a>
                             </div>
                         </div>
@@ -35,10 +35,10 @@
                                 <h1 data-animation="animated fadeInUp">Innovation In Online Shopping </h1>
                                 <p data-animation="animated fadeInDown">Shopping and coupons deals at one place help you
                                     find everything you want from anywhere</p>
-                                <a data-animation="animated fadeInUp" href="coupon_brands.html"
-                                    class="header-requestbtn learn-more hvr-bounce-to-right btn-center">Coupon Brands</a>
-                                <a data-animation="animated fadeInUp" href="category-list.html"
-                                    class="header-requestbtn learn-more our-solution hvr-bounce-to-right btn-center">Coupon
+                                <a data-animation="animated fadeInUp" href="{{ route('LandingPage.All.Stores') }}"
+                                    class="header-requestbtn learn-more hvr-bounce-to-right btn-center">Stores</a>
+                                <a data-animation="animated fadeInUp" href="{{ route('LandingPage.Categorys') }}"
+                                    class="header-requestbtn learn-more our-solution hvr-bounce-to-right btn-center">
                                     Categories</a>
                             </div>
                         </div>
@@ -53,9 +53,9 @@
                                 <h1 data-animation="animated fadeInUp">Variety in Coupons </h1>
                                 <p data-animation="animated fadeInDown">All brands and stores are available in USA, UK,
                                     Australia and Dubai</p>
-                                <a data-animation="animated fadeInUp" href="coupon_brands.html"
+                                <a data-animation="animated fadeInUp" href="{{ route('LandingPage.All.Stores') }}"
                                     class="header-requestbtn learn-more hvr-bounce-to-right btn-center">Stores</a>
-                                <a data-animation="animated fadeInUp" href="category-list.html"
+                                <a data-animation="animated fadeInUp" href="{{ route('LandingPage.Categorys') }}"
                                     class="header-requestbtn learn-more our-solution hvr-bounce-to-right btn-center">Categories</a>
                             </div>
                         </div>
@@ -73,37 +73,15 @@
     <!--=========Certificate Start============-->
     <section class="certifield-section yellow-background">
         <div class="container">
-            <h3 style="text-align: center; margin-bottom:20px">Top Best Brands used online on figarodeals</h3>
-            <!-- <a href=""><img src="{{ asset('assets/admin/assets/logo/4patriots_250.jpg') }}" width="80" height="80"> </a> -->
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/pottery-barn.html"><img
-                        src="{{ asset('assets/admin/assets/logo/pottery-barn_250.jpg') }}" width="80" height="80">
-                </a></div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/muji.html"><img
-                        src="{{ asset('assets/admin/assets/logo/muji_250.jpg') }}" width="80" height="80"> </a></div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/mothercare.html"><img
-                        src="{{ asset('assets/admin/assets/logo/mothercare_250.jpg') }}" width="80" height="80"> </a>
-            </div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/american-eagle.html"><img
-                        src="{{ asset('assets/admin/assets/logo/american-eagle_250.jpg') }}" width="80" height="80">
-                </a></div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/dickies-life.html"><img
-                        src="{{ asset('assets/admin/assets/logo/dickies-life_250.png') }}" width="80" height="80">
-                </a></div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/lorna-jane.html"><img
-                        src="{{ asset('assets/admin/assets/logo/lorna-jane_250.jpg') }}" width="80" height="80"> </a>
-            </div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/sephra.html"><img
-                        src="{{ asset('assets/admin/assets/logo/sephra_250.jpg') }}" width="80" height="80"> </a>
-            </div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/melinda-maria.html"><img
-                        src="{{ asset('assets/admin/assets/logo/melinda-maria_250.jpg') }}" width="80"
-                        height="80"> </a></div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/kendra-scott.html"><img
-                        src="{{ asset('assets/admin/assets/logo/kendra-scott_250.jpg') }}" width="80" height="80">
-                </a></div>
-            <div style="margin: 15px; display:inline-block"><a href="coupon-codes/the-body-shop.html"><img
-                        src="{{ asset('assets/admin/assets/logo/thebodyshop_250.jpg') }}" width="80" height="80">
-                </a></div>
+            <h3 style="text-align: center; margin-bottom:20px">Top Best Stores used online on {{ env('APP_NAME') }}</h3>
+            @forelse ($stores as $store)
+                <div style="margin: 15px; display:inline-block"><a
+                        href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}"><img
+                            src="{{ asset('images/' . $store->store_img) }}" width="80" height="80"> </a>
+                </div>
+            @empty
+                <h4>No store added yet!</h4>
+            @endforelse
         </div>
     </section>
     <section class="" style="padding: 30px 0;">
@@ -132,12 +110,10 @@
                                 <h5>{{ $coupon->coupon_name }}</h5>
                                 <p class="line-height26 marbtm20">{{ $coupon->coupon_des }}</p>
                                 @if ($coupon->coupon_type === 'Coupon')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="myBtn"> <span
-                                            class="read-more-link">GET
+                                    <a href="#{{ $coupon->coupon_slug }}" class="myBtn"> <span class="read-more-link">GET
                                             Coupon</span></a>
                                 @elseif ($coupon->coupon_type === 'Deal')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="myBtn"> <span
-                                            class="read-more-link">GET
+                                    <a href="#{{ $coupon->coupon_slug }}" class="myBtn"> <span class="read-more-link">GET
                                             Deal</span></a>
                                 @endif
                             </div>
@@ -277,7 +253,8 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h3 class="marbtm30">who are we?</h3>
                     <span class="image_hover wdt-100 img marbtm30">
-                        <img src="{{ asset('assets/images/about.jpg') }}" class="img-responsive zoom_img_effect" alt="whoare-image">
+                        <img src="{{ asset('assets/images/about.jpg') }}" class="img-responsive zoom_img_effect"
+                            alt="whoare-image">
                     </span>
                     <p class="fnt-17">Our group find the super assessed offers from all stores and brands which you want
                         the most .We give best proposition on your unique days and significant occasions like the shopping

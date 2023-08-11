@@ -4,38 +4,43 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12  ftr-about-text">
                     <h6>About Us</h6>
-                    <p class="marbtm20 line-height26">{{ env('APP_NAME') }} rated offers from all stores and brands which one you
+                    <p class="marbtm20 line-height26">{{ env('APP_NAME') }} rated offers from all stores and brands which
+                        one you
                         more desire.We provides best offers on your specaildays and majour holiydays like Black Friday,
                         Mother's day, Father's day, Cyber Monday and others.</p>
                     <a class="ftr-read-more" href="#">Read More</a>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 ftr-sol-column">
-                    <h6>Special Offers</h6>
+                    <h6>Categories</h6>
                     <ul class="footer-link">
-                        <li><a href="#">Christmax Coupons</a></li>
-                        <li><a href="#">Cyber Monday Coupons</a></li>
-                        <li><a href="#">Black Friday Coupons</a></li>
-                        <li><a href="#">Halloween Coupons</a></li>
+                        @forelse ($categorys as $category)
+                            <li><a
+                                    href="{{ route('LandingPage.Single.Category', ['category_slug' => $category->category_slug]) }}">{{ $category->category_name }}</a>
+                            </li>
+                        @empty
+                        @endforelse
                     </ul>
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-12 ftr-link-column">
-                    <h6>Quick Links</h6>
+                    <h6>Stores</h6>
                     <ul class="footer-link">
-                        <li><a href="#">- About Us</a></li>
-                        <li><a href="#">- Term of Use</a></li>
-                        <li><a href="#">- Privacy Policy</a></li>
+                        @forelse ($stores as $store)
+                            <li>
+                                <a
+                                    href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">{{ $store->store_name }}</a>
+                            </li>
+                        @empty
+                            <h4>No store added yet</h4>
+                        @endforelse
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 ftr-follow-column pull-right">
                     <h6>Follow Us</h6>
                     <div class="header-socials footer-socials">
-                        <a href="#"><i
-                                class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram"
-                                aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"
-                                aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                     <span class="ftr-logo" id="footer_img"><img src="{{ asset('assets/images/logo-white.png') }}"
                             class="img-responsive" alt="logo-image"></span>

@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row ">
            <div class="text-center">
-            <h2 style="border: 1px solid red;color:red;margin-top:8px;margin-bottom:8px;">Categories</h2>
+            <h2 style="border: 1px solid red;color:red;margin-top:8px;margin-bottom:8px;">All Categories</h2>
            </div>
         </div>
     </div>
