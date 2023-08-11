@@ -253,7 +253,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h3 class="marbtm30">who are we?</h3>
                     <span class="image_hover wdt-100 img marbtm30">
-                        <img src="{{ asset('assets/images/about.jpg') }}" class="img-responsive zoom_img_effect"
+                        <img src="{{ asset('assets/images/newPic.jpeg') }}" class="img-responsive zoom_img_effect"
                             alt="whoare-image">
                     </span>
                     <p class="fnt-17">Our group find the super assessed offers from all stores and brands which you want
