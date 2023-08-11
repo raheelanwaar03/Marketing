@@ -5,197 +5,400 @@
 @endsection
 
 @section('content')
-    <section id="blog" class="container" style="margin-top: 20px;">
-        <div id="leftpan">
-            <a href=""><img src="{{ asset('images/' . $store->store_img) }}" width="100%"
-                    alt="{{ $store->store_name }} logo" /></a>
-            <fieldset id="about">
-                <legend>{{ $store->store_name }}</legend>
-                <legend style="margin-top: 10px;">About {{ env('APP_NAME') }}</legend>
-                If you make a purchase using our coupon code on a {{ $store->store_name }}'s website may earn an
-                commission from {{ $store->store_name }}. We do not guarantee the authenticity of any coupon or promo
-                code. You should
-                varify all promotions at the {{ $store->store_name }} website before making a purchase. </p>
-            </fieldset>
-        </div>
-        <div id="middlepan">
-            <h1 id="title_sm">{{ $store->store_name }}</h1>
-        </div>
-        <div id="rightpan">
-            @forelse ($coupons as $coupon)
-                <div class="offer">
-                    <div class="store-logo">
-                        <span class='price'>{{ $coupon->coupon_text }}</span>
-                    </div>
-                    <div class="store-right">
-                        <div class="store-text">
-                            <h3 class="coptext"><a title="" href="#{{ $coupon->coupon_slug }}"
-                                    class="prettyPhoto btn-code"
-                                    onclick="fun('Allstar Signings','',">{{ $coupon->coupon_name }}</a>
-                            </h3>
-                            <p class='coupondetail'>
-                                {{ $coupon->coupon_des }}
-                            </p>
-                        </div>
-                        @if ($coupon->coupon_type === 'Coupon')
-                            <div class="store-btn">
-                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
-                                    <div class="btn btn-success">Get Coupon</div>
-                                </a>
-                            </div>
-                        @elseif($coupon->coupon_type === 'Deal')
-                            <div class="store-btn">
-                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
-                                    <div>Get Deal</div>
-                                </a>
-                            </div>
-                        @endif
-                    </div>
-                    <div class="clear"></div>
+    <section style="width: 100%;">
+        <div id="mainContainer" style="margin-top: 20px; margin:0 auto;">
+            <div id="leftpan">
+                <div id="slogo">
+                    <a href=""><img src="{{ asset('images/' . $store->store_img) }}" width="100%"
+                            alt="{{ $store->store_name }} logo" /></a>
                 </div>
 
-                {{-- model --}}
+                <p id="count-coupon">9 Offers Available</p>
+                <fieldset id="about" style="padding: 10px;">
+                    <legend>About {{ $store->store_name }}</legend>
+                    <h5 style='text-align:center'>Go to </h5>
+                    <h6
+                        style='text-align:center; border:1px solid black; border-radius:6px; padding:8px 0; margin-top:10px'>
+                        <a style='text-transform:lowercase; margin: 8px 0;'
+                            href='{{ $store->store_link }}'>{{ $store->store_link }}</a>
+                    </h6>
+                    <p>{{ $store->store_name }}&rsquo;s motto of &ldquo;Smart Home Simplified&rdquo; is what drives us to
+                        build easy-to-use
+                        smart home devices and appliances that are designed to enhance your life.</p>
 
-                <div class="modal fade" id="{{ $coupon->coupon_slug }}" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">×</button>
-                                <h4 class="modal-title" id="getcodemodelLabel">{{ $coupon->coupon_name }}</h4>
-                            </div>
-                            <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
-                                <div id="popupoffer">{{ $coupon->coupon_name }}</div>
-                                <p>Open store to avail this offer <a target='_blank' href='{{ $coupon->coupon_link }}'
-                                        id="newtab"
-                                        style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
+                    <p>From laser-guided robotic vacuum cleaners to wireless security systems, every
+                        {{ $store->store_name }} product is
+                        developed using cutting-edge technologies and is designed for your convenience.</p>
+
+                    <p>&nbsp;</p>
+
+                    <p>{{ $store->store_name }} is developing a new generation of connected devices and appliances that work
+                        seamlessly together
+                        to simplify the complete smart home experience.</p>
+
+                    <p>{{ $store->store_name }} is part of Anker Innovations, one of the leading and most trusted consumer
+                        electronics brands in
+                        America.</p>
+                </fieldset>
+            </div>
+            <div id="middlepan">
+                <div id="mobile_logo" style="margin-bottom: 10px; border:1px dotted gray;">
+                    <div style="float:left; width:25%; padding:1%">
+                    <a href="{{ $store->store_link }}"><img
+                                src="{{ asset('images/' . $store->store_img) }}" width="100%"
+                                style="border:1px solid black" alt="{{ $store->store_name }} logo" /></a>
+                    </div>
+                    <div style="float:left; width:72%; padding:1%">
+                        <h1 id="title_sm">{{ $store->store_name }} Discount Codes</h1>
+                        <h5 style='text-align:center; border:1px solid black; border-radius:2px; padding:4px 0'><a
+                                href='{{ $store->store_link }}' target="_blank">VISIT
+                                STORE</a></h5>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+            <div id="rightpan">
+                <h1 id="title_md">{{ $store->store_name }} Discount Codes</h1>
+
+                @forelse ($coupons as $coupon)
+                    <div class="offer">
+                        <div class="store-logo">
+                            <span class='price'>{{ $coupon->coupon_text }}</span>
+                        </div>
+                        <div class="store-right">
+                            <div class="store-text">
+                                <h3 class="coptext"><a title="" href="#{{ $coupon->coupon_slug }}"
+                                        class="prettyPhoto btn-code"
+                                        onclick="fun('Allstar Signings','',">{{ $coupon->coupon_name }}</a>
+                                </h3>
+                                <p class='coupondetail'>
+                                    {{ $coupon->coupon_des }}
                                 </p>
-                                @if ($coupon->coupon_type === 'Coupon')
-                                    <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
-                                        style="color:brown" />
-                                    <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
-                                @elseif ($coupon->coupon_type === 'Deal')
-                                    <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}" readonly
-                                        style="color:brown" />
-                                    <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
-                                @endif
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                            <script>
-                                document.getElementById("copyButton").addEventListener("click", function() {
-                                    var inputElement = document.getElementById("dataToCopy");
-                                    inputElement.select();
-                                    document.execCommand("copy");
-                                    window.getSelection().removeAllRanges();
-                                    alert("Copied: " + inputElement.value);
-                                });
-                            </script>
-                            {{-- second script --}}
-                            <script type="text/javascript">
-                                $(document).ready(function() {
-                                    $(".myBtn").click(function() {
-                                        $(#'{{ $coupon->coupon_slug }}').modal({
-                                            show: true
+                            @if ($coupon->coupon_type === 'Coupon')
+                                <div class="store-btn">
+                                    <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                        <div class="btn btn-success">Get Coupon</div>
+                                    </a>
+                                </div>
+                            @elseif($coupon->coupon_type === 'Deal')
+                                <div class="store-btn">
+                                    <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                        <div>Get Deal</div>
+                                    </a>
+                                </div>
+                            @endif
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="modal fade" id="{{ $coupon->coupon_slug }}" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <h4 class="modal-title" id="getcodemodelLabel">{{ $coupon->coupon_name }}</h4>
+                                </div>
+                                <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
+                                    <div id="popupoffer">{{ $coupon->coupon_name }}</div>
+                                    <p>Open store to avail this offer <a target='_blank' href='{{ $coupon->coupon_link }}'
+                                            id="newtab"
+                                            style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
+                                    </p>
+                                    @if ($coupon->coupon_type === 'Coupon')
+                                        <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
+                                            style="color:brown" />
+                                        <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
+                                    @elseif ($coupon->coupon_type === 'Deal')
+                                        <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}" readonly
+                                            style="color:brown" />
+                                        <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
+                                    @endif
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                <script>
+                                    document.getElementById("copyButton").addEventListener("click", function() {
+                                        var inputElement = document.getElementById("dataToCopy");
+                                        inputElement.select();
+                                        document.execCommand("copy");
+                                        window.getSelection().removeAllRanges();
+                                        alert("Copied: " + inputElement.value);
+                                    });
+                                </script>
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        $(".myBtn").click(function() {
+                                            $('#{{ $coupon->coupon_slug }}').modal({
+                                                show: true
+                                            });
                                         });
                                     });
-                                });
-                                popid = 0;
-                                poplink = "";
-                                popstore = "";
+                                    popid = 0;
+                                    poplink = "";
+                                    popstore = "";
 
-                                function redirect2() {
-                                    window.open(poplink);
-                                }
+                                    function redirect2() {
+                                        window.open(poplink);
+                                    }
 
-                                function redirect(e) {
-                                    var copyText = document.getElementById("ccode");
-                                    copyText.select();
-                                    document.execCommand("copy");
-                                    $("#popup button").html("Go to Site");
-                                    $("#popup input").css("background", "grey");
-                                    $("#popup p").html("Code Copied. Paste the code at <a target='_blank' id='newtab' href='" + poplink + "'>" +
-                                        popstore + "</a>");
-                                    $("#popup button").attr("onclick", "redirect2()");
-                                }
-
-                                function fun(store, c, link, text, id, logo) {
-                                    popid = id;
-                                    poplink = link;
-                                    popstore = store;
-                                    $("#popup button").show();
-                                    $("#popup button + span").hide();
-                                    $("#popupoffer").html(text);
-                                    $("#getcodemodelLabel").html(store);
-                                    $("#popup > p").css({
-                                        "padding": "12px 0",
-                                        "font-size": "18px"
-                                    });
-                                    $("#popup img").attr("src", "{{ asset('adminimages/logo.png') }}" + logo);
-
-                                    if (c.trim() == "") // GET Deal
-                                    {
-                                        $("#popup button").html("Continue to Store");
-                                        $("#popup button").attr("onclick", "redirect2()");
-                                        $("#popup button + span").html("<a style='color:white;' href='couponstoredetail.php?id=" + 3 +
-                                            "'>Continue to Store</a>");
-                                        $("#ccode").hide();
-                                        $("#popup > button").css({
-                                            "background": "rgb(72,16,100)",
-                                            "padding": "10px 50px",
-                                            "font-size": "20px"
-                                        });
-                                        $("#popup p").html("Tip: No Code Needed!");
-                                        window.open(link);
-                                    } else // GET CODE
-                                    {
-                                        var x = "txt_" + id;
-                                        var copyText = document.getElementById(x);
+                                    function redirect(e) {
+                                        var copyText = document.getElementById("ccode");
                                         copyText.select();
                                         document.execCommand("copy");
-                                        window.open("{{ $coupon->coupon_link }}" + id, "_blank");
-                                        $("#popup button").attr("onclick", "redirect()");
-                                        $("#popup input").css("background", "white");
-                                        $("#popup button").html("COPY");
-                                        $("#ccode").show();
-                                        $("#ccode").attr('value', c);
-                                        // $("#popup p").html("Copy the code below <a target='_blank' id='newtab' href='"+link+"'>"+store+"</a>");
-                                        $("#popup p").html("Copy the code below");
-                                        $("#popup > button").css({
-                                            "background": "rgb(72,16,100)",
-                                            "font-size": "14px"
-                                        });
+                                        $("#popup button").html("Go to Site");
+                                        $("#popup input").css("background", "grey");
+                                        $("#popup p").html("Code Copied. Paste the code at <a target='_blank' id='newtab' href='" + poplink + "'>" +
+                                            popstore + "</a>");
+                                        $("#popup button").attr("onclick", "redirect2()");
                                     }
-                                }
 
-                                function showall(detail, d) {
-                                    $("#d_" + d).html(detail);
-                                }
-                            </script>
+                                    function fun(store, c, link, text, id, logo) {
+                                        popid = id;
+                                        poplink = link;
+                                        popstore = store;
+                                        $("#popup button").show();
+                                        $("#popup button + span").hide();
+                                        $("#popupoffer").html(text);
+                                        $("#getcodemodelLabel").html(store);
+                                        $("#popup > p").css({
+                                            "padding": "12px 0",
+                                            "font-size": "18px"
+                                        });
+                                        $("#popup img").attr("src", "{{ asset('adminimages/logo.png') }}" + logo);
+
+                                        if (c.trim() == "") // GET Deal
+                                        {
+                                            $("#popup button").html("Continue to Store");
+                                            $("#popup button").attr("onclick", "redirect2()");
+                                            $("#popup button + span").html("<a style='color:white;' href='couponstoredetail.php?id=" + 3 +
+                                                "'>Continue to Store</a>");
+                                            $("#ccode").hide();
+                                            $("#popup > button").css({
+                                                "background": "rgb(72,16,100)",
+                                                "padding": "10px 50px",
+                                                "font-size": "20px"
+                                            });
+                                            $("#popup p").html("Tip: No Code Needed!");
+                                            window.open(link);
+                                        } else // GET CODE
+                                        {
+                                            var x = "txt_" + id;
+                                            var copyText = document.getElementById(x);
+                                            copyText.select();
+                                            document.execCommand("copy");
+                                            window.open("{{ $coupon->coupon_link }}" + id, "_blank");
+                                            $("#popup button").attr("onclick", "redirect()");
+                                            $("#popup input").css("background", "white");
+                                            $("#popup button").html("COPY");
+                                            $("#ccode").show();
+                                            $("#ccode").attr('value', c);
+                                            // $("#popup p").html("Copy the code below <a target='_blank' id='newtab' href='"+link+"'>"+store+"</a>");
+                                            $("#popup p").html("Copy the code below");
+                                            $("#popup > button").css({
+                                                "background": "rgb(72,16,100)",
+                                                "font-size": "14px"
+                                            });
+                                        }
+                                    }
+
+                                    function showall(detail, d) {
+                                        $("#d_" + d).html(detail);
+                                    }
+                                </script>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @empty
+                    <h4>No Coupon added in this category yet</h4>
+                @endforelse
 
-            @empty
-                <h4>No Coupon added in this category yet</h4>
-            @endforelse
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="clear"></div>
     </section>
 
     <section class="container">
         <fieldset id="about-store">
             <legend>About {{ $store->store_name }}</legend>
-            <legend style="margin-top: 10px;">About {{ env('app') }}</legend>
-            If you make a purchase using our coupon code on a {{ $store->store_name }}'s website. kartcoupon.com may
-            earn an commission
-            from {{ $store->store_name }}. We do not guarantee the authenticity of any coupon or promo code. You
-            should fy all promotions
-            at the {{ $store->store_name }} website before making a purchase. </p>
+            <p>{{ $store->store_name }}&rsquo;s motto of &ldquo;Smart Home Simplified&rdquo; is what drives us to build
+                easy-to-use smart home
+                devices and appliances that are designed to enhance your life.</p>
+
+            <p>From laser-guided robotic vacuum cleaners to wireless security systems, every {{ $store->store_name }}
+                product is developed using
+                cutting-edge technologies and is designed for your convenience.</p>
+
+            <p>&nbsp;</p>
+
+            <p>{{ $store->store_name }} is developing a new generation of connected devices and appliances that work
+                seamlessly together to
+                simplify the complete smart home experience.</p>
+
+            <p>{{ $store->store_name }} is part of Anker Innovations, one of the leading and most trusted consumer
+                electronics brands in
+                America.</p>
         </fieldset>
     </section>
 @endsection
 
+{{-- <div id="rightpan">
+    @forelse ($coupons as $coupon)
+        <div class="offer">
+            <div class="store-logo">
+                <span class='price'>{{ $coupon->coupon_text }}</span>
+            </div>
+            <div class="store-right">
+                <div class="store-text">
+                    <h3 class="coptext"><a title="" href="#{{ $coupon->coupon_slug }}"
+                            class="prettyPhoto btn-code"
+                            onclick="fun('Allstar Signings','',">{{ $coupon->coupon_name }}</a>
+                    </h3>
+                    <p class='coupondetail'>
+                        {{ $coupon->coupon_des }}
+                    </p>
+                </div>
+                @if ($coupon->coupon_type === 'Coupon')
+                    <div class="store-btn">
+                        <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                            <div class="btn btn-success">Get Coupon</div>
+                        </a>
+                    </div>
+                @elseif($coupon->coupon_type === 'Deal')
+                    <div class="store-btn">
+                        <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                            <div>Get Deal</div>
+                        </a>
+                    </div>
+                @endif
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="modal fade" id="{{ $coupon->coupon_slug }}" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title" id="getcodemodelLabel">{{ $coupon->coupon_name }}</h4>
+                    </div>
+                    <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
+                        <div id="popupoffer">{{ $coupon->coupon_name }}</div>
+                        <p>Open store to avail this offer <a target='_blank' href='{{ $coupon->coupon_link }}'
+                                id="newtab"
+                                style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
+                        </p>
+                        @if ($coupon->coupon_type === 'Coupon')
+                            <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}" readonly
+                                style="color:brown" />
+                            <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
+                        @elseif ($coupon->coupon_type === 'Deal')
+                            <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}" readonly
+                                style="color:brown" />
+                            <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
+                        @endif
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <script>
+                        document.getElementById("copyButton").addEventListener("click", function() {
+                            var inputElement = document.getElementById("dataToCopy");
+                            inputElement.select();
+                            document.execCommand("copy");
+                            window.getSelection().removeAllRanges();
+                            alert("Copied: " + inputElement.value);
+                        });
+                    </script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".myBtn").click(function() {
+                                $(# '{{ $coupon->coupon_slug }}').modal({
+                                    show: true
+                                });
+                            });
+                        });
+                        popid = 0;
+                        poplink = "";
+                        popstore = "";
+
+                        function redirect2() {
+                            window.open(poplink);
+                        }
+
+                        function redirect(e) {
+                            var copyText = document.getElementById("ccode");
+                            copyText.select();
+                            document.execCommand("copy");
+                            $("#popup button").html("Go to Site");
+                            $("#popup input").css("background", "grey");
+                            $("#popup p").html("Code Copied. Paste the code at <a target='_blank' id='newtab' href='" + poplink + "'>" +
+                                popstore + "</a>");
+                            $("#popup button").attr("onclick", "redirect2()");
+                        }
+
+                        function fun(store, c, link, text, id, logo) {
+                            popid = id;
+                            poplink = link;
+                            popstore = store;
+                            $("#popup button").show();
+                            $("#popup button + span").hide();
+                            $("#popupoffer").html(text);
+                            $("#getcodemodelLabel").html(store);
+                            $("#popup > p").css({
+                                "padding": "12px 0",
+                                "font-size": "18px"
+                            });
+                            $("#popup img").attr("src", "{{ asset('adminimages/logo.png') }}" + logo);
+
+                            if (c.trim() == "") // GET Deal
+                            {
+                                $("#popup button").html("Continue to Store");
+                                $("#popup button").attr("onclick", "redirect2()");
+                                $("#popup button + span").html("<a style='color:white;' href='couponstoredetail.php?id=" + 3 +
+                                    "'>Continue to Store</a>");
+                                $("#ccode").hide();
+                                $("#popup > button").css({
+                                    "background": "rgb(72,16,100)",
+                                    "padding": "10px 50px",
+                                    "font-size": "20px"
+                                });
+                                $("#popup p").html("Tip: No Code Needed!");
+                                window.open(link);
+                            } else // GET CODE
+                            {
+                                var x = "txt_" + id;
+                                var copyText = document.getElementById(x);
+                                copyText.select();
+                                document.execCommand("copy");
+                                window.open("{{ $coupon->coupon_link }}" + id, "_blank");
+                                $("#popup button").attr("onclick", "redirect()");
+                                $("#popup input").css("background", "white");
+                                $("#popup button").html("COPY");
+                                $("#ccode").show();
+                                $("#ccode").attr('value', c);
+                                // $("#popup p").html("Copy the code below <a target='_blank' id='newtab' href='"+link+"'>"+store+"</a>");
+                                $("#popup p").html("Copy the code below");
+                                $("#popup > button").css({
+                                    "background": "rgb(72,16,100)",
+                                    "font-size": "14px"
+                                });
+                            }
+                        }
+
+                        function showall(detail, d) {
+                            $("#d_" + d).html(detail);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    @empty
+        <h4>No Coupon added in this category yet</h4>
+    @endforelse
+</div> --}}
 {{-- @extends('layout.app')
 
 

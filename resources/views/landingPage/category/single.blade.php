@@ -7,7 +7,7 @@
 @section('content')
     <section id="blog" class="container" style="margin-top: 20px;">
         <div id="leftpan">
-            <a href=""><img src="{{ asset('images/' . $category->image) }}" width="100%"
+            <a><img src="{{ asset('images/' . $category->image) }}" width="100%"
                     alt="{{ $category->category_name }} logo" /></a>
             <fieldset id="about">
                 <legend>{{ $category->category_name }}</legend>
@@ -19,7 +19,16 @@
             </fieldset>
         </div>
         <div id="middlepan">
-            <h1 id="title_sm">{{ $category->category_name }}</h1>
+            <div id="mobile_logo" style="margin-bottom: 10px; border:1px dotted gray;">
+                <div style="float:left; width:25%; padding:1%">
+                    <a href="#"><img src="{{ asset('images/' . $category->image) }}" width="100%"
+                            style="border:1px solid black" alt="{{ $category->category_name }} logo" /></a>
+                </div>
+                <div style="float:left; width:72%; padding:1%">
+                    <h1 id="title_sm">{{ $category->category_name }} Discount Codes</h1>
+                </div>
+                <div style="clear:both"></div>
+            </div>
         </div>
         <div id="rightpan">
             @forelse ($coupons as $coupon)
