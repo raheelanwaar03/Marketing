@@ -40,7 +40,7 @@
                         @if ($coupon->coupon_type === 'Coupon')
                             <div class="store-btn">
                                 <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
-                                    <div>Get Coupon</div>
+                                    <div class="btn btn-success">Get Coupon</div>
                                 </a>
                             </div>
                         @elseif($coupon->coupon_type === 'Deal')
