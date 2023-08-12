@@ -48,13 +48,13 @@
                         </div>
                         @if ($coupon->coupon_type === 'Coupon')
                             <div class="store-btn">
-                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code {{ $coupon->id }}">
                                     <div>Get Coupon</div>
                                 </a>
                             </div>
                         @elseif($coupon->coupon_type === 'Deal')
                             <div class="store-btn">
-                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code myBtn">
+                                <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code {{ $coupon->id }}">
                                     <div>Get Deal</div>
                                 </a>
                             </div>
@@ -103,7 +103,7 @@
                             {{-- second script --}}
                             <script type="text/javascript">
                                 $(document).ready(function() {
-                                    $(".myBtn").click(function() {
+                                    $(".{{ $coupon->id }}").click(function() {
                                         $('#{{ $coupon->coupon_slug }}').modal({
                                             show: true
                                         });
