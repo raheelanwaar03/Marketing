@@ -110,10 +110,12 @@
                                 <h5>{{ $coupon->coupon_name }}</h5>
                                 <p class="line-height26 marbtm20">{{ $coupon->coupon_des }}</p>
                                 @if ($coupon->coupon_type === 'Coupon')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span class="read-more-link">GET
+                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span
+                                            class="read-more-link">GET
                                             Coupon</span></a>
                                 @elseif ($coupon->coupon_type === 'Deal')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span class="read-more-link">GET
+                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span
+                                            class="read-more-link">GET
                                             Deal</span></a>
                                 @endif
                             </div>
@@ -127,22 +129,27 @@
                                         <button type="button" class="close" data-dismiss="modal">×</button>
                                         <h4 class="modal-title" id="getcodemodelLabel">{{ $coupon->coupon_name }}</h4>
                                     </div>
-                                    <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
-                                        <div id="popupoffer">{{ $coupon->coupon_name }}</div>
-                                        <p>Open store to avail this offer <a target='_blank'
-                                                href='{{ $coupon->coupon_link }}' id="newtab"
-                                                style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
-                                        </p>
-                                        @if ($coupon->coupon_type === 'Coupon')
+                                    @if ($coupon->coupon_type === 'Coupon')
+                                        <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
+                                            <div id="popupoffer" style="border: 1px solid powderblue">{{ $coupon->coupon_text }}</div>
+                                            <p>Open store to avail this offer <a target='_blank'
+                                                    href='{{ $coupon->coupon_link }}' id="newtab"
+                                                    style="font-size: 25px;text-transform: uppercase;">"{{ $coupon->coupon_store }}"</a>
+                                            </p>
                                             <input type='text' id='dataToCopy' value="{{ $coupon->coupon_code }}"
                                                 readonly style="color:brown" />
                                             <button class="btn btn-success btn-sm" id="copyButton">COPY</button>
-                                        @elseif ($coupon->coupon_type === 'Deal')
-                                            <input type='text' id='dataToCopy' value="{{ $coupon->coupon_link }}"
-                                                readonly style="color:brown" />
-                                            <a href="{{ $coupon->coupon_link }}" class="btn btn-success">GoTo Store</a>
-                                        @endif
-                                    </div>
+                                        </div>
+                                    @elseif ($coupon->coupon_type === 'Deal')
+                                        <div class="modal-body" id="popup" style="width: 100%; margin:6px 0">
+                                            <div id="popupoffer">{{ $coupon->coupon_text }}</div>
+                                            <p>
+                                                Tip: No code needed!
+                                            </p>
+                                            <a href="{{ $coupon->coupon_link }}" target="_blank"
+                                                class="btn btn-lg btn-success">GoTo Store</a>
+                                        </div>
+                                    @endif
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default"
                                             data-dismiss="modal">Close</button>

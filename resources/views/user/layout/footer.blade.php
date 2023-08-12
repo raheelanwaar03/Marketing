@@ -75,6 +75,34 @@
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <script src="{{ asset('assets/js/theme.js') }}"></script>
 <script src="{{ asset('assets/js/slick.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 300) {
+                $('i').css({
+                    "opacity": "1",
+                    "pointer-events": "auto"
+                });
+            } else {
+                $('i').css({
+                    "opacity": "0",
+                    "pointer-events": "none"
+                });
+            }
+        });
+        $('i').click(function() {
+            $('html').animate({
+                scrollTop: 0
+            }, 500);
+        });
+    });
+</script>
+
+
+
 </body>
 
 </html>
