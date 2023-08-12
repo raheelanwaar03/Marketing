@@ -110,10 +110,10 @@
                                 <h5>{{ $coupon->coupon_name }}</h5>
                                 <p class="line-height26 marbtm20">{{ $coupon->coupon_des }}</p>
                                 @if ($coupon->coupon_type === 'Coupon')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="myBtn"> <span class="read-more-link">GET
+                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span class="read-more-link">GET
                                             Coupon</span></a>
                                 @elseif ($coupon->coupon_type === 'Deal')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="myBtn"> <span class="read-more-link">GET
+                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span class="read-more-link">GET
                                             Deal</span></a>
                                 @endif
                             </div>
@@ -159,7 +159,7 @@
                                     {{-- second script --}}
                                     <script type="text/javascript">
                                         $(document).ready(function() {
-                                            $(".myBtn").click(function() {
+                                            $(".{{ $coupon->id }}").click(function() {
                                                 $('#{{ $coupon->coupon_slug }}').modal({
                                                     show: true
                                                 });
