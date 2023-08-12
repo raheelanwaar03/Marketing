@@ -28,3 +28,12 @@ function totalUsers()
     $totalUsers = User::get()->count();
     return $totalUsers;
 }
+
+
+// function store_coupon()
+// {
+//     $store = $store->store_name;
+//     $totalCoupons =  Coupon::where('coupon_store', $store)->get();
+//     $totalCoupons = $totalCoupons->count();
+//     return $totalCoupons;
+// }

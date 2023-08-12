@@ -52,13 +52,14 @@ class LandingPageController extends Controller
     {
         $categorys = Catagory::get();
         $stores = Store::orderBy('store_name', 'asc')->paginate(9);
-        return view('landingPage.store.index', compact('categorys', 'stores', 'coupons'));
+        return view('landingPage.store.index', compact('categorys', 'stores'));
     }
 
     public function singleCategory($category_slug)
     {
         $category = Catagory::where('category_slug', $category_slug)->first();
         $category_name = $category->category_name;
+        $stores = Store::orderBy('store_name', 'asc')->paginate(9);
         // checking coupons on this category
         $categorys = Catagory::get();
         $coupons = Coupon::where('coupon_category', $category_name)->orderBy('coupon_name', 'asc')->paginate(10);

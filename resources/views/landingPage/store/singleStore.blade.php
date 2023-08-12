@@ -13,7 +13,7 @@
                             alt="{{ $store->store_name }} logo" /></a>
                 </div>
 
-                <p id="count-coupon">9 Offers Available</p>
+                <p id="count-coupon"></p>
                 <fieldset id="about" style="padding: 10px;">
                     <legend>About {{ $store->store_name }}</legend>
                     <h5 style='text-align:center'>Go to </h5>
