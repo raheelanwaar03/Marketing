@@ -14,12 +14,10 @@ class LandingPageController extends Controller
 {
     public function landingpage()
     {
-        $homeImages = Home_page_Img::get();
         $categorys = Catagory::get();
         $stores = Store::get();
-        $coupons = Coupon::where('status', 1)->where('coupon_type', 'Coupon')->get();
-        $trending_coupons = Coupon::where('status', 1)->where('coupon_type', 'Deal')->get();
-        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons', 'trending_coupons', 'homeImages'));
+        $coupons = Coupon::get();
+        return view('landingPage.welcome', compact('categorys', 'stores', 'coupons'));
     }
 
     public function contact()
