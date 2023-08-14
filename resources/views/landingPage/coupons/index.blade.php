@@ -139,6 +139,9 @@
                                 </ul>
                             </div>
                         @endforeach
+                        <div class="">
+                            {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
+                        </div>
                     </div><!-- end row -->
                 </div>
             </div>

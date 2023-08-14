@@ -41,6 +41,9 @@
                 @empty
                 <h3>No store added Yet</h3>
                 @endforelse
+                <div class="">
+                    {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
+                </div>
             </div>
         </div>
     </section>

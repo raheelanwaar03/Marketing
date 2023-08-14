@@ -14,25 +14,25 @@ class LandingPageController extends Controller
 {
     public function landingpage()
     {
-        $categorys = Catagory::get();
-        $stores = Store::get();
-        $coupons = Coupon::get();
+        $categorys = Catagory::latest()->paginate(10);
+        $stores = Store::latest()->paginate(10);
+        $coupons = Coupon::latest()->paginate(10);
         return view('landingPage.welcome', compact('categorys', 'stores', 'coupons'));
     }
 
     public function contact()
     {
-        $categorys = Catagory::get();
-        $stores = Store::get();
-        $coupons = Coupon::get();
+        $categorys = Catagory::latest()->paginate(10);
+        $stores = Store::latest()->paginate(10);
+        $coupons = Coupon::latest()->paginate(10);
         return view('landingPage.contactUs', compact('categorys', 'stores', 'coupons'));
     }
 
     public function allCategorys()
     {
-        $categorys = Catagory::orderBy('category_name', 'asc')->paginate(10);
-        $stores = Store::get();
-        $coupons = Coupon::get();
+        $categorys = Catagory::orderBy('category_name', 'asc')->latest()->paginate(10);
+        $stores = Store::latest()->paginate(10);
+        $coupons = Coupon::latest()->paginate(10);
         return view('landingPage.category.index', compact('categorys', 'stores', 'coupons'));
     }
 
@@ -40,16 +40,16 @@ class LandingPageController extends Controller
 
     public function allCoupons()
     {
-        $categorys = Catagory::get();
-        $stores = Store::get();
+        $categorys = Catagory::latest()->paginate(10);
+        $stores = Store::latest()->paginate(10);
         $coupons = Coupon::orderBy('coupon_name', 'asc')->paginate(10);
         return view('landingPage.coupons.index', compact('categorys', 'stores', 'coupons'));
     }
 
     public function allStores()
     {
-        $categorys = Catagory::get();
-        $stores = Store::orderBy('store_name', 'asc')->paginate(9);
+        $categorys = Catagory::latest()->paginate(10);
+        $stores = Store::orderBy('store_name', 'asc')->latest()->paginate(10);
         return view('landingPage.store.index', compact('categorys', 'stores'));
     }
 
@@ -57,7 +57,7 @@ class LandingPageController extends Controller
     {
         $category = Catagory::where('category_slug', $category_slug)->first();
         $category_name = $category->category_name;
-        $stores = Store::orderBy('store_name', 'asc')->paginate(9);
+        $stores = Store::orderBy('store_name', 'asc')->latest()->paginate(10);
         // checking coupons on this category
         $categorys = Catagory::get();
         $coupons = Coupon::where('coupon_category', $category_name)->orderBy('coupon_name', 'asc')->paginate(10);

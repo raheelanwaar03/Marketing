@@ -219,7 +219,9 @@
                 @empty
                     <h4>No Coupon added in this category yet</h4>
                 @endforelse
-
+                <div class="">
+                    {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
+                </div>
             </div>
             <div class="clear"></div>
         </div>
