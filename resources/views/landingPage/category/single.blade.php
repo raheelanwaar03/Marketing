@@ -48,7 +48,7 @@
                         </div>
                         @if ($coupon->coupon_type === 'Coupon')
                             <div class="store-btn">
-                                <a href="#{{ $coupon->coupon_slug }}" class="btn btn-lg btn-success {{ $coupon->id }}">
+                                <a href="#{{ $coupon->coupon_slug }}" class="btn btn-success {{ $coupon->id }}">
                                     <div>Get Coupon</div>
                                 </a>
                             </div>
