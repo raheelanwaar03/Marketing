@@ -48,7 +48,7 @@
             </div>
             <div class="footer-btm">
                 <div class="col-md-6 col-sm-6 col-xs-12 pad-left_zero pad-right_zero">
-                    <p>Copyright © 23 {{ env('APP_NAME') }}.com. All Rights Reserved.</p>
+                    <p>Copyright ©  {{ env('APP_NAME') }}.com. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12 pad-left_zero pad-right_zero pull-right">
                     <p class="text-right">Powered by: <a href="#">{{ env('APP_NAME') }}.com</a></p>
