@@ -27,7 +27,7 @@
     <section class="pad100-50-top-bottom">
         <div class="container">
             <div class="row ">
-                @forelse ($categorys as $store)
+                @forelse ($stores as $store)
                 <div class="col-md-3 col-sm-3 col-xs-12 marbtm50 service-list-column">
                     <a href="{{ route('LandingPage.Single.Store',['store_slug'=>$store->store_slug]) }}">
                         <span class="image_hover"> <img src="{{ asset('images/'. $store->store_img) }}"
@@ -42,7 +42,7 @@
                 <h3>No store added Yet</h3>
                 @endforelse
                 <div class="">
-                    {{ $categorys->withQueryString()->links('pagination::bootstrap-5') }}
+                    {{ $stores->withQueryString()->links('pagination::bootstrap-5') }}
                 </div>
             </div>
         </div>
