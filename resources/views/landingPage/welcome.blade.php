@@ -110,11 +110,11 @@
                                 <h5>{{ $coupon->coupon_name }}</h5>
                                 <p class="line-height26 marbtm20">{{ $coupon->coupon_des }}</p>
                                 @if ($coupon->coupon_type === 'Coupon')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span
+                                    <a href="#{{ $coupon->coupon_slug }}"  onclick="window.open('{{ $coupon->coupon_link }}')" class="{{ $coupon->id }}"> <span
                                             class="read-more-link">GET
                                             Coupon</span></a>
                                 @elseif ($coupon->coupon_type === 'Deal')
-                                    <a href="#{{ $coupon->coupon_slug }}" class="{{ $coupon->id }}"> <span
+                                    <a href="#{{ $coupon->coupon_slug }}"  onclick="window.open('{{ $coupon->coupon_link }}')" class="{{ $coupon->id }}"> <span
                                             class="read-more-link">GET
                                             Deal</span></a>
                                 @endif

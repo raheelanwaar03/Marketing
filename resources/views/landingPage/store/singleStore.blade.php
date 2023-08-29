@@ -82,7 +82,7 @@
                                 </div>
                             @elseif($coupon->coupon_type === 'Deal')
                                 <div class="store-btn">
-                                    <a href="#{{ $coupon->coupon_slug }}" class="prettyPhoto btn-code {{ $coupon->id }}">
+                                    <a href="#{{ $coupon->coupon_slug }}" onclick="window.open('{{ $coupon->coupon_link }}')" class="prettyPhoto btn-code {{ $coupon->id }}">
                                         <div>Get Deal</div>
                                     </a>
                                 </div>
