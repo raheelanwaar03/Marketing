@@ -101,7 +101,7 @@
                 <div class="col-md-12">
                     @forelse ($coupons as $coupon)
                         <div class="col-md-6 col-sm-6 col-xs-12 service-column service4-column">
-                            <span class="service4-icons icons" style="height:200px;font-size:35px;margin-top:-1px;">
+                            <span class="service4-icons icons" style="height:200px;font-size:25px;margin-top:-1px;overflow:inherit">
                                 <strong>
                                     {{ $coupon->coupon_text }}
                                 </strong>

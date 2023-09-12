@@ -26,28 +26,29 @@
 @section('content')
     <section class="pad100-50-top-bottom">
         <div class="container">
-            <div class="row ">
-                @forelse ($stores as $store)
-                <div class="col-md-3 col-sm-3 col-xs-12 marbtm50 service-list-column">
-                    <a href="{{ route('LandingPage.Single.Store',['store_slug'=>$store->store_slug]) }}">
-                        <span class="image_hover"> <img src="{{ asset('images/'. $store->store_img) }}"
-                                class="img-responsive zoom_img_effect" alt="Kitchen Appliances-image"></span>
-                        <div class="service-heading service-manufactureicon" style="min-height: 86px;">
-                            <h5>{{ $store->store_name }}</h5>
-                            <span class="read-more-link btn"><a href="{{ route('LandingPage.Single.Store',['store_slug'=>$store->store_slug]) }}">View Coupons</a></span>
+            <div class="row">
+
+                @php
+                    $groupStores = $stores->groupBy(function ($store) {
+                        return strtoupper(substr($store->name, 0, 1));
+                    });
+                @endphp
+
+                @forelse ($groupStores as $letter => $stores)
+                    <h2>All Stores starting from {{ $letter }}</h2>
+                    @foreach ($stores as $store)
+                        <div class="col-md-1 col-sm-3 col-xs-12">
+                            <a href="{{ route('LandingPage.Single.Store', ['store_slug' => $store->store_slug]) }}">
+                                <div class="service-heading service-manufactureicon" style="min-height: 86px;">
+                                    <h5 style="background-color:rgb(224, 224, 224);padding:10px;">{{ $store->store_name }}</h5>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    @endforeach
                 @empty
-                <h3>No store added Yet</h3>
+                    <h3>No store added Yet</h3>
                 @endforelse
-                <div class="">
-                    {{ $stores->withQueryString()->links('pagination::bootstrap-5') }}
-                </div>
             </div>
         </div>
     </section>
 @endsection
-
-
-

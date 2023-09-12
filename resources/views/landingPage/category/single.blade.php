@@ -34,7 +34,7 @@
             @forelse ($coupons as $coupon)
                 <div class="offer">
                     <div class="store-logo">
-                        <span class='price'>{{ $coupon->coupon_text }}</span>
+                        <span class='price' style="overflow:inherit">{{ $coupon->coupon_text }}</span>
                     </div>
                     <div class="store-right">
                         <div class="store-text">
